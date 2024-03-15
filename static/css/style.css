@@ -1,14 +1,63 @@
+/* General styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Header */
 .bg-color {
     background-color: #F1EEE9;
 }
 
 #logo {
-    height: 80px;
+    height: 75px;
     position: relative;
     right: 1rem;
 }
 
 #position {
     position: relative;
-    top: 13px;
+    top: 15px;
+}
+
+.top {
+    top: 5px;
+}
+
+.font-size {
+    font-size: 14px;
+}
+
+/* Home page */
+main {
+    margin-top: 4.5rem;
+    background-color: yellow;
+}
+
+.home-title {
+    font-family: 'Ojuju', sans-serif;
+}
+
+/* Media queries */
+@media (min-width: 576px) {
+    #logo {
+        height: 90px;
+    }
+
+    .font-size {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 992px) {
+    #logo {
+        height: 100px;
+    }
+
+    .font-size {
+        font-size: 1.1rem;
+    }
+
+    .top {
+        top: 2px;
+    }
 }
