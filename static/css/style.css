@@ -29,11 +29,12 @@ body {
 
 /* Home page */
 main {
-    margin-top: 4.5rem;
+    margin-top: 4.8rem;
 }
 
 .home-title {
     font-family: 'Ojuju', sans-serif;
+    border-bottom: 1px solid black;
 }
 
 /* Media queries */
@@ -45,9 +46,23 @@ main {
     .font-size {
         font-size: 1rem;
     }
+
+    .home-title {
+        margin-top: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .home-title {
+        font-size: 3.1rem;
+    }
 }
 
 @media (min-width: 992px) {
+    main {
+        margin-top: 5.4rem;
+    }
+
     #logo {
         height: 100px;
     }
@@ -58,5 +73,17 @@ main {
 
     .top {
         top: 2px;
+    }
+
+    .container {
+        max-width: 1200px;
+    }
+
+    .home-title {
+        font-size: 2.6rem;
+    }
+
+    .margin-top {
+        margin-top: 20px;
     }
 }
