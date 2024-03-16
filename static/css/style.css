@@ -14,17 +14,28 @@ body {
     right: 1rem;
 }
 
-#position {
-    position: relative;
-    top: 15px;
+.navbar {
+    flex-wrap: nowrap;
 }
 
-.top {
-    top: 5px;
+.navbar-collapse {
+    flex-basis: 0%;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+ul {
+    margin-bottom: 0;
 }
 
 .font-size {
     font-size: 14px;
+}
+
+.collapse:not(.show) {
+    display: flex !important;
 }
 
 /* Home page */
@@ -69,10 +80,6 @@ main {
 
     .font-size {
         font-size: 1.1rem;
-    }
-
-    .top {
-        top: 2px;
     }
 
     .container {
