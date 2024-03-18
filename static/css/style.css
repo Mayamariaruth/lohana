@@ -43,6 +43,10 @@ ul {
     margin-top: 6rem;
 }
 
+.header-margin2 {
+    margin-top: 9rem;
+}
+
 .collapse:not(.show) {
     display: flex !important;
 }
@@ -64,6 +68,16 @@ main {
 
 .product-name {
     font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Product details page */
+.detail-title {
+    font-size: 2rem;
+}
+
+.details {
+    font-size: 1.4rem;
     font-weight: 600;
 }
 
