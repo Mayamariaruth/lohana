@@ -39,6 +39,10 @@ ul {
     top: 12px;
 }
 
+.header-margin {
+    margin-top: 6rem;
+}
+
 .collapse:not(.show) {
     display: flex !important;
 }
@@ -52,6 +56,12 @@ main {
     font-family: 'Ojuju', sans-serif;
     border-bottom: 1px solid black;
 }
+
+/* Products page */
+.products-title {
+    font-family: 'Ojuju', sans-serif;
+}
+
 
 /* Media queries */
 @media (min-width: 576px) {
