@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block page_header %}
+    <div class="header-margin1"></div>
+{% endblock %}
+
 {% block content %}
     <main class="container">
         <div class="row">
@@ -13,7 +17,7 @@
                 </div>
             </div>
             <div class="col-sm-12 col-lg-4 p-0">
-                <div class="position-relative text-center margin-top">
+                <div class="position-relative text-center">
                     <a class="btn" href="{% url 'products' %}?category=necklaces">
                         <h1 class="home-title text-center">Necklaces</h1>
                     </a>

@@ -40,26 +40,27 @@ ul {
 }
 
 .header-margin {
-    margin-top: 6rem;
-}
-
-.header-margin2 {
     margin-top: 9rem;
 }
 
-.header-margin3 {
-    margin-top: 7rem;
+.header-margin1 {
+    margin-top: 8rem;
+}
+
+.header-margin2 {
+    margin-top: 10rem;
 }
 
 .collapse:not(.show) {
     display: flex !important;
 }
 
-/* Home page */
-main {
-    margin-top: 4.8rem;
+#delivery {
+    background-color: #B69787;
+    color: white;
 }
 
+/* Home page */
 .home-title {
     font-family: 'Ojuju', sans-serif;
     border-bottom: 1px solid black;
@@ -79,6 +80,7 @@ main {
     font-size: 13px;
     font-weight: bold;
     color: #777;
+    box-shadow: 0.4px 0.4px 0.8px 0.8px rgba(0, 0, 0, 0.4);
 }
 
 .c-name:hover,
@@ -103,6 +105,7 @@ main {
 .bg-btn {
     font-size: 17px;
     font-weight: 600;
+    box-shadow: 0.5px 0.5px 2px 2px rgba(0, 0, 0, 0.4);
 }
 
 /* Product details page */
