@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
-from .models import Product
+from .models import Product, Category
 
+
+### PRODUCTS TITLE NOT WORKING WITH all_categories
 
 # Create your views here.
 def all_products(request):
@@ -10,9 +12,20 @@ def all_products(request):
     Show all products and sort/search queries
     """
     products = Product.objects.all()
+    all_categories = Category.objects.all()
     query = None
+    categories = None
+    title = 'Products'
 
     if request.GET:
+        if 'category' in request.GET:
+            categories = request.GET['category'].split(',')
+            products = products.filter(category__name__in=categories)
+            categories = Category.objects.filter(name__in=categories)
+            title = categories[0].name.capitalize()
+        elif all_categories in request.GET:
+            title = 'Products'
+
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -25,6 +38,8 @@ def all_products(request):
     context = {
         'products': products,
         'search_term': query,
+        'current_categories': categories,
+        'title': title,
     }
 
     return render(request, 'products/products.html', context)

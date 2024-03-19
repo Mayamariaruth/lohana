@@ -70,11 +70,11 @@
                                 <span>Products</span>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Earrings</a>
-                                <a class="dropdown-item" href="#">Necklaces</a>
-                                <a class="dropdown-item" href="#">Bracelets</a>
+                                <a class="dropdown-item" href="{% url 'products' %}?category=earrings">Earrings</a>
+                                <a class="dropdown-item" href="{% url 'products' %}?category=necklaces">Necklaces</a>
+                                <a class="dropdown-item" href="{% url 'products' %}?category=bracelets">Bracelets</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="{% url 'products' %}">All Products</a>
+                                <a class="dropdown-item" href="{% url 'products' %}?category=earrings,necklaces,bracelets">All Products</a>
                             </div>
                         </li>
                     </ul>
