@@ -4,15 +4,12 @@ from django.db.models import Q
 from .models import Product, Category
 
 
-### PRODUCTS TITLE NOT WORKING WITH all_categories
-
 # Create your views here.
 def all_products(request):
     """
     Show all products and sort/search queries
     """
     products = Product.objects.all()
-    all_categories = Category.objects.all()
     query = None
     categories = None
     title = 'Products'
@@ -23,8 +20,9 @@ def all_products(request):
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
             title = categories[0].name.capitalize()
-        elif all_categories in request.GET:
-            title = 'Products'
+
+            if len(categories) == Category.objects.count():
+                title = 'Products' 
 
         if 'q' in request.GET:
             query = request.GET['q']
