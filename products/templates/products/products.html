@@ -9,42 +9,82 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col mt-2 text-center">
-                <h1 class="products-title mt-2">{{ title }}</h1>
+                <h1 class="products-title mt-2 mb-4">{{ title }}</h1>
+                {% if title == 'Products' %}
+                    {% for c in current_categories %}
+                        <a class="c-name p-2 border mr-2" href="{% url 'products' %}?category={{ c.name }}">
+                            <span>{{ c.name|title }}</span>
+                        </a>
+                    {% endfor %}
+                {% endif %}
                 <hr>
             </div>
-            <div class="row mt-4">
-                {% for product in products %}
-                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        <div class="card mb-5">
-                            {% if product.image %}
-                                <a href="{% url 'product_detail' product.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
-                                </a>
-                                {% else %}
-                                <a href="{% url 'product_detail' product.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                                </a>
-                            {% endif %}
-                            <div class="card-body">
-                                <p class="product-name">{{ product.name }}</p>
-                                <p>{{ product.introduction }}</p>
-                            </div>
-                            <div class="card-footer">
-                                <div class="row">
-                                    <div class="col">
-                                        <p class="lead text-left font-weight-bold">${{ product.price }}</p>
-                                        {% if product.rating %}
-                                            <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
-                                        {% else %}
-                                            <small class="text-muted">No Rating</small>
-                                        {% endif %}
-                                    </div>
+        </div>
+        <!-- Sorting box -->
+        <div class="row justify-content-center justify-content-md-end">
+            <div class="col-12 col-md-6 my-auto d-flex justify-content-center justify-content-md-end">
+                <div class="w-50">
+                    <select
+                        class="custom-select custom-select-sm rounded-0 border border-{% if sort_by %}info{% else %}black{% endif %}">
+                        <option value="">Sort by...</option>
+                        <option value="name_asc">Name (A-Z)</option>
+                        <option value="name_desc">Name (Z-A)</option>
+                        <option value="price_asc">Price (low to high)</option>
+                        <option value="price_desc">Price (high to low)</option>
+                        <option value="rating_asc">Rating (low to high)</option>
+                        <option value="rating_desc">Rating (high to low)</option>
+                        <option value="category_asc">Category (A-Z)</option>
+                        <option value="category_desc">Category (Z-A)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 order-md-first">
+                <p class="text-muted mt-2 text-center text-md-left">
+                    <span class="small"><a href="{% url 'products' %}">All Products</a> | </span>
+                    {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+                </p>
+            </div>
+        </div>
+        <!-- Products -->
+        <div class="row mt-4">
+            {% for product in products %}
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                    <div class="card mb-5">
+                        {% if product.image %}
+                            <a href="{% url 'product_detail' product.id %}">
+                                <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                            </a>
+                        {% else %}
+                            <a href="{% url 'product_detail' product.id %}">
+                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                            </a>
+                        {% endif %}
+                        <div class="card-body">
+                            <p class="product-name">{{ product.name }}</p>
+                            <p>{{ product.introduction }}</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="row">
+                                <div class="col">
+                                    <p class="lead text-left font-weight-bold">${{ product.price }}</p>
+                                    {% if product.rating %}
+                                        <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                                    {% else %}
+                                        <small class="text-muted">No Rating</small>
+                                    {% endif %}
+                                    {% if product.category %}
+                                        <p class="small">
+                                            <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
+                                                <i class="fas fa-tag mr-1"></i>{{ product.category.name|title }}
+                                            </a>
+                                        </p>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
                     </div>
-                {% endfor %}
-            </div>
+                </div>
+            {% endfor %}
         </div>
     </div>
 {% endblock %}

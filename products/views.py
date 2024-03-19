@@ -13,8 +13,22 @@ def all_products(request):
     query = None
     categories = None
     title = 'Products'
+    sort_by = request.GET.get('sort')
 
     if request.GET:
+        if sort_by == 'name_asc':
+            products = products.order_by('name')
+        elif sort_by == 'name_desc':
+            products = products.order_by('-name')
+        elif sort_by == 'price_asc':
+            products = products.order_by('price')
+        elif sort_by == 'price_desc':
+            products = products.order_by('-price')
+        elif sort_by == 'category_asc':
+            products = products.order_by('category')
+        elif sort_by == 'category_desc':
+            products = products.order_by('-category')
+
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
@@ -38,6 +52,7 @@ def all_products(request):
         'search_term': query,
         'current_categories': categories,
         'title': title,
+        'sort_by': sort_by,
     }
 
     return render(request, 'products/products.html', context)

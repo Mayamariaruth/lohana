@@ -28,6 +28,13 @@
                     {% else %}
                         <small class="text-muted">No Rating</small>
                     {% endif %}
+                    {% if product.category %}
+                        <p class="small mt-2">
+                            <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
+                                <i class="fas fa-tag mr-1"></i>{{ product.category.name|title }}
+                            </a>
+                        </p>
+                    {% endif %}
                     {% if product.introduction %}
                         <p class="mb-4 mt-2">{{ product.introduction }}</p>
                     {% endif %}
