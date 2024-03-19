@@ -96,6 +96,7 @@
 
 {% block postloadjs %}
     {{ block.super }}
+    <!-- Scroll to top button -->
     <script type="text/javascript">
         $(window).scroll(function() {
             if ($(this).scrollTop() > 20) {
@@ -108,7 +109,7 @@
 			window.scrollTo(0,0)
 		})
 	</script>
-    
+    <!-- Sorting products -->
     <script type="text/javascript">
         $('#sort-selector').change(function() {
             var selector = $(this);

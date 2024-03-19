@@ -47,6 +47,10 @@ ul {
     margin-top: 9rem;
 }
 
+.header-margin3 {
+    margin-top: 7rem;
+}
+
 .collapse:not(.show) {
     display: flex !important;
 }
@@ -77,7 +81,9 @@ main {
     color: #777;
 }
 
-.c-name:hover {
+.c-name:hover,
+.top-btn:hover,
+.bg-btn:hover {
     background: rgba(0, 0, 0, 0.557);
     color: white;
 }
@@ -94,9 +100,9 @@ main {
     background: white;
 }
 
-.top-btn:hover {
-    background: rgba(0, 0, 0, 0.557);
-    color: white;
+.bg-btn {
+    font-size: 17px;
+    font-weight: 600;
 }
 
 /* Product details page */

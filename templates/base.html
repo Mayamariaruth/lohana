@@ -121,7 +121,7 @@
                     <!-- Shopping bag -->
                     <li class="list-inline-item font-size pr-sm-2 pr-lg-4">
                         <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link p-0"
-                            href="">
+                            href="{% url 'view_bag' %}">
                             <div class="text-center">
                                 <div><i class="fas fa-shopping-bag fa-lg text-dark"></i></div>
                                 <p class="my-0 text-dark">
