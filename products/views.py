@@ -13,21 +13,24 @@ def all_products(request):
     query = None
     categories = None
     title = 'Products'
-    sort_by = request.GET.get('sort')
+    sort_by = request.GET.get('sort_by')
 
     if request.GET:
-        if sort_by == 'name_asc':
-            products = products.order_by('name')
-        elif sort_by == 'name_desc':
-            products = products.order_by('-name')
-        elif sort_by == 'price_asc':
-            products = products.order_by('price')
-        elif sort_by == 'price_desc':
-            products = products.order_by('-price')
-        elif sort_by == 'category_asc':
-            products = products.order_by('category')
-        elif sort_by == 'category_desc':
-            products = products.order_by('-category')
+        if 'sort_by' in request.GET:
+            if sort_by == 'name_asc':
+                products = products.order_by('name')
+            elif sort_by == 'name_desc':
+                products = products.order_by('-name')
+            elif sort_by == 'price_asc':
+                products = products.order_by('price')
+            elif sort_by == 'price_desc':
+                products = products.order_by('-price')
+            elif sort_by == 'category_asc':
+                products = products.order_by('category__name')
+            elif sort_by == 'category_desc':
+                products = products.order_by('-category__name')
+        if sort_by == 'reset':
+            sort_by = None
 
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
