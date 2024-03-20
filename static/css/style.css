@@ -157,6 +157,16 @@ ul {
     height: 2px;
 }
 
+.margin-left {
+    margin-left: 2rem;
+}
+
+.wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 /* Media queries */
 @media (min-width: 576px) {
     #logo {
