@@ -129,6 +129,11 @@ ul {
     color: white;
 }
 
+/* Shopping bag */
+#shop-title {
+    font-family: 'Ojuju', sans-serif;
+}
+
 /* Media queries */
 @media (min-width: 576px) {
     #logo {
