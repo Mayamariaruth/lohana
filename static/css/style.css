@@ -134,6 +134,11 @@ ul {
     font-family: 'Ojuju', sans-serif;
 }
 
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
 /* Media queries */
 @media (min-width: 576px) {
     #logo {
