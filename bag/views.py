@@ -13,7 +13,7 @@ def add_to_bag(request, item_id):
     """
     Add quantity of products to bag
     """
-    quantity = int(request.POST.GET('quantity'))
+    quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     bag = request.session.get('bag', {})
 
