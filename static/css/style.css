@@ -167,6 +167,10 @@ ul {
     overflow-y: auto;
 }
 
+/* Checkout */
+
+
+
 /* Media queries */
 @media (min-width: 576px) {
     #logo {
