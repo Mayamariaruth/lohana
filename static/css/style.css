@@ -149,7 +149,7 @@ ul {
 }
 
 .message-title {
-    color: black;
+    color: #000000;
     font-size: 1rem;
 }
 
@@ -167,9 +167,32 @@ ul {
     overflow-y: auto;
 }
 
-/* Checkout */
+/* Checkout / From Stripe  */
+.StripeElement,
+.stripe-style-input {
+  box-sizing: border-box;
+  height: 40px;
+  padding: 10px 12px;
+  background-color: white;
+  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+}
 
+.StripeElement--focus,
+.stripe-style-input:focus,
+.stripe-style-input:active {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+}
 
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+.fieldset-label {
+    position: relative;
+    right: .5rem;
+}
 
 /* Media queries */
 @media (min-width: 576px) {
