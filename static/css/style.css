@@ -130,7 +130,7 @@ ul {
 }
 
 /* Shopping bag */
-#shop-title {
+.shop-title {
     font-family: 'Ojuju', sans-serif;
 }
 
@@ -194,6 +194,26 @@ ul {
     right: .5rem;
 }
 
+/* Checkout success  */
+.delivery-title {
+    font-size: 1.7rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.delivery-details-container {
+    position: relative;
+    top: 2rem;
+}
+
+.overflow {
+    overflow-wrap: anywhere;
+}
+
+#font {
+    font-size: 1.3rem;
+}
+
 /* Media queries */
 @media (min-width: 576px) {
     #logo {
@@ -212,6 +232,10 @@ ul {
 @media (min-width: 768px) {
     .home-title {
         font-size: 3.1rem;
+    }
+
+    .delivery-details-container {
+        bottom: 5rem;
     }
 }
 
@@ -238,5 +262,9 @@ ul {
 
     .margin-top {
         margin-top: 20px;
+    }
+
+    .delivery-details-container {
+        bottom: 15rem;
     }
 }

@@ -39,7 +39,11 @@ def checkout(request):
                         try:
                             quantity = item_data['quantity']
                         except (KeyError, TypeError):
-                            messages.error(request, "Invalid quantity data in the bag. Please contact support.")
+                            messages.error(
+                                request,
+                                "Invalid quantity data in the bag. \
+                                    Please contact support."
+                            )
                             continue
                     order_line_item = OrderLineItem(
                             order=order,
@@ -48,12 +52,14 @@ def checkout(request):
                         )
                     order_line_item.save()
                 except Product.DoesNotExist:
-                    messages.error(request, ("One of the products in your bag doesn't exist in our database. "
+                    messages.error(request, (
+                        "One of the products in your bag doesn't exist."
                         "Please contact us for help!"))
                     order.delete()
                     return redirect(reverse('view_bag'))
             request.session['save_info'] = 'save_info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(reverse(
+                'checkout_success', args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                            Please double check your information.')
@@ -62,7 +68,7 @@ def checkout(request):
         if not bag:
             messages.error(request, 'There is nothing in your bag')
             return redirect(reverse('products'))
-        
+
         current_bag = bag_contents(request)
         total = current_bag['grand_total']
         stripe_total = round(total * 100)
@@ -77,7 +83,7 @@ def checkout(request):
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
                          Did you forget to set it in your environment?')
-    
+
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
@@ -97,7 +103,7 @@ def checkout_success(request, order_number):
     messages.success(request, f'Order successfully processed! \
                      Your order number is {order_number}. A confirmation \
                         email will be sent to {order.email}.')
-    
+
     if 'bag' in request.session:
         del request.session['bag']
 
