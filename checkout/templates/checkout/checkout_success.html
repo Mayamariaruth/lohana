@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="header-margin2"></div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 id="shop-title">Order Completed!</h1>
+            <hr>
+            <p>A confirmation email has been sent to <strong>{{ order.email }}</strong>, make sure to double check your spam folder if you cannot find the email.</p>
+            <p>Your order information is below. Please contact us if anything isn't correct!</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>Order Summary ({{ product_count }}):</p>
+        </div>
+    </div>
+    <a href="{% url 'products' %}" class="btn bg-btn border px-3 py-2">
+        <span>Continue Shopping</span>
+    </a>
+</div>
+{% endblock %}
