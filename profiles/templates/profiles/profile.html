@@ -17,5 +17,97 @@
             <hr>
         </div>
     </div>
+    {% if request.user.is_authenticated %}
+        <!-- Admin profile -->
+        {% if request.user.is_superuser %}
+            <div class="row">
+
+            </div>
+        {% endif %}
+        <!-- User profile (Tabs from W3Schools https://getbootstrap.com/docs/4.6/components/navs/#tabs) -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link border-right active" id="account-details-tab" data-toggle="tab" data-target="#account-details" type="button" role="tab" aria-controls="account-details" aria-selected="true">Account Details</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link border-right" id="order-history-tab" data-toggle="tab" data-target="#order-history" type="button" role="tab" aria-controls="order-history" aria-selected="false">Order history</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link border-right" id="wishlist-tab" data-toggle="tab" data-target="#wishlist" type="button" role="tab" aria-controls="wishlist" aria-selected="false">Wishlist</button>
+            </li>
+          </ul>
+          <!-- Tab content -->
+          <div class="tab-content" id="myTabContent">
+            <!-- User details -->
+            <div class="tab-pane fade show active row d-flex" id="account-details" role="tabpanel" aria-labelledby="account-details-tab">
+                <div class="col-md-6 mt-4">
+                    <p class="font-weight-bold">Delivery Details</p>
+                    <div class="row">
+                        <div class="col">
+                            <p class="font-weight-bold">Phone</p>
+                        </div>
+                        <p>{{ profile.user_phone_number }}</p>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <p class="font-weight-bold">Address</p>
+                        </div>
+                        <p>{{ profile.street_address1 }}{% if profile.street_address2 %}, {{ profile.street_address2 }}{% endif %}</p>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <p class="font-weight-bold">City</p>
+                        </div>
+                        <p>{{ profile.town_or_city }}</p>
+                    </div>
+                    {% if profile.county %}
+                    <div class="row">
+                        <div class="col">
+                            <p class="font-weight-bold">County</p>
+                        </div>
+                        <p>{{ profile.county }}</p>
+                    </div>
+                    {% endif %}
+                    {% if profile.postcode %}
+                    <div class="row">
+                        <div class="col">
+                            <p class="font-weight-bold">Postcode</p>
+                        </div>
+                        <p>{{ profile.postcode }}</p>
+                    </div>
+                    {% endif %}
+                    <div class="row">
+                        <div class="col">
+                            <p class="font-weight-bold">Country</p>
+                        </div>
+                        <p>{{ profile.country }}</spa>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col">
+                            <a href="{% url 'products' %}" class="btn btn-lg bg-btn border px-3 py-2">
+                                <span>Continue Shopping</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mt-4">
+                    <p class="font-weight-bold">Update your delivery details below</p>
+                    <form class="" action="{% url 'profile' %}" method="POST" id="update-details">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <button class="btn">Update Details</button>
+                    </form>
+                </div>
+            </div>
+            <!-- Order history -->
+            <div class="tab-pane fade" id="order-history" role="tabpanel" aria-labelledby="order-history-tab">
+
+            </div>
+            <!-- Wishlist -->
+            <div class="tab-pane fade" id="wishlist" role="tabpanel" aria-labelledby="wishlist-tab">
+
+            </div>
+          </div>
+    {% endif %}
 </div>
 {% endblock %}

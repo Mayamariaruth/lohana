@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('user_phone_number', models.CharField(blank=True, max_length=20, null=True)),
-                ('user_country', django_countries.fields.CountryField(blank=True, max_length=2, null=True)),
+                ('user_country', django_countries.fields.CountryField(blank=True, max_length=255, null=True)),
                 ('user_postcode', models.CharField(blank=True, max_length=20, null=True)),
                 ('user_town_or_city', models.CharField(blank=True, max_length=40, null=True)),
                 ('user_street_address1', models.CharField(blank=True, max_length=80, null=True)),

@@ -15,7 +15,7 @@
                     <hr>
                 </div>
             </div>
-            {% if grand_total %}
+            {% if grand_total and not on_profile %}
                 <p class="font-weight-bold text-uppercase">Your Bag ({{ product_count }})</p>
                 <hr>
                 <div class="wrapper"> 
