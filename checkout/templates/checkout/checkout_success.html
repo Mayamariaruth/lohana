@@ -130,6 +130,11 @@
                 <a href="{% url 'products' %}" class="btn btn-lg bg-btn border px-3 py-2">
                     <span>Continue Shopping</span>
                 </a>
+                {% if from_profile %}
+                    <a href="{% url 'profile' %}" class="btn bg-btn border">
+                        <span>Go back</span>
+                    </a>
+                {% endif %}
             </div>
         </div>
     </div>

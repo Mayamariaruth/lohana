@@ -2,10 +2,14 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpR
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
+
 from .forms import OrderForm
 from .models import Order, OrderLineItem
 from products.models import Product
 from bag.contexts import bag_contents
+from profiles.forms import UserDetailsForm
+from profiles.models import UserProfile
+
 import stripe
 import json
 
@@ -119,20 +123,31 @@ def checkout(request):
 
 def checkout_success(request, order_number):
     """
-    Successful checkout view
+    Handle successful checkouts
     """
-    save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
-    messages.success(request, f'Order successfully processed! \
-                     Your order number is {order_number}. A confirmation \
-                        email will be sent to {order.email}.')
+    
+    if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user=request.user)
+        order.user_profile = profile
+        order.save()
+
+        save_info = request.session.get('save_info')
+        if save_info:
+            profile.user_phone_number = order.phone_number
+            profile.user_country = order.country
+            profile.user_postcode = order.postcode
+            profile.user_town_or_city = order.town_or_city
+            profile.user_street_address1 = order.street_address1
+            profile.user_street_address2 = order.street_address2
+            profile.user_county = order.county
+            profile.save()
+
+    messages.success(request,
+                     f'Order successfully processed! Your order number is {order_number}.'
+                     f'A confirmation email will be sent to {order.email}.')
 
     if 'bag' in request.session:
         del request.session['bag']
 
-    template = 'checkout/checkout_success.html'
-    context = {
-        'order': order,
-    }
-
-    return render(request, template, context)
+    return render(request, 'checkout/checkout_success.html', {'order': order})

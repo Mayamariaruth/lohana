@@ -27,7 +27,7 @@
         <!-- User profile (Tabs from W3Schools https://getbootstrap.com/docs/4.6/components/navs/#tabs) -->
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
-              <button class="nav-link border-right active" id="account-details-tab" data-toggle="tab" data-target="#account-details" type="button" role="tab" aria-controls="account-details" aria-selected="true">Account Details</button>
+              <button class="nav-link border-right active" id="delivery-details-tab" data-toggle="tab" data-target="#delivery-details" type="button" role="tab" aria-controls="delivery-details" aria-selected="true">Delivery Details</button>
             </li>
             <li class="nav-item" role="presentation">
               <button class="nav-link border-right" id="order-history-tab" data-toggle="tab" data-target="#order-history" type="button" role="tab" aria-controls="order-history" aria-selected="false">Order history</button>
@@ -35,13 +35,12 @@
             <li class="nav-item" role="presentation">
               <button class="nav-link border-right" id="wishlist-tab" data-toggle="tab" data-target="#wishlist" type="button" role="tab" aria-controls="wishlist" aria-selected="false">Wishlist</button>
             </li>
-          </ul>
+        </ul>
           <!-- Tab content -->
-          <div class="tab-content" id="myTabContent">
-            <!-- User details -->
-            <div class="tab-pane fade show active row d-flex" id="account-details" role="tabpanel" aria-labelledby="account-details-tab">
+        <div class="tab-content" id="myTabContent">
+            <!-- Delivery details -->
+            <div class="tab-pane fade row d-flex active show" id="delivery-details" role="tabpanel" aria-labelledby="delivery-details-tab">
                 <div class="col-md-6 mt-4">
-                    <p class="font-weight-bold">Delivery Details</p>
                     <div class="row">
                         <div class="col">
                             <p class="font-weight-bold">Phone</p>
@@ -52,35 +51,35 @@
                         <div class="col">
                             <p class="font-weight-bold">Address</p>
                         </div>
-                        <p>{{ profile.street_address1 }}{% if profile.street_address2 %}, {{ profile.street_address2 }}{% endif %}</p>
+                        <p>{{ profile.user_street_address1 }}{% if profile.user_street_address2 %}, {{ profile.user_street_address2 }}{% endif %}</p>
                     </div>
                     <div class="row">
                         <div class="col">
                             <p class="font-weight-bold">City</p>
                         </div>
-                        <p>{{ profile.town_or_city }}</p>
+                        <p>{{ profile.user_town_or_city }}</p>
                     </div>
-                    {% if profile.county %}
+                    {% if profile.user_county %}
                     <div class="row">
                         <div class="col">
                             <p class="font-weight-bold">County</p>
                         </div>
-                        <p>{{ profile.county }}</p>
+                        <p>{{ profile.user_county }}</p>
                     </div>
                     {% endif %}
-                    {% if profile.postcode %}
+                    {% if profile.user_postcode %}
                     <div class="row">
                         <div class="col">
                             <p class="font-weight-bold">Postcode</p>
                         </div>
-                        <p>{{ profile.postcode }}</p>
+                        <p>{{ profile.user_postcode }}</p>
                     </div>
                     {% endif %}
                     <div class="row">
                         <div class="col">
                             <p class="font-weight-bold">Country</p>
                         </div>
-                        <p>{{ profile.country }}</spa>
+                        <p>{{ profile.user_country }}</spa>
                     </div>
                     <div class="row mt-4">
                         <div class="col">
@@ -101,13 +100,61 @@
             </div>
             <!-- Order history -->
             <div class="tab-pane fade" id="order-history" role="tabpanel" aria-labelledby="order-history-tab">
-
+                {% if orders %}
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Order Number</th>
+                                <th>Items</th>
+                                <th>Order Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for order in orders %}
+                                <tr>
+                                    <td>{{ order.date }}</td>
+                                    <td>
+                                        <a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number }}">
+                                            {{ order.order_number }}
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            {% for item in order.lineitems.all %}
+                                            <li>
+                                                {{ item.product.name }} x {{ item.quantity }}
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </td>
+                                    <td>${{ order.grand_total }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    <p class="mt-4 ml-4">You have no orders.</p>
+                {% endif %}
             </div>
             <!-- Wishlist -->
             <div class="tab-pane fade" id="wishlist" role="tabpanel" aria-labelledby="wishlist-tab">
 
             </div>
-          </div>
+        </div>
     {% endif %}
 </div>
+{% endblock %}
+{% block postloadjs %}
+    <script>
+        $('#myTab button').on('click', function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+            $('#delivery-details').removeClass('d-flex');
+
+            if ($(this).attr('aria-controls') === 'delivery-details') {
+                $('#delivery-details').addClass('d-flex');
+            }
+        });
+    </script>
 {% endblock %}
