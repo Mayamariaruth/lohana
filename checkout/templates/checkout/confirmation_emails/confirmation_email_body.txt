@@ -1,0 +1,16 @@
+Lohana Jewelry
+
+Thank you {{ order.full_name }} for your order!
+
+We have received your order and we will begin processing it as soon as possible.
+
+Please see all the order details below:
+Order Number: {{ order.order_number }}
+Order Date: {{ order.date }}
+Order Total: {{ order.date }}
+Delivery Cost: {{ order.date }}
+Grand Total: {{ order.date }}
+
+We will let you know once your package ships to your address at {{ order.street_address1 }}, {{ order.town_or_city }}, {{ order.country }}.
+
+If you have any questions, please contact us through the contact form on our website. We are here to help!
