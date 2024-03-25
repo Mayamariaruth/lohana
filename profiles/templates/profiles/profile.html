@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="col">
             <h1 class="shop-title">My Profile</h1>
@@ -41,56 +41,49 @@
             <!-- Delivery details -->
             <div class="tab-pane fade row d-flex active show" id="delivery-details" role="tabpanel" aria-labelledby="delivery-details-tab">
                 <div class="col-md-6 mt-4">
-                    <div class="row">
-                        <div class="col">
+                    <div class="row mb-3">
+                        <div class="col-6">
                             <p class="font-weight-bold">Phone</p>
                         </div>
                         <p>{{ profile.user_phone_number }}</p>
                     </div>
-                    <div class="row">
-                        <div class="col">
+                    <div class="row mb-3">
+                        <div class="col-6">
                             <p class="font-weight-bold">Address</p>
                         </div>
                         <p>{{ profile.user_street_address1 }}{% if profile.user_street_address2 %}, {{ profile.user_street_address2 }}{% endif %}</p>
                     </div>
-                    <div class="row">
-                        <div class="col">
+                    <div class="row mb-3">
+                        <div class="col-6">
                             <p class="font-weight-bold">City</p>
                         </div>
                         <p>{{ profile.user_town_or_city }}</p>
                     </div>
                     {% if profile.user_county %}
-                    <div class="row">
-                        <div class="col">
+                    <div class="row mb-3">
+                        <div class="col-6">
                             <p class="font-weight-bold">County</p>
                         </div>
                         <p>{{ profile.user_county }}</p>
                     </div>
                     {% endif %}
                     {% if profile.user_postcode %}
-                    <div class="row">
-                        <div class="col">
+                    <div class="row mb-3">
+                        <div class="col-6">
                             <p class="font-weight-bold">Postcode</p>
                         </div>
                         <p>{{ profile.user_postcode }}</p>
                     </div>
                     {% endif %}
-                    <div class="row">
-                        <div class="col">
+                    <div class="row mb-3">
+                        <div class="col-6">
                             <p class="font-weight-bold">Country</p>
                         </div>
-                        <p>{{ profile.user_country }}</spa>
-                    </div>
-                    <div class="row mt-4">
-                        <div class="col">
-                            <a href="{% url 'products' %}" class="btn btn-lg bg-btn border px-3 py-2">
-                                <span>Continue Shopping</span>
-                            </a>
-                        </div>
+                        <p>{{ profile.user_country }}</p>
                     </div>
                 </div>
                 <div class="col-md-6 mt-4">
-                    <p class="font-weight-bold">Update your delivery details below</p>
+                    <p class="mb-4">Update your delivery details below</p>
                     <form class="" action="{% url 'profile' %}" method="POST" id="update-details">
                         {% csrf_token %}
                         {{ form|crispy }}
@@ -120,7 +113,7 @@
                                         </a>
                                     </td>
                                     <td>
-                                        <ul>
+                                        <ul class="list-unstyled">
                                             {% for item in order.lineitems.all %}
                                             <li>
                                                 {{ item.product.name }} x {{ item.quantity }}

@@ -17,15 +17,17 @@ def profile(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Delivery details updated successfully!')
+    else:
+        form = UserDetailsForm(instance=profile)
 
-    form = UserDetailsForm(instance=profile)
     orders = profile.orders.all()
 
     template = 'profiles/profile.html'
     context = {
         'form': form,
         'orders': orders,
-        'on_profile': True,
+        'profile': profile,
+        'on_profile': True
     }
 
     return render(request, template, context)
