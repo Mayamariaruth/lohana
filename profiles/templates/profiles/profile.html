@@ -18,13 +18,7 @@
         </div>
     </div>
     {% if request.user.is_authenticated %}
-        <!-- Admin profile -->
-        {% if request.user.is_superuser %}
-            <div class="row">
-
-            </div>
-        {% endif %}
-        <!-- User profile (Tabs from W3Schools https://getbootstrap.com/docs/4.6/components/navs/#tabs) -->
+        <!-- User profile navigation tabs (Tabs from W3Schools https://getbootstrap.com/docs/4.6/components/navs/#tabs) -->
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
               <button class="nav-link border-right active" id="delivery-details-tab" data-toggle="tab" data-target="#delivery-details" type="button" role="tab" aria-controls="delivery-details" aria-selected="true">Delivery Details</button>
@@ -36,7 +30,7 @@
               <button class="nav-link border-right" id="wishlist-tab" data-toggle="tab" data-target="#wishlist" type="button" role="tab" aria-controls="wishlist" aria-selected="false">Wishlist</button>
             </li>
         </ul>
-          <!-- Tab content -->
+        <!-- Tab content -->
         <div class="tab-content" id="myTabContent">
             <!-- Delivery details -->
             <div class="tab-pane fade row d-flex active show" id="delivery-details" role="tabpanel" aria-labelledby="delivery-details-tab">

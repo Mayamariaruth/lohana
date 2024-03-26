@@ -75,19 +75,27 @@ def product_detail(request, product_id):
     return render(request, 'products/product_detail.html', context)
 
 
-def add_products(request):
+def admin_products(request):
     """
-    Add products to the site
+    Admin can add products to the site and
+    edit/delete products from site
     """
+    products = Product.objects.all()
+    
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             messages.success(request, 'The product was added successfully!')
-            return redirect(reverse('add_products'))
+            return redirect(reverse('admin_products'))
         else:
             messages.error(request, 'Adding the new product failed. Please ensure all fields are valid.')
     else:
         form = ProductForm()
 
-    return render(request, 'products/add_products.html', {'form': form})
+    context = {
+        'form': form,
+        'products': products,
+    }
+
+    return render(request, 'products/admin_products.html', context)

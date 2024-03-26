@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="header-margin2"></div>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <h1 class="shop-title">Management</h1>
+            <hr>
+        </div>
+    </div>
+    <!-- Admin management navigation tabs (Tabs from W3Schools https://getbootstrap.com/docs/4.6/components/navs/#tabs) -->
+    <ul class="nav nav-tabs" id="Tab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link border-right active" id="add-products-tab" data-toggle="tab" data-target="#add-products" type="button" role="tab" aria-controls="add-products" aria-selected="true">Add Products</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link border-right" id="edit-products-tab" data-toggle="tab" data-target="#edit-products" type="button" role="tab" aria-controls="edit-products" aria-selected="false">Edit Products</button>
+        </li>
+        <!--
+        <li class="nav-item" role="presentation">
+          <button class="nav-link border-right" id="wishlist-tab" data-toggle="tab" data-target="#wishlist" type="button" role="tab" aria-controls="wishlist" aria-selected="false">Wishlist</button>
+        </li>
+        -->
+    </ul>
+    <!-- Tab content -->
+    <div class="tab-content" id="TabContent">
+        <!-- Add products -->
+        <div class="tab-pane fade active show" id="add-products" role="tabpanel" aria-labelledby="add-products-tab"">
+            <form method="POST" action="{% url 'admin_products' %}" class="form w-50 ml-4" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button class="btn border ml-4 mb-5 mt-3" type="submit">Add Product</button>
+            </form>
+        </div>
+        <!-- Edit products -->
+        <div class="tab-pane fade" id="edit-products" role="tabpanel" aria-labelledby="edit-products-tab">
+            
+        </div>
+    </div>
+</div>
+
+{% endblock %}
