@@ -16,7 +16,13 @@
     <div>
         <form method="POST" action="{% url 'edit_product' product.id %}" class="form w-50 ml-4" enctype="multipart/form-data">
             {% csrf_token %}
-            {{ form|crispy }}
+            {% for field in form %}
+                {% if field.name != 'image' %}
+                    {{ field | as_crispy_field }}
+                {% else %}
+                    {{ field }}
+                {% endif %}
+            {% endfor %}
             <button class="btn btn-lg add-btn border mb-5 mt-3" type="submit">Update</button>
         </form>
     </div>
