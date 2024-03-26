@@ -22,11 +22,6 @@
         <div class="col">
             <p class="detail-title mb-2">{{ product.name }}</p>
             <p class="lead font-weight-bold mb-1">${{ product.price }}</p>
-            {% if product.rating %}
-            <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
-            {% else %}
-            <small class="text-muted">No Rating</small>
-            {% endif %}
             {% if product.category %}
             <p class="small mt-2">
                 <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
@@ -67,14 +62,19 @@
                     </div>
 
                     <div class="col-12 mt-3">
-                        <a href="{% url 'products' %}" class="btn border border-dark p-2 mr-2 shop-btn">
+                        <a href="{% url 'products' %}" class="btn border border-dark p-2 mr-2 mb-3 shop-btn">
                             <span class="text-uppercase">Continue Shopping</span>
                         </a>
-                        <input type="submit" class="btn border border-dark text-uppercase p-2 add-btn" value="Add to Bag">
+                        <input type="submit" class="btn border border-dark text-uppercase p-2 mb-3 add-btn" value="Add to Bag">
                     </div>
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 </div>
             </form>
+            {% if request.user.is_superuser %}
+                <hr>
+                <a class="btn border border-dark p-2 mr-2 shop-btn text-center mt-3 text-uppercase font-weight-bold" href="{% url 'edit_products' product.id %}">Edit Product</a>
+                <a class="btn border border-dark p-2 mr-2 shop-btn text-center mt-3 text-uppercase font-weight-bold" href="">Delete Product</a>
+            {% endif %}
             <p class="details mb-2 mt-5">Details</p>
             <p class="">{{ product.description|safe }}</p>
         </div>

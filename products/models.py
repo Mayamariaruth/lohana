@@ -1,4 +1,6 @@
 from django.db import models
+from django_summernote.fields import SummernoteTextField
+
 
 # Create your models here.
 class Category(models.Model):
@@ -16,7 +18,7 @@ class Product(models.Model):
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
     introduction = models.CharField(max_length=200, null=True, blank=True)
-    description = models.TextField()
+    description = SummernoteTextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
