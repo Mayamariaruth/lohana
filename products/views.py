@@ -75,29 +75,30 @@ def product_detail(request, product_id):
     return render(request, 'products/product_detail.html', context)
 
 
-def add_products(request):
+def add_product(request):
     """
     Admin can add products to the site
     """
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            product = form.save()
             messages.success(request, 'The product was added successfully!')
-            return redirect(reverse('add_products'))
+            return redirect(reverse('product_detail', args=[product.id]))
         else:
             messages.error(request, 'Adding the new product failed. Please ensure all fields are valid.')
     else:
         form = ProductForm()
 
-    return render(request, 'products/admin_products.html', {'form': form})
+    return render(request, 'products/add_product.html', {'form': form})
 
 
-def edit_products(request, product_id):
+def edit_product(request, product_id):
     """
-    Admin can edit products
+    Admin can edit product
     """
     product = get_object_or_404(Product, pk=product_id)
+
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
@@ -114,4 +115,18 @@ def edit_products(request, product_id):
         'product': product,
     }
 
-    return render(request, 'products/edit_products.html', context)
+    return render(request, 'products/edit_product.html', context)
+
+
+def delete_product(request, product_id):
+    """
+    Admin can delete a product from the database
+    """
+    product = get_object_or_404(Product, pk=product_id)
+
+    if request.method == 'POST':
+        product.delete()
+        messages.success(request, 'The product was successfully deleted!')
+        return redirect('products')
+
+    return render(request, 'products/delete_product.html', {'product': product})

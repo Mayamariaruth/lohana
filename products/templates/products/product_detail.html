@@ -72,8 +72,8 @@
             </form>
             {% if request.user.is_superuser %}
                 <hr>
-                <a class="btn border border-dark p-2 mr-2 shop-btn text-center mt-3 text-uppercase font-weight-bold" href="{% url 'edit_products' product.id %}">Edit Product</a>
-                <a class="btn border border-dark p-2 mr-2 shop-btn text-center mt-3 text-uppercase font-weight-bold" href="">Delete Product</a>
+                <a class="btn border border-dark p-2 mr-2 shop-btn text-center mt-3 text-uppercase font-weight-bold" href="{% url 'edit_product' product.id %}">Edit Product</a>
+                <a class="btn border border-dark p-2 mr-2 shop-btn text-center mt-3 text-uppercase font-weight-bold" href="{% url 'delete_product' product.id %}">Delete Product</a>
             {% endif %}
             <p class="details mb-2 mt-5">Details</p>
             <p class="">{{ product.description|safe }}</p>
