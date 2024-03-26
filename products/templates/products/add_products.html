@@ -9,7 +9,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col">
-            <h1 class="shop-title">Product Management</h1>
+            <h1 class="shop-title">Management</h1>
             <hr>
         </div>
     </div>
@@ -20,8 +20,8 @@
             <form method="POST" action="{% url 'add_products' %}" class="form w-50 ml-4" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form|crispy }}
+                <button class="btn border ml-4 mb-5 mt-3" type="submit">Add Product</button>
             </form>
-            <button class="btn btn-lg border ml-4 mb-5 mt-3" type="submit">Add Product</button>
         </div>
     </div>
 </div>
