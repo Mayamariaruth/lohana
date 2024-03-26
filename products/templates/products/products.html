@@ -66,17 +66,20 @@
                             <div class="row">
                                 <div class="col">
                                     <p class="lead text-left font-weight-bold">${{ product.price }}</p>
-                                    {% if product.rating %}
-                                        <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
-                                    {% else %}
-                                        <small class="text-muted">No Rating</small>
-                                    {% endif %}
                                     {% if product.category %}
                                         <p class="small">
                                             <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
                                                 <i class="fas fa-tag mr-1"></i>{{ product.category.name|title }}
                                             </a>
                                         </p>
+                                    {% endif %}
+                                    {% if request.user.is_superuser %}
+                                        <small class="text-muted">
+                                            <a href="{% url 'edit_product' product.id %}">Edit</a> |
+                                        </small>
+                                        <small class="text-muted text-danger">
+                                            <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                        </small>
                                     {% endif %}
                                 </div>
                             </div>
