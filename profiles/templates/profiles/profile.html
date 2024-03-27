@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block page_header %}
-<div class="header-margin2"></div>
+    <div class="header-margin2"></di>
 {% endblock %}
 
 {% block content %}
@@ -121,14 +121,88 @@
                 {% endif %}
             </div>
             <!-- Wishlist -->
-            <div class="tab-pane fade" id="wishlist" role="tabpanel" aria-labelledby="wishlist-tab">
-                <div class="row">
-                    <div class="col">
-                        {% for item in wishlist_items %}
-                            {{ item.product.name }}
-                        {% endfor %}
+            <div class="tab-pane fade container-fluid mt-3" id="wishlist" role="tabpanel" aria-labelledby="wishlist-tab">
+                <!-- Sorting box -->
+                <div class="row justify-content-center justify-content-md-end">
+                    <div class="col-12 col-md-6 my-auto d-flex justify-content-center justify-content-md-end">
+                        <div class="w-50">
+                            <select id="sort-selector"
+                                class="custom-select custom-select-sm rounded-0 border border-{% if sort_by %}info{% else %}black{% endif %}">
+                                <option value="reset">Sort by...</option>
+                                <option value="name_asc">Name (A-Z)</option>
+                                <option value="name_desc">Name (Z-A)</option>
+                                <option value="price_asc">Price (low to high)</option>
+                                <option value="price_desc">Price (high to low)</option>
+                                <option value="rating_asc">Rating (low to high)</option>
+                                <option value="rating_desc">Rating (high to low)</option>
+                                <option value="category_asc">Category (A-Z)</option>
+                                <option value="category_desc">Category (Z-A)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 order-md-first">
+                        <p class="text-muted mt-2 text-center text-md-left">
+                            <span class="small"><a href="{% url 'products' %}">All Products</a> | </span>
+                            {{ wishlist_items|length }}
+                        </p>
                     </div>
                 </div>
+                <!-- Products -->   
+                <div class="row mt-4">
+                    {% for item in wishlist_items %}
+                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                            <div class="card mb-5">
+                                {% if item.product.image %}
+                                    <a href="{% url 'product_detail' item.product.id %}">
+                                        <img class="card-img-top img-fluid" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                    </a>
+                                {% else %}
+                                    <a href="{% url 'product_detail' item.product.id %}">
+                                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                                    </a>
+                                {% endif %}
+                                <div class="card-body">
+                                    <p class="product-name">{{ item.product.name }}</p>
+                                    <p>{{ item.product.introduction }}</p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="lead text-left font-weight-bold mb-1">${{ item.product.price }}</p>
+                                            {% if item.product.category %}
+                                                <p class="small">
+                                                    <a class="text-muted" href="{% url 'products' %}?category={{ item.product.category.name }}">
+                                                        <i class="fas fa-tag mr-1"></i>{{ item.product.category.name|title }}
+                                                    </a>
+                                                </p>
+                                            {% endif %}
+                                            {% if request.user.is_authenticated %}
+                                                {% if not request.user.is_superuser %}
+                                                    <div class="d-flex flex-row-reverse">
+                                                        <a class="wishlist-button" data-product-id="{{ product.id }}">
+                                                        {% if item.product.id in wishlist_product_ids %}
+                                                            <i class="fa-solid fa-heart heart-red"></i>
+                                                        {% else %}
+                                                            <i class="fa-regular fa-heart"></i>
+                                                        {% endif %}
+                                                        </a>
+                                                        <p class="text-muted small mr-2">Add to wishlist</p>
+                                                    </div>
+                                                {% endif %}
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <!-- Back to top button -->
+            <div class="top-btn shadow-sm border">
+                <a class="">
+                    <i class="fas fa-arrow-up mx-auto my-auto"></i>
+                </a>
             </div>
         </div>
     {% endif %}
@@ -144,6 +218,36 @@
             if ($(this).attr('aria-controls') === 'delivery-details') {
                 $('#delivery-details').addClass('d-flex');
             }
+        });
+    </script>
+    <!-- Wishlist button -->
+    <script type="text/javascript">
+        $('.wishlist-button').on('click', function (e) {
+            e.preventDefault();
+            var productId = $(this).data('product-id');
+            var csrfToken = '{{ csrf_token }}';
+            var isAdded = $(this).find('.fa-solid').length > 0;
+
+            $.ajax({
+                type: 'POST',
+                url: 'add_to_wishlist/',
+                data: {
+                    'product_id': productId,
+                    'csrfmiddlewaretoken': csrfToken,
+                    'remove': isAdded ? 'true' : 'false'
+                },
+                success: function (response) {
+                    if ($(event.target).hasClass('add-to-wishlist')) {
+                        $(event.target).removeClass('add-to-wishlist');
+                        $(event.target).find('.fa-regular').show();
+                        $(event.target).find('.fa-solid').hide();
+                    } else {
+                        $(event.target).addClass('add-to-wishlist');
+                        $(event.target).find('.fa-regular').hide();
+                        $(event.target).find('.fa-solid').show();
+                    };
+                }
+            });
         });
     </script>
 {% endblock %}

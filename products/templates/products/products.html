@@ -78,11 +78,11 @@
                                         {% if not request.user.is_superuser %}
                                             <div class="d-flex flex-row-reverse">
                                                 <a class="wishlist-button" data-product-id="{{ product.id }}">
-                                                    {% if product.id in wishlist_product_ids %}
+                                                {% if product.id in wishlist_product_ids %}
                                                     <i class="fa-solid fa-heart heart-red"></i>
-                                                    {% else %}
+                                                {% else %}
                                                     <i class="fa-regular fa-heart"></i>
-                                                    {% endif %}
+                                                {% endif %}
                                                 </a>
                                                 <p class="text-muted small mr-2">Add to wishlist</p>
                                             </div>
@@ -150,33 +150,33 @@
 </script>
 <!-- Wishlist button -->
 <script type="text/javascript">
-        $('.wishlist-button').on('click', function (e) {
-            e.preventDefault();
-            var productId = $(this).data('product-id');
-            var csrfToken = '{{ csrf_token }}';
-            var isAdded = $(this).find('.fa-solid').length > 0;
+    $('.wishlist-button').on('click', function (e) {
+        e.preventDefault();
+        var productId = $(this).data('product-id');
+        var csrfToken = '{{ csrf_token }}';
+        var isAdded = $(this).find('.fa-solid').length > 0;
 
-            $.ajax({
-                type: 'POST',
-                url: 'add_to_wishlist/',
-                data: {
-                    'product_id': productId,
-                    'csrfmiddlewaretoken': csrfToken,
-                    'remove': isAdded ? 'true' : 'false'
-                },
-                success: function (response) {
-                    if ($(event.target).hasClass('add-to-wishlist')) {
-                        $(event.target).removeClass('add-to-wishlist');
-                        $(event.target).find('.fa-regular').show();
-                        $(event.target).find('.fa-solid').hide();
-                    } else {
-                        $(event.target).addClass('add-to-wishlist');
-                        $(event.target).find('.fa-regular').hide();
-                        $(event.target).find('.fa-solid').show();
-                    };
-                }
-            });
+        $.ajax({
+            type: 'POST',
+            url: 'add_to_wishlist/',
+            data: {
+                'product_id': productId,
+                'csrfmiddlewaretoken': csrfToken,
+                'remove': isAdded ? 'true' : 'false'
+            },
+            success: function (response) {
+                if ($(event.target).hasClass('add-to-wishlist')) {
+                    $(event.target).removeClass('add-to-wishlist');
+                    $(event.target).find('.fa-regular').show();
+                    $(event.target).find('.fa-solid').hide();
+                } else {
+                    $(event.target).addClass('add-to-wishlist');
+                    $(event.target).find('.fa-regular').hide();
+                    $(event.target).find('.fa-solid').show();
+                };
+            }
         });
+    });
 </script>
 {% endblock %}
 </body>

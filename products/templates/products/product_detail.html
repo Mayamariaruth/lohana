@@ -23,11 +23,25 @@
             <p class="detail-title mb-2">{{ product.name }}</p>
             <p class="lead font-weight-bold mb-1">${{ product.price }}</p>
             {% if product.category %}
-            <p class="small mt-2">
-                <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
-                    <i class="fas fa-tag mr-1"></i>{{ product.category.name|title }}
-                </a>
-            </p>
+                <p class="small mt-2">
+                    <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
+                        <i class="fas fa-tag mr-1"></i>{{ product.category.name|title }}
+                    </a>
+                </p>
+            {% endif %}
+            {% if request.user.is_authenticated %}
+                {% if not request.user.is_superuser %}
+                    <div class="d-flex flex-row-reverse justify-content-end mt-3">
+                        <a class="wishlist-button" data-product-id="{{ product.id }}">
+                        {% if product.id in wishlist_product_ids %}
+                            <i class="fa-solid fa-heart heart-red"></i>
+                        {% else %}
+                            <i class="fa-regular fa-heart"></i>
+                        {% endif %}
+                        </a>
+                        <p class="text-muted small mr-2">Add to wishlist</p>
+                    </div>
+                {% endif %}
             {% endif %}
             {% if request.user.is_superuser %}
                 <small class="text-muted">
@@ -38,7 +52,7 @@
                 </small>
             {% endif %}
             {% if product.introduction %}
-            <p class="mb-3 mt-4">{{ product.introduction }}</p>
+            <p class="mb-3">{{ product.introduction }}</p>
             <hr>
             {% endif %}
             <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
@@ -88,5 +102,33 @@
 {% block postloadjs %}
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
-    <script></script>
+<script>
+    $('.wishlist-button').on('click', function (e) {
+        e.preventDefault();
+        var productId = $(this).data('product-id');
+        var csrfToken = '{{ csrf_token }}';
+        var isAdded = $(this).find('.fa-solid').length > 0;
+
+        $.ajax({
+            type: 'POST',
+            url: 'add_to_wishlist/',
+            data: {
+                'product_id': productId,
+                'csrfmiddlewaretoken': csrfToken,
+                'remove': isAdded ? 'true' : 'false'
+            },
+            success: function (response) {
+                if ($(event.target).hasClass('add-to-wishlist')) {
+                    $(event.target).removeClass('add-to-wishlist');
+                    $(event.target).find('.fa-regular').show();
+                    $(event.target).find('.fa-solid').hide();
+                } else {
+                    $(event.target).addClass('add-to-wishlist');
+                    $(event.target).find('.fa-regular').hide();
+                    $(event.target).find('.fa-solid').show();
+                };
+            }
+        });
+    });
+</script>
 {% endblock %}
