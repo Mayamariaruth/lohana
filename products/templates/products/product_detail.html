@@ -7,7 +7,7 @@
 
 {% block content %}
 <div class="container-fluid">
-    <div class="row">
+    <div class="row mb-3">
         <div class="col">
             {% if product.image %}
             <a href="{{ product.image.url }}" target="_blank">
@@ -18,30 +18,10 @@
                 <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
             </a>
             {% endif %}
-            <div class="row">
-                <div class="col mt-5">
-                    <p class="mb-4">Tell us what you think about <strong>{{ product.name }}!</strong></p>
-                    {% for review in reviews %}
-                        <div class="review-container border">
-                            <p><strong>{{ review.review_name }}</strong> - {{ review.created_on }}</p>
-                            <p class="mt-3">{{ review.review_text }}</p>
-                        </div>
-                    {% endfor %}
-                    {% if reviews %}
-                        <p class="mt-5 small">Number of reviews: {{ reviews|length }}</p>
-                    {% else %}
-                        <p class="small">No reviews yet.</p>
-                    {% endif %}
-                    <form method="post" class="form mt-5">
-                        {% csrf_token %}
-                        {{ review_form|crispy }}
-                        <button type="submit" class="btn add-btn">Add Review</button>
-                    </form>
-                </div>
-            </div>
         </div>
         <div class="col">
             <p class="detail-title mb-2">{{ product.name }}</p>
+            <hr>
             <p class="lead font-weight-bold mb-1">${{ product.price }}</p>
             {% if product.category %}
                 <p class="small mt-2">
@@ -74,7 +54,6 @@
             {% endif %}
             {% if product.introduction %}
             <p class="mb-3">{{ product.introduction }}</p>
-            <hr>
             {% endif %}
             <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                 {% csrf_token %}
@@ -114,7 +93,37 @@
                 </div>
             </form>
             <p class="details mb-2 mt-5">Details</p>
-            <p class="">{{ product.description|safe }}</p>
+            <p>{{ product.description|safe }}</p>
+        </div>
+    </div>
+    <!-- Reviews -->
+    <div class="row">
+        <div class="col mt-4">
+            <p class="mb-2 ml-1" id="review-title">Reviews</p>
+            <hr>
+            <div class="row">
+                <div class="col-12 col-md-6 review-container mt-2">
+                {% if reviews %}
+                    <p class="small mb-3">{{ reviews|length }} Reviews</p>
+                {% else %}
+                    <p>No reviews yet.</p>
+                {% endif %}
+                {% for review in reviews %}
+                    <div class="border-bottom p-4 mb-2 bg-color-reviews">
+                        <p><strong>{{ review.review_name }}</strong> - {{ review.created_on }}</p>
+                        <p class="mt-3">{{ review.review_text }}</p>
+                    </div>
+                {% endfor %}
+                </div>
+                <div class="col-12 col-md-6">
+                    <p class="mt-2">Write a review</p>
+                    <form method="post" class="form mt-4">
+                        {% csrf_token %}
+                        {{ review_form|crispy }}
+                        <button type="submit" class="btn add-btn">Add Review</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </div>

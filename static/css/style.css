@@ -133,9 +133,17 @@ ul {
     color: white;
 }
 
+#review-title {
+    font-size: 2rem;
+}
+
 .review-container {
     font-family: 'Montserrat', sans-serif;
     overflow: scroll;
+}
+
+.bg-color-reviews {
+    background-color: #f9f7f4;
 }
 
 /* Shopping bag */
