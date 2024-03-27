@@ -4,12 +4,11 @@ from django.http import JsonResponse
 from django.contrib import messages
 from django.db.models import Q
 from profiles.models import WishlistItem
-from .models import Product, Category
-from .forms import ProductForm
+from .models import Product, Category, Review
+from .forms import ProductForm, ReviewForm
 
 
 # Create your views here.
-@login_required
 def all_products(request):
     """
     Show all products and sort/search queries
@@ -68,15 +67,30 @@ def all_products(request):
     return render(request, 'products/products.html', context)
 
 
-@login_required
 def product_detail(request, product_id):
     """
     Show individual product detail
     """
     product = get_object_or_404(Product, pk=product_id)
+    reviews = Review.objects.filter(product=product)
+
+    if request.method == 'POST':
+        review_form = ReviewForm(request.POST)
+        if review_form.is_valid():
+            review = review_form.save(commit=False)
+            review.product = product
+            review.save() 
+            messages.success(request, 'Your review was added successfully!')
+            return redirect('product_detail', product_id=product_id)
+        else:
+            messages.error(request, 'Adding the review failed. Please try again.')
+    else:
+        review_form = ReviewForm()
 
     context = {
         'product': product,
+        'reviews': reviews,
+        'review_form': review_form,
     }
 
     return render(request, 'products/product_detail.html', context)

@@ -133,6 +133,11 @@ ul {
     color: white;
 }
 
+.review-container {
+    font-family: 'Montserrat', sans-serif;
+    overflow: scroll;
+}
+
 /* Shopping bag */
 
 .update-link,

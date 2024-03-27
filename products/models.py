@@ -1,5 +1,6 @@
 from django.db import models
 from django_summernote.fields import SummernoteTextField
+from django.utils import timezone
 
 
 # Create your models here.
@@ -24,3 +25,13 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Review(models.Model):
+    product = models.ForeignKey('products.Product', on_delete=models.CASCADE)
+    review_name = models.CharField(max_length=100)
+    review_text = models.TextField()
+    created_on = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return f"Comment by {self.review_name} on {self.product}"

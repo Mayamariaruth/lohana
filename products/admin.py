@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, Category
+from .models import Product, Category, Review
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -19,3 +19,4 @@ class ProductAdmin(SummernoteModelAdmin):
 
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category)
+admin.site.register(Review)
