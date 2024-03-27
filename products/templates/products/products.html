@@ -9,7 +9,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col mt-2 text-center">
-                <h1 class="products-title mt-2 mb-4">{{ title }}</h1>
+                <h1 class="mt-2 mb-4">{{ title }}</h1>
                 {% if title == 'Products' %}
                     {% for c in current_categories %}
                         <a class="c-name p-2 border mr-2" href="{% url 'products' %}?category={{ c.name }}">

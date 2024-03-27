@@ -1,6 +1,6 @@
 /* General styles */
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Reddit Mono', sans-serif;
 }
 
 /* Header */
@@ -56,21 +56,15 @@ ul {
 }
 
 #delivery {
-    background-color: #B69787;
-    color: white;
+    background-color: rgba(182, 151, 135, 0.7);
 }
 
 /* Home page */
 .home-title {
-    font-family: 'Ojuju', sans-serif;
     border-bottom: 1px solid black;
 }
 
 /* Products page */
-.products-title {
-    font-family: 'Ojuju', sans-serif;
-}
-
 .product-name {
     font-size: 1.2rem;
     font-weight: 600;
@@ -130,9 +124,6 @@ ul {
 }
 
 /* Shopping bag */
-.shop-title {
-    font-family: 'Ojuju', sans-serif;
-}
 
 .update-link,
 .remove-item {

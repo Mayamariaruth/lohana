@@ -24,10 +24,7 @@
         <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ojuju:wght@200..800&display=swap" rel="stylesheet">
-    {% endblock %}
-
-    {% block extra_css %}
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Reddit+Mono:wght@200..900&display=swap" rel="stylesheet">
     {% endblock %}
 
     <!-- Favicon -->
@@ -55,6 +52,11 @@
 
 <body>
     <header class="container-fluid fixed-top bg-color pr-2">
+        <div id="delivery" class="row text-center">
+            <div class="col w-100">
+                <p class="my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</p>                
+            </div>            
+        </div>
         <nav class="navbar p-0">
             <!-- Logo -->
             <div>
@@ -140,11 +142,6 @@
                 </ul>
             </div>
         </nav>
-        <div id="delivery" class="row text-center">
-            <div class="col w-100">
-                <h4 class="my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</h4>                
-            </div>            
-        </div>
     </header>
 
     {% if messages %}
