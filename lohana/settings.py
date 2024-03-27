@@ -32,7 +32,6 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'django_summernote',
     'home',
     'products',
     'bag',
@@ -40,6 +39,7 @@ INSTALLED_APPS = [
     'profiles',
 
     # Other
+    'django_summernote',
     'crispy_forms',
     'storages',
 ]
@@ -93,8 +93,6 @@ AUTHENTICATION_BACKENDS = (
 )
 
 SITE_ID = 1
-
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
@@ -152,6 +150,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -173,8 +172,8 @@ if 'USE_AWS' in os.environ:
     # Static and media files
     STATICFILES_LOCATION = 'static'
     MEDIAFILES_LOCATION = 'media'
-    STATICFILES_STORAGE = 'home.custom_storages.StaticStorage'
-    DEFAULT_FILE_STORAGE = 'home.custom_storages.MediaStorage'
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
     # Override static and media URLs in production
     STATIC_URL = F'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
@@ -188,6 +187,19 @@ STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET', '')
 DEFAULT_FROM_EMAIL = 'lohana@example.com'
+
+# Email
+if 'DEVELOPMENT' in os.environ:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    DEFAULT_FROM_EMAIL = 'lohana@example.com'
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_USE_TLS = True
+    EMAIL_PORT = 587
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
+    DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
