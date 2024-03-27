@@ -1,5 +1,4 @@
 from pathlib import Path
-from custom_storages import StaticStorage, MediaStorage
 import os
 import dj_database_url
 if os.path.isfile('env.py'):
@@ -158,6 +157,12 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 if 'USE_AWS' in os.environ:
+    # Cache control
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=94608000',
+    }
+
     # Bucket Config
     AWS_STORAGE_BUCKET_NAME = 'lohana'
     AWS_S3_REGION_NAME = 'eu-north-1'
@@ -181,7 +186,7 @@ STANDARD_DELIVERY_PERCENTAGE = 10
 STRIPE_CURRENCY = 'usd'
 STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY', '')
-STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_KEY', '')
+STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET', '')
 DEFAULT_FROM_EMAIL = 'lohana@example.com'
 
 # Default primary key field type
