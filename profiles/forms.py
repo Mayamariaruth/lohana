@@ -1,5 +1,5 @@
 from django import forms
-from .models import UserProfile
+from .models import UserProfile, WishlistItem
 
 
 # Create your forms here.

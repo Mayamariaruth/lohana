@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
 from django.contrib import messages
 from django.db.models import Q
+from profiles.models import WishlistItem
 from .models import Product, Category
 from .forms import ProductForm
 
@@ -13,6 +15,7 @@ def all_products(request):
     Show all products and sort/search queries
     """
     products = Product.objects.all()
+    wishlist_product_ids = request.user.wishlist_items.values_list('product_id', flat=True)
     query = None
     categories = None
     title = 'Products'
@@ -55,6 +58,7 @@ def all_products(request):
 
     context = {
         'products': products,
+        'wishlist_product_ids': wishlist_product_ids,
         'search_term': query,
         'current_categories': categories,
         'title': title,
@@ -148,3 +152,29 @@ def delete_product(request, product_id):
         return redirect('products')
 
     return render(request, 'products/delete_product.html', {'product': product})
+
+
+@login_required
+def add_to_wishlist(request):
+    if request.is_ajax():
+        product_id = request.POST.get('product_id')
+        product = get_object_or_404(Product, id=product_id)
+        user = request.user
+
+        try:
+            if request.POST.get('remove') == 'true':
+                user.wishlist_items.filter(product=product).delete()
+                message = 'Product removed from wishlist successfully!'
+            else:
+                if user.wishlist_items.filter(product=product).exists():
+                    message = 'This product is already in your wishlist.'
+                else:
+                    WishlistItem.objects.create(user=user, product=product)
+                    message = 'Product added to wishlist successfully!'
+            return JsonResponse({'success': True, 'message': message})
+        except Exception as e:
+            message = 'Failed to add/remove product to/from wishlist. Error: {}'.format(str(e))
+            return JsonResponse({'success': False, 'message': message})
+    else:
+        message = 'Invalid request.'
+        return JsonResponse({'success': False, 'message': message})

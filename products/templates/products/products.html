@@ -24,7 +24,8 @@
         <div class="row justify-content-center justify-content-md-end">
             <div class="col-12 col-md-6 my-auto d-flex justify-content-center justify-content-md-end">
                 <div class="w-50">
-                    <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if sort_by %}info{% else %}black{% endif %}">
+                    <select id="sort-selector"
+                        class="custom-select custom-select-sm rounded-0 border border-{% if sort_by %}info{% else %}black{% endif %}">
                         <option value="reset">Sort by...</option>
                         <option value="name_asc">Name (A-Z)</option>
                         <option value="name_desc">Name (Z-A)</option>
@@ -65,13 +66,27 @@
                         <div class="card-footer">
                             <div class="row">
                                 <div class="col">
-                                    <p class="lead text-left font-weight-bold">${{ product.price }}</p>
+                                    <p class="lead text-left font-weight-bold mb-1">${{ product.price }}</p>
                                     {% if product.category %}
                                         <p class="small">
                                             <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
                                                 <i class="fas fa-tag mr-1"></i>{{ product.category.name|title }}
                                             </a>
                                         </p>
+                                    {% endif %}
+                                    {% if request.user.is_authenticated %}
+                                        {% if not request.user.is_superuser %}
+                                            <div class="d-flex flex-row-reverse">
+                                                <a class="wishlist-button" data-product-id="{{ product.id }}">
+                                                    {% if product.id in wishlist_product_ids %}
+                                                    <i class="fa-solid fa-heart heart-red"></i>
+                                                    {% else %}
+                                                    <i class="fa-regular fa-heart"></i>
+                                                    {% endif %}
+                                                </a>
+                                                <p class="text-muted small mr-2">Add to wishlist</p>
+                                            </div>
+                                        {% endif %}
                                     {% endif %}
                                     {% if request.user.is_superuser %}
                                         <small class="text-muted">
@@ -93,44 +108,75 @@
     <div class="top-btn shadow-sm border">
         <a class="">
             <i class="fas fa-arrow-up mx-auto my-auto"></i>
-        </a>	
+        </a>
     </div>
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
-    <!-- Scroll to top button -->
-    <script type="text/javascript">
-        $(window).scroll(function() {
-            if ($(this).scrollTop() > 20) {
-                $('.top-btn').css('display', 'block');
-            } else {
-                $('.top-btn').css('display', 'none');
-            }
+{{ block.super }}
+<!-- Scroll to top button -->
+<script type="text/javascript">
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 20) {
+            $('.top-btn').css('display', 'block');
+        } else {
+            $('.top-btn').css('display', 'none');
+        }
+    });
+    $('.top-btn').click(function (e) {
+        window.scrollTo(0, 0)
+    })
+</script>
+<!-- Sorting products -->
+<script type="text/javascript">
+    $('#sort-selector').change(function () {
+        var selector = $(this);
+        var currentUrl = new URL(window.location);
+
+        var selectedVal = selector.val();
+        if (selectedVal != "reset") {
+            var sort = selectedVal.split("_")[0];
+            var direction = selectedVal.split("_")[1];
+
+            currentUrl.searchParams.set("sort_by", sort + "_" + direction);
+
+            window.location.replace(currentUrl);
+        } else {
+            currentUrl.searchParams.delete("sort_by");
+
+            window.location.replace(currentUrl);
+        }
+    })
+</script>
+<!-- Wishlist button -->
+<script type="text/javascript">
+        $('.wishlist-button').on('click', function (e) {
+            e.preventDefault();
+            var productId = $(this).data('product-id');
+            var csrfToken = '{{ csrf_token }}';
+            var isAdded = $(this).find('.fa-solid').length > 0;
+
+            $.ajax({
+                type: 'POST',
+                url: 'add_to_wishlist/',
+                data: {
+                    'product_id': productId,
+                    'csrfmiddlewaretoken': csrfToken,
+                    'remove': isAdded ? 'true' : 'false'
+                },
+                success: function (response) {
+                    if ($(event.target).hasClass('add-to-wishlist')) {
+                        $(event.target).removeClass('add-to-wishlist');
+                        $(event.target).find('.fa-regular').show();
+                        $(event.target).find('.fa-solid').hide();
+                    } else {
+                        $(event.target).addClass('add-to-wishlist');
+                        $(event.target).find('.fa-regular').hide();
+                        $(event.target).find('.fa-solid').show();
+                    };
+                }
+            });
         });
-		$('.top-btn').click(function(e) {
-			window.scrollTo(0,0)
-		})
-	</script>
-    <!-- Sorting products -->
-    <script type="text/javascript">
-        $('#sort-selector').change(function() {
-            var selector = $(this);
-            var currentUrl = new URL(window.location);
-
-            var selectedVal = selector.val();
-            if(selectedVal != "reset"){
-                var sort = selectedVal.split("_")[0];
-                var direction = selectedVal.split("_")[1];
-
-                currentUrl.searchParams.set("sort_by", sort + "_" + direction);
-
-                window.location.replace(currentUrl);
-            } else {
-                currentUrl.searchParams.delete("sort_by");
-
-                window.location.replace(currentUrl);
-            }
-        })
-    </script>
+</script>
 {% endblock %}
+</body>

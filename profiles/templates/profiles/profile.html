@@ -122,7 +122,13 @@
             </div>
             <!-- Wishlist -->
             <div class="tab-pane fade" id="wishlist" role="tabpanel" aria-labelledby="wishlist-tab">
-
+                <div class="row">
+                    <div class="col">
+                        {% for item in wishlist_items %}
+                            {{ item.product.name }}
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
         </div>
     {% endif %}

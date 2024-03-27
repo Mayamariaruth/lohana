@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .models import UserProfile
+from .models import UserProfile, WishlistItem
 from .forms import UserDetailsForm
 from checkout.models import Order
 
@@ -13,6 +13,7 @@ def profile(request):
     Render user profile
     """
     profile = get_object_or_404(UserProfile, user=request.user)
+    wishlist_items = profile.user.wishlist_items.all()
 
     if request.method == 'POST':
         form = UserDetailsForm(request.POST, instance=profile)
@@ -31,7 +32,8 @@ def profile(request):
         'form': form,
         'orders': orders,
         'profile': profile,
-        'on_profile': True
+        'on_profile': True,
+        'wishlist_items': wishlist_items,
     }
 
     return render(request, template, context)
