@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- Meta tags for search engines -->
         <meta name="description" content="Jewelry store Lohana."> <!-- ADD MORE CONTENT -->
-        <meta name="keywords" content="Lohana, Jewelry, store, gold, silver, earrings, necklaces, rings">
+        <meta name="keywords" content="Jewelry, gold jewelry, necklaces, earrings, bracelets, jewelry brand, jewelry for women, jewelry stores, gift ideas for jewelry, jewelry stores near me, christmas gift ideas, gifts for mom">
     {% endblock %}
 
     {% block corecss %}
@@ -59,14 +59,30 @@
         </div>
         <nav class="navbar p-0">
             <!-- Logo -->
-            <div>
+            <div class="">
                 <a href="{% url 'home' %}">
                     <img src="{% static 'images/header.png' %}" alt="Lohana logo image" id="logo">
                 </a>
             </div>
-            <!-- Products dropdown -->
             <div class="d-flex align-items-center">
-                <div class="collapse navbar-collapse" id="products-nav">
+                <!-- Search bar -->
+                <div class="dropdown mr-md-3">
+                    <button class="btn btn-black" type="button" id="searchDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="icon font-size">
+                            <i class="fas fa-search"></i>
+                        </span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="searchDropdown">
+                        <form method="GET" action="{% url 'products' %}" class="p-1 px-3">
+                            <div class="form-group">
+                                <input class="form-control border border-black rounded-0 font-size" type="text" name="q" placeholder="Search our site">
+                            </div>
+                            <button class="btn btn-black border border-black font-size" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- Products dropdown -->
+                <div class="collapse navbar-collapse mr-md-3">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle btn font-size" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -82,24 +98,8 @@
                         </li>
                     </ul>
                 </div>
-            <div class="d-flex align-items-center">
-                <!-- Search bar -->
-                <div class="dropdown pr-sm-2 pr-lg-4">
-                    <button class="btn btn-black" type="button" id="searchDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="icon font-size">
-                            <i class="fas fa-search"></i>
-                        </span>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="searchDropdown">
-                        <form method="GET" action="{% url 'products' %}" class="p-1 px-3">
-                            <div class="form-group">
-                                <input class="form-control border border-black rounded-0 font-size" type="text" name="q" placeholder="Search our site">
-                            </div>
-                            <button class="btn btn-black border border-black font-size" type="submit">Search</button>
-                        </form>
-                    </div>
-                </div>
-                <!-- My account dropdown -->
+            <!-- My account dropdown -->
+            <div class="d-flex align-items-center mr-md-3">
                 <ul class="list-inline list-unstyled d-flex">
                     <li class="list-inline-item dropdown">
                         <a class="nav-link p-0" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
@@ -170,21 +170,22 @@
     {% endblock %}
 
     <!-- Footer -->
-    <footer class="container">
+    <footer class="container main-content">
         <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <h2 class="text-uppercase">Newsletter Sign-Up</h2>
+            <div class="row text-center">
+                <div class="col-12 col-md-6 margin-b">
+                    <h2 class="text-uppercase">Newsletter</h2>
                     <hr>
                     <div class="col-12 col-md-6">
-                        <p>Get exclusive offers and discount codes by subscribing to our monthly newsletter!</p>
+                        <p class="">Get exclusive offers and discount codes by subscribing to our monthly newsletter!</p>
                         <!-- Mailchimp signup form -->
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                 <h2 class="text-uppercase">Contact Us</h2>
-                <a href="{% url 'contact' %}" class="btn shop-btn border">Contact</a>
-                <a href="https://www.facebook.com/profile.php?id=61557981383837" target="_blank"><i class="fab fa-facebook-square"></i> Follow us on Facebook!</a>
+                <hr>
+                <a href="{% url 'contact' %}" class="btn shop-btn border contact-home">Contact</a>
+                <a class="fb-btn" href="https://www.facebook.com/profile.php?id=61557981383837" target="_blank"><i class="fab fa-facebook-square"></i> Follow us on Facebook!</a>
                 </div>
             </div>
         </div>
