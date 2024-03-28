@@ -169,6 +169,27 @@
     {% block content %}
     {% endblock %}
 
+    <!-- Footer -->
+    <footer class="container">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <h2 class="text-uppercase">Newsletter Sign-Up</h2>
+                    <hr>
+                    <div class="col-12 col-md-6">
+                        <p>Get exclusive offers and discount codes by subscribing to our monthly newsletter!</p>
+                        <!-- Mailchimp signup form -->
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                <h2 class="text-uppercase">Contact Us</h2>
+                <a href="{% url 'contact' %}" class="btn shop-btn border">Contact</a>
+                <a href="https://www.facebook.com/profile.php?id=61557981383837" target="_blank"><i class="fab fa-facebook-square"></i> Follow us on Facebook!</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     {% block postloadjs %}
         <script>
             $(document).ready(function() {
