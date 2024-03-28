@@ -21,7 +21,9 @@ def all_products(request):
 
     if request.user.is_authenticated:
         wishlist_product_ids = request.user.wishlist_items.values_list('product_id', flat=True)
-
+    else:
+        wishlist_product_ids = []
+        
     if request.GET:
         if 'sort_by' in request.GET:
             if sort_by == 'name_asc':

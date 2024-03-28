@@ -1,6 +1,6 @@
 /* General styles */
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Serif', sans-serif;
 }
 
 /* Header */
@@ -51,26 +51,52 @@ ul {
     margin-top: 10rem;
 }
 
+.header-margin3 {
+    margin-top: 11rem;
+}
+
 .collapse:not(.show) {
     display: flex !important;
 }
 
 #delivery {
-    background-color: #B69787;
-    color: white;
+    background-color: rgba(182, 151, 135, 0.7);
+}
+
+/* Hero image */
+.main-content {
+    margin-bottom: 8rem;
+}
+
+.hero-image {
+    background: url('../images/hero-mobile.jpg') no-repeat center center/cover;
+    height: 600px;
+    margin-left: 10rem;
+}
+
+.hero-content {
+    position: absolute;
+    top: 100%;
+    left: 33%;
+    transform: translate(-40%, -50%);
+}
+
+.hero-content h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.hero-content a {
+    background-color: white;
 }
 
 /* Home page */
 .home-title {
-    font-family: 'Ojuju', sans-serif;
     border-bottom: 1px solid black;
 }
 
 /* Products page */
-.products-title {
-    font-family: 'Ojuju', sans-serif;
-}
-
 .product-name {
     font-size: 1.2rem;
     font-weight: 600;
@@ -109,6 +135,16 @@ ul {
     box-shadow: 0.5px 0.5px 2px 2px rgba(0, 0, 0, 0.4);
 }
 
+.wishlist-button {
+    font-size: 1.5rem;
+    position: relative;
+    bottom: 8px;
+}
+
+.heart-red {
+    color: #6f1200;
+}
+
 /* Product details page */
 .detail-title {
     font-size: 2rem;
@@ -129,11 +165,16 @@ ul {
     color: white;
 }
 
-/* Shopping bag */
-.shop-title {
-    font-family: 'Ojuju', sans-serif;
+.review-container {
+    font-family: 'Montserrat', sans-serif;
+    overflow: scroll;
 }
 
+.bg-color-reviews {
+    background-color: #f9f7f4;
+}
+
+/* Shopping bag */
 .update-link,
 .remove-item {
     cursor: pointer;
@@ -236,6 +277,15 @@ ul {
 
 /* Media queries */
 @media (min-width: 576px) {
+    .header-margin {
+        margin-top: 10rem;
+    }
+
+    .hero-image {
+        height: 650px;
+        margin-left: 3rem;
+    }
+
     #logo {
         height: 90px;
     }
@@ -250,6 +300,16 @@ ul {
 }
 
 @media (min-width: 768px) {
+    .hero-image {
+        background: url('../images/hero-desktop.jpg') no-repeat center center/cover;
+        height: 680px;
+        margin-left: 10rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
     .home-title {
         font-size: 3.1rem;
     }
@@ -272,8 +332,28 @@ ul {
         font-size: 1.1rem;
     }
 
+    .header-margin {
+        margin-top: 11rem;
+    }
+
     .container {
         max-width: 1200px;
+    }
+
+    .hero-image {
+        height: 700px;
+        margin-left: 19rem;
+    }
+
+    .hero-content {
+        top: 92%;
+        left: 29%;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+        font-weight: 300;
     }
 
     .home-title {
