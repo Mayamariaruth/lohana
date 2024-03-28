@@ -2,35 +2,16 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="header-margin1"></div>
+    <div class="header-margin"></div>
 {% endblock %}
 
 {% block content %}
-    <main class="container">
-        <div class="row">
-            <div class="col-sm-12 col-lg-4 p-0">
-                <div class="position-relative text-center">
-                    <a class="btn" href="{% url 'products' %}?category=earrings">
-                        <h1 class="home-title">Earrings</h1>
-                    </a>
-                    <img src="{% static 'images/camil-18k-flora-home.png' %}" alt="Woman wearing gold earrings" class="img-fluid">
-                </div>
-            </div>
-            <div class="col-sm-12 col-lg-4 p-0">
-                <div class="position-relative text-center">
-                    <a class="btn" href="{% url 'products' %}?category=necklaces">
-                        <h1 class="home-title text-center">Necklaces</h1>
-                    </a>
-                    <img src="{% static 'images/pearl-14k-pearl-home.png' %}" alt="Woman's neck wearing gold necklace" class="img-fluid">
-                </div>
-            </div>
-            <div class="col-sm-12 col-lg-4 p-0">
-                <div class="position-relative text-center">
-                    <a class="btn" href="{% url 'products' %}?category=bracelets">
-                        <h1 class="home-title text-center">Bracelets</h1>
-                    </a>
-                    <img src="{% static 'images/poppy-18k-set-home.png' %}" alt="Woman's arm wearing gold bracelet" class="img-fluid">
-                </div>
+    <main class="container mr-sm-0 main-content">
+        <div class="container-fluid">
+            <div class="hero-image"></div>
+            <div class="hero-content">
+                <h1 class="text-uppercase">Jewelry For Every Occasion</h1>
+                <a href="{% url 'products' %}" class="btn btn-lg border border-secondary text-uppercase">Discover our collections</a>
             </div>
         </div>
     </main>

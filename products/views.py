@@ -14,11 +14,13 @@ def all_products(request):
     Show all products and sort/search queries
     """
     products = Product.objects.all()
-    wishlist_product_ids = request.user.wishlist_items.values_list('product_id', flat=True)
     query = None
     categories = None
     title = 'Products'
     sort_by = request.GET.get('sort_by')
+
+    if request.user.is_authenticated:
+        wishlist_product_ids = request.user.wishlist_items.values_list('product_id', flat=True)
 
     if request.GET:
         if 'sort_by' in request.GET:
