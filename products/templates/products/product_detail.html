@@ -99,7 +99,7 @@
     <!-- Reviews -->
     <div class="row mb-5">
         <div class="col mt-4">
-            <p class="mb-2 ml-1" id="review-title">Reviews</p>
+            <p class="mb-2 ml-1 detail-title">Reviews</p>
             <hr>
             <div class="row">
                 <div class="col-12 col-md-6 review-container mt-2">
@@ -119,7 +119,7 @@
                     <p class="mt-2">Write a review</p>
                     <form method="post" class="form mt-4">
                         {% csrf_token %}
-                        {{ review_form|crispy }}
+                        {{ form|crispy }}
                         <button type="submit" class="btn add-btn">Add Review</button>
                     </form>
                 </div>

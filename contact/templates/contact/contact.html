@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="header-margin2"></div>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <h1>Contact Us</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row p-2">
+        <div class="col">
+            <form method="POST" action="{% url 'contact' %}" class="bg-color-reviews rounded w-75 form p-4">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button class="btn border btn-lg mb-3 add-btn mt-3" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

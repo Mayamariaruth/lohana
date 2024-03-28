@@ -75,9 +75,9 @@ def product_detail(request, product_id):
     reviews = Review.objects.filter(product=product)
 
     if request.method == 'POST':
-        review_form = ReviewForm(request.POST)
-        if review_form.is_valid():
-            review = review_form.save(commit=False)
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
             review.product = product
             review.save() 
             messages.success(request, 'Your review was added successfully!')
@@ -85,12 +85,12 @@ def product_detail(request, product_id):
         else:
             messages.error(request, 'Adding the review failed. Please try again.')
     else:
-        review_form = ReviewForm()
+        form = ReviewForm()
 
     context = {
         'product': product,
         'reviews': reviews,
-        'review_form': review_form,
+        'form': form,
     }
 
     return render(request, 'products/product_detail.html', context)

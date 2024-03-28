@@ -133,10 +133,6 @@ ul {
     color: white;
 }
 
-#review-title {
-    font-size: 2rem;
-}
-
 .review-container {
     font-family: 'Montserrat', sans-serif;
     overflow: scroll;
@@ -147,7 +143,6 @@ ul {
 }
 
 /* Shopping bag */
-
 .update-link,
 .remove-item {
     cursor: pointer;

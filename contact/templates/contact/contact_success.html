@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="header-margin2"></div>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <h1>Thank you for contacting us!</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="col">
+        <p>We have received your inquiry and we aim to get back to you within 2 business days.</p>
+        <p class="mt-2 mb-3">Have a look at our products while you wait.</p>
+        <a href="{% url 'products' %}" class="btn border btn-lg border-dark p-2 mr-2 mb-3 shop-btn">
+            <span class="text-uppercase">Continue Shopping</span>
+        </a>
+    </div>
+</div>
+{% endblock %}
