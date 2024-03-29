@@ -32,24 +32,16 @@ Link to the live site here - [Lohana]()
         * [***Navigation - User***](#navigation---user)
         * [***Navigation - Admin***](#navigation---admin)
     * [***Landing page***](#landing-page)
-        * [***Hero image***](#hero-image)
-        * [***About***](#about)
-        * [***Menu***](#menu)
-        * [***Book a table***](#book-a-table)
     * [***Footer***](#footer)
     * [***AllAuth***](#allauth)
         * [***Register***](#register)
         * [***Login***](#login)
         * [***Logout***](#logout)
-    * [***Menu***](#menu-1)
-    * [***Booking form***](#booking-form)
+    * [***Contact form***](#booking-form)
     * [***User***](#user)
-        * [***Booking success***](#booking-success)
         * [***Profile***](#profile)
-        * [***Edit/delete account***](#editdelete-account)
-        * [***Edit/Delete bookings***](#editdelete-bookings)
     * [***Admin***](#admin)
-        * [***Admin panel***](#admin-panel)
+        * [***Add products***](#add-products-pagel)
     * [***Future features***](#future-features)
 1. [**Deployment**](#deployment)
     * [***Cloning***](#cloning)
@@ -313,19 +305,19 @@ As a result, I'm only displaying the wireframes for the critical pages below. De
 
 
 ### Database schema
- I used Django's built-in User Model for the user accounts and I created a custom model for bookings. 
- The booking model and the user model were connected through a foreign key, allowing me to associate bookings with specific users.
- From this, I was able to enhance user experience by pre-populating the booking form with the user account details when making a booking request.
+ I used Django's built-in User Model for the user accounts and I created three custom models for reviews, wishlist and a contact form (the rest were based off the walkthrough project Boutique Ado). 
+ 
+ 
 
-![ERD](docs/images/erd.png)
+![ERD]()
 
 ### Color scheme
-I wanted a simple and elegant color scheme to match the theme of the site. After creating a basic logo, I decided to use the 
-I generated the colors from the hero image on [Coolors](https://coolors.co/).
+I wanted a simple and elegant color scheme to match the theme of the site. 
+I generated the colors from the logo on [Coolors](https://coolors.co/).
 
 I utilized the Contrast grid by Eightshapes to test my color combos so the colors complied with the highest accessibility.
 
-![Color](docs/images/eightshapes.png)
+![Color]()
 
 ### Typography
 I used two different fonts across the page:

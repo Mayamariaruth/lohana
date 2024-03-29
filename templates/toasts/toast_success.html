@@ -1,4 +1,4 @@
-<!-- Copied from Bootstrap documentation (with some extra touches) -->
+<!-- Copied from Bootstrap documentation (with some extra touches)-->
 <div class="custom-toast" data-autohide="false">
     <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-header">
@@ -16,8 +16,7 @@
                 </div>
             </div>
             {% if grand_total and not on_profile %}
-                <p class="font-weight-bold text-uppercase">Your Bag ({{ product_count }})</p>
-                <hr>
+                <p class="text-center mb-4 text-uppercase"><strong>Your Bag</strong> ({{ product_count }})</p>
                 <div class="wrapper"> 
                     {% for item in bag_items %}
                         <div class="row mb-2">
@@ -29,7 +28,7 @@
                             {% endif %}
                             </div>
                             <div class="col-9 p-0">
-                                <p class="">{{ item.product.name }}</p>
+                                <p class="font-weight-bold">{{ item.product.name }}</p>
                                 <p class="small text-muted">Qty: {{ item.quantity }}</p>
                             </div>
                         </div>
@@ -46,7 +45,7 @@
                                 Spend <strong>${{ free_delivery_delta }}</strong> more to get free delivery!
                             </p>
                         {% endif %}
-                        <a href="{% url 'view_bag' %}" class="btn add-btn margin-left mt-2">
+                        <a href="{% url 'view_bag' %}" class="btn add-btn mt-2">
                             <span class="text-uppercase">Go To Secure Checkout</span>
                             <span class="icon">
                                 <i class="fas fa-lock"></i>

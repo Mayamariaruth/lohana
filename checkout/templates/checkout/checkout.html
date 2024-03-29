@@ -10,23 +10,23 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1>Checkout</h1>
+            <h1 class="text-center">Checkout</h1>
             <hr>
         </div>
     </div>
-    <div class="row">
+    <div class="row ml-2 mt-3">
         <div class="col-12 col-lg-6 order-lg-last pl-4">
-            <p>Order Summary ({{ product_count }})</p>
+            <p class="text-uppercase">Order Summary ({{ product_count }})</p>
             <hr>
+            {% for item in bag_items %}
             <div class="row">
                 <div class="col-7 offset-2">
-                    <p class="font-weight-bold">Item</p>
+                    <p class="font-weight-bold bag-name">{{ item.product.name }}</p>
                 </div>
                 <div class="col-3">
                     <p class="font-weight-bold">Subtotal</p>
                 </div>
             </div>
-            {% for item in bag_items %}
             <div class="row">
                 <div class="col-2 mt-2">
                     <a href="{% url 'product_detail' item.product.id %}">
@@ -38,8 +38,8 @@
                     </a>
                 </div>
                 <div class="col-7">
-                    <p>{{ item.product.name }}</p>
-                    <p>Qty: {{ item.quantity }}</p>
+                    <p class="text-muted small">SKU: {{ item.product.sku|upper }}</p>
+                    <p class="text-muted">Qty: <strong class="text-dark">{{ item.quantity }}</strong></p>
                 </div>
                 <div class="col-3">
                     <p>${{ item.product.price | calc_subtotal:item.quantity }}</p>
@@ -106,7 +106,7 @@
                     <span>Your card will be charged <stong>${{ grand_total | floatformat:2 }}</stong></span>
                 </p>
                 <div class="submit-button mb-5">
-                    <a href="{% url 'view_bag' %}" class="btn border bg-btn border px-3 py-2 mr-2">
+                    <a href="{% url 'view_bag' %}" class="btn bg-btn shop-btn px-3 py-2 mr-2">
                         <span class="font-weight-bold">Adjust Bag</span>
                     </a>
                     <button id="submit-button" class="btn border add-btn btn-lg">
@@ -120,7 +120,7 @@
         </div>
     </div>
 </div>
-<!-- Loading overlay - (From Boutique Ado walkthrough) -->
+<!-- Loading overlay -->
 <div id="loading-overlay">
     <h1 class="text-light logo-font loading-spinner">
         <span class="icon">

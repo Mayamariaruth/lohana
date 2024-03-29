@@ -167,12 +167,6 @@ ul {
     background: white;
 }
 
-.bg-btn {
-    font-size: 17px;
-    font-weight: 600;
-    box-shadow: 0.5px 0.5px 2px 2px rgba(0, 0, 0, 0.4);
-}
-
 .wishlist-button {
     font-size: 14px;
     padding: 8px 20px;
@@ -221,6 +215,24 @@ ul {
     cursor: pointer;
 }
 
+.bg-btn {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.bag-name {
+    font-size: 1.2rem;
+}
+
+/* Checkout success */
+.p-left {
+    padding-left: 3rem;
+}
+
+.summary-color {
+    background-color: #e1e1e1e1;
+}
+
 /* Toasts */
 .custom-toast {
     position: fixed;
@@ -237,10 +249,6 @@ ul {
 
 .message-line {
     height: 2px;
-}
-
-.margin-left {
-    margin-left: 2rem;
 }
 
 .wrapper {
@@ -294,26 +302,6 @@ ul {
     justify-content: center;
     margin: 0;
     height: 100%;
-}
-
-/* Checkout success  */
-.delivery-title {
-    font-size: 1.7rem;
-    font-weight: 500;
-    margin-bottom: 1rem;
-}
-
-.delivery-details-container {
-    position: relative;
-    top: 2rem;
-}
-
-.overflow {
-    overflow-wrap: anywhere;
-}
-
-#font {
-    font-size: 1.3rem;
 }
 
 /* Contact form */
@@ -419,6 +407,10 @@ footer {
     .delivery-details-container {
         bottom: 5rem;
     }
+
+    .p-left {
+        padding-left: 3.8rem;
+    }
 }
 
 @media (min-width: 992px) {
@@ -482,5 +474,9 @@ footer {
     .fb-btn {
         top: 5rem;
         right: 5.1rem;
+    }
+
+    .p-left {
+        padding-left: 5.5rem;
     }
 }

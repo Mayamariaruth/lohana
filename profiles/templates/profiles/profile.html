@@ -127,7 +127,7 @@
                     <div class="col-12 col-md-6 my-auto d-flex justify-content-center justify-content-md-end">
                         <div class="w-50">
                             <select id="sort-selector"
-                                class="custom-select custom-select-sm rounded-0 border border-{% if sort_by %}info{% else %}black{% endif %}">
+                                class="custom-select custom-select-sm rounded-0 border-{% if sort_by %}info{% else %}secondary{% endif %}">
                                 <option value="reset">Sort by...</option>
                                 <option value="name_asc">Name (A-Z)</option>
                                 <option value="name_desc">Name (Z-A)</option>
@@ -141,7 +141,7 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-6 order-md-first">
-                        <p class="text-muted mt-2 text-center text-md-left">
+                        <p class="mt-2 text-center text-md-left">
                             <span class="small"><a href="{% url 'products' %}">All Products</a> | </span>
                             {{ wishlist_items|length }}
                         </p>
@@ -149,49 +149,53 @@
                 </div>
                 <!-- Products -->   
                 <div class="row mt-4">
-                    {% for item in wishlist_items %}
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                            <div class="card mb-5">
-                                {% if item.product.image %}
-                                    <a href="{% url 'product_detail' item.product.id %}">
-                                        <img class="card-img-top img-fluid" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
-                                    </a>
-                                {% else %}
-                                    <a href="{% url 'product_detail' item.product.id %}">
-                                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
-                                    </a>
-                                {% endif %}
-                                <div class="card-body">
-                                    <p class="product-name">{{ item.product.name }}</p>
-                                    <p>{{ item.product.introduction }}</p>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="row">
-                                        <div class="col">
-                                            <p class="lead text-left font-weight-bold mb-1">${{ item.product.price }}</p>
-                                            {% if item.product.category %}
-                                                <p class="small">
-                                                    <a class="text-muted" href="{% url 'products' %}?category={{ item.product.category.name }}">
-                                                        <i class="fas fa-tag mr-1"></i>{{ item.product.category.name|title }}
-                                                    </a>
-                                                </p>
-                                            {% endif %}
-                                            {% if request.user.is_authenticated %}
-                                                {% if not request.user.is_superuser %}
-                                                    <div class="mb-5 wishlist-item">
-                                                        <button class="wishlist-button btn shop-btn border" data-product-id="{{ item.product.id }}">
-                                                            Remove from wishlist
-                                                            <i class="fa-solid fa-heart heart-red"></i>
-                                                        </button>
-                                                    </div>
+                    {% if wishlist_items %}
+                        {% for item in wishlist_items %}
+                            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                                <div class="card mb-5">
+                                    {% if item.product.image %}
+                                        <a href="{% url 'product_detail' item.product.id %}">
+                                            <img class="card-img-top img-fluid" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                        </a>
+                                    {% else %}
+                                        <a href="{% url 'product_detail' item.product.id %}">
+                                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                                        </a>
+                                    {% endif %}
+                                    <div class="card-body">
+                                        <p class="product-name">{{ item.product.name }}</p>
+                                        <p>{{ item.product.introduction }}</p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="row">
+                                            <div class="col">
+                                                <p class="lead text-left font-weight-bold mb-1">${{ item.product.price }}</p>
+                                                {% if item.product.category %}
+                                                    <p class="small">
+                                                        <a class="text-muted" href="{% url 'products' %}?category={{ item.product.category.name }}">
+                                                            <i class="fas fa-tag mr-1"></i>{{ item.product.category.name|title }}
+                                                        </a>
+                                                    </p>
                                                 {% endif %}
-                                            {% endif %}
+                                                {% if request.user.is_authenticated %}
+                                                    {% if not request.user.is_superuser %}
+                                                        <div class="mb-5 wishlist-item">
+                                                            <button class="wishlist-button btn shop-btn" data-product-id="{{ item.product.id }}">
+                                                                Remove from wishlist
+                                                                <i class="fa-solid fa-heart heart-red"></i>
+                                                            </button>
+                                                        </div>
+                                                    {% endif %}
+                                                {% endif %}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    {% endfor %}
+                        {% endfor %}
+                    {% else %}
+                    <p class="mb-5">You have no products in your wishlist.</p>
+                    {% endif %}
                 </div>
             </div>
             <!-- Back to top button -->
@@ -218,22 +222,24 @@
     </script>
     <!-- Wishlist button -->
     <script type="text/javascript">
-        $(document).on('click', '.wishlist-button', function() {
-            var button = $(this);
-            var productId = button.data('product-id');
-            var url = '/profile/add_to_wishlist/';
-            
-            $.post(url, {'product_id': productId, 'csrfmiddlewaretoken': '{{ csrf_token }}'})
-            .done(function(response) {
-                if (response.success) {
-                    alert(response.message);
-                    button.closest('.card').remove();
-                } else {
-                    alert(response.message);
-                }
-            })
-            .fail(function() {
-                alert('Failed to communicate with the server.');
+        $(document).ready(function() {
+            $(document).on('click', '.wishlist-button', function() {
+                var button = $(this);
+                var productId = button.data('product-id');
+                var url = '/profile/add_to_wishlist/';
+                
+                $.post(url, {'product_id': productId, 'csrfmiddlewaretoken': '{{ csrf_token }}'})
+                .done(function(response) {
+                    if (response.success) {
+                        alert(response.message);
+                        button.closest('.card').remove();
+                    } else {
+                        alert(response.message);
+                    }
+                })
+                .fail(function() {
+                    alert('Failed to communicate with the server.');
+                });
             });
         });
     </script>

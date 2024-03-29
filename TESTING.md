@@ -25,7 +25,7 @@ I manually tested this site in multiple ways highlighted below:
 * I deployed the site in an early stage on Heroku to make sure everything was working as intended. 
 * I received invaluable feedback from my mentor David, students in my community, family members and friends working in the industry.
 * I tested the site for cross-compatibility in the two most used browsers, Chrome and Safari.
-* I used DevTools to easily move between different screen sizes, simulating sizes between 370px to 4000px (but it is also functional on even larger screens given the max-width setting on the Body element to keep the content compact instead of stretched).
+* I used DevTools to easily move between different screen sizes, simulating sizes between 390px to 4000px (but it is also functional on even larger screens given the max-width setting on the Body element to keep the content compact instead of stretched).
 
 ### User stories
 **User Story:** As a site user/admin, I can navigate the site content from the landing page so that I can access all the content easily and find what I'm looking for.

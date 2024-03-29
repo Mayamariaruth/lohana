@@ -40,8 +40,8 @@
             {% endif %}
             {% if request.user.is_authenticated %}
                 {% if not request.user.is_superuser %}
-                    <div class="mb-5">
-                        <button class="wishlist-button btn shop-btn border" data-product-id="{{ product.id }}">
+                    <div class="mb-5 mt-4">
+                        <button class="wishlist-button btn shop-btn" data-product-id="{{ product.id }}">
                             Add to wishlist
                             <i class="fa-solid fa-heart heart-red"></i>
                         </button>
@@ -79,10 +79,10 @@
                         </div>
                     </div>
                     <div class="col-12 mt-3">
-                        <a href="{% url 'products' %}" class="btn border p-2 mr-2 mb-3 shop-btn border-secondary">
+                        <a href="{% url 'products' %}" class="btn p-2 mr-2 mb-3 shop-btn">
                             <span class="text-uppercase">Continue Shopping</span>
                         </a>
-                        <input type="submit" class="btn border border-dark text-uppercase p-2 mb-3 add-btn" value="Add to Bag">
+                        <input type="submit" class="btn border text-uppercase p-2 mb-3 add-btn" value="Add to Bag">
                     </div>
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 </div>
@@ -104,7 +104,7 @@
                     <p>No reviews yet.</p>
                 {% endif %}
                 {% for review in reviews %}
-                    <div class="border-bottom p-4 mb-2 bg-color-reviews">
+                    <div class="border-bottom p-4 mb-2 bg-color rounded">
                         <p><strong>{{ review.review_name }}</strong> - {{ review.created_on }}</p>
                         <p class="mt-3">{{ review.review_text }}</p>
                     </div>
@@ -128,18 +128,23 @@
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
 <script type="text/javascript">
-    $('.wishlist-button').click(function() {
-        var productId = $(this).data('product-id');
-        $.post('products/?product_id=/add_to_wishlist/', {'product_id': productId, 'csrfmiddlewaretoken': '{{ csrf_token }}'})
-        .done(function(response) {
-            if (response.success) {
-                alert(response.message);
-            } else {
-                alert(response.message);
-            }
-        })
-        .fail(function() {
-            alert('Failed to communicate with the server.');
+    $(document).ready(function() {
+        $(document).on('click', '.wishlist-button', function() {
+            var button = $(this);
+            var productId = button.data('product-id');
+            var url = 'add_to_wishlist/';
+            
+            $.post(url, {'product_id': productId, 'csrfmiddlewaretoken': '{{ csrf_token }}'})
+            .done(function(response) {
+                if (response.success) {
+                    alert(response.message);
+                } else {
+                    alert(response.message);
+                }
+            })
+            .fail(function() {
+                alert('Failed to communicate with the server.');
+            });
         });
     });
 </script>
