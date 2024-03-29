@@ -474,7 +474,7 @@ All the testing for this project can be found in a separate document [here](TEST
 
 ### Code 
 
-- I drew help from the walk-through of the Boutique Ado project. There is directly copied code from the project, as well as similarities in some of the rest of the code but I adapted it to fit the aims of this project.
+- I drew help from the walk-through of the Boutique Ado project. There is directly copied code from the project, as well as similarities in some of the code but I adapted it to fit the aims of this project as much as possible.
 
 Below are links that helped me adapt/build certain features:
 - []()

@@ -81,7 +81,7 @@
                         {% if user.is_authenticated %}
                         <label class="form-check-label mr-4" id="save-info">Save this delivery information to my
                             account</label>
-                        <input class="form-check-input" type="checkbox" id="save-info" name="save-info" checked>
+                        <input class="form-check-input" type="checkbox" id="save-info" name="save-info">
                         {% else %}
                         <label class="form-check-label" for="save-info">
                             <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or

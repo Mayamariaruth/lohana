@@ -5,26 +5,31 @@
 
 <head>
     {% block meta %}
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <!-- Meta tags for search engines -->
-        <meta name="description" content="Jewelry store Lohana."> <!-- ADD MORE CONTENT -->
-        <meta name="keywords" content="Jewelry, gold jewelry, necklaces, earrings, bracelets, jewelry brand, jewelry for women, jewelry stores, gift ideas for jewelry, jewelry stores near me, christmas gift ideas, gifts for mom">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Meta tags for search engines -->
+    <meta name="description" content="Jewelry store Lohana."> <!-- ADD MORE CONTENT -->
+    <meta name="keywords"
+        content="Jewelry, gold jewelry, necklaces, earrings, bracelets, jewelry brand, jewelry for women, jewelry stores, gift ideas for jewelry, jewelry stores near me, christmas gift ideas, gifts for mom">
     {% endblock %}
 
     {% block corecss %}
-        <!-- Bootstrap -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
-        <!-- Font Awesome icons -->
-        <script src="https://kit.fontawesome.com/11ca27fbbb.js" crossorigin="anonymous"></script>
-        <!-- Google Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Reddit+Mono:wght@200..900&display=swap" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Font Awesome icons -->
+    <script src="https://kit.fontawesome.com/11ca27fbbb.js" crossorigin="anonymous"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Reddit+Mono:wght@200..900&display=swap"
+        rel="stylesheet">
+    <!-- Mailchimp -->
+    <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
     {% endblock %}
 
     <!-- Favicon -->
@@ -33,15 +38,15 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon_io/favicon-16x16.png' %}">
 
     {% block corejs %}
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"
-            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
-            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-            crossorigin="anonymous"></script>
-        <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="https://js.stripe.com/v3/"></script>
     {% endblock %}
 
     {% block extra_js %}
@@ -54,8 +59,8 @@
     <header class="container-fluid fixed-top bg-color pr-2">
         <div id="delivery" class="row text-center">
             <div class="col w-100">
-                <p class="my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</p>                
-            </div>            
+                <p class="my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</p>
+            </div>
         </div>
         <nav class="navbar p-0">
             <!-- Logo -->
@@ -67,7 +72,8 @@
             <div class="d-flex align-items-center">
                 <!-- Search bar -->
                 <div class="dropdown mr-md-3">
-                    <button class="btn btn-black" type="button" id="searchDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn btn-black" type="button" id="searchDropdown" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
                         <span class="icon font-size">
                             <i class="fas fa-search"></i>
                         </span>
@@ -75,9 +81,10 @@
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="searchDropdown">
                         <form method="GET" action="{% url 'products' %}" class="p-1 px-3">
                             <div class="form-group">
-                                <input class="form-control border border-black rounded-0 font-size" type="text" name="q" placeholder="Search our site">
+                                <input class="form-control border border-black rounded-0 font-size" type="text" name="q"
+                                    placeholder="Search our site">
                             </div>
-                            <button class="btn btn-black border border-black font-size" type="submit">Search</button>
+                            <button class="btn border shop-btn" type="submit">Search</button>
                         </form>
                     </div>
                 </div>
@@ -85,7 +92,8 @@
                 <div class="collapse navbar-collapse mr-md-3">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle btn font-size" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle btn font-size" href="" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span>Products</span>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -93,74 +101,75 @@
                                 <a class="dropdown-item" href="{% url 'products' %}?category=necklaces">Necklaces</a>
                                 <a class="dropdown-item" href="{% url 'products' %}?category=bracelets">Bracelets</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="{% url 'products' %}?category=earrings,necklaces,bracelets">All Products</a>
+                                <a class="dropdown-item"
+                                    href="{% url 'products' %}?category=earrings,necklaces,bracelets">All Products</a>
                             </div>
                         </li>
                     </ul>
                 </div>
-            <!-- My account dropdown -->
-            <div class="d-flex align-items-center mr-md-3">
-                <ul class="list-inline list-unstyled d-flex">
-                    <li class="list-inline-item dropdown">
-                        <a class="nav-link p-0" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
-                            <div class="pr-sm-2 pr-lg-4 top">
-                                <p class="text-dark font-size">My Account</p>
-                            </div>
-                        </a>
-                        <div class="dropdown-menu font-size" aria-labelledby="user-options">
-                            {% if request.user.is_authenticated %}
+                <!-- My account dropdown -->
+                <div class="d-flex align-items-center mr-md-3">
+                    <ul class="list-inline list-unstyled d-flex">
+                        <li class="list-inline-item dropdown">
+                            <a class="nav-link p-0" href="#" id="user-options" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <div class="pr-sm-2 pr-lg-4 top">
+                                    <p class="text-dark font-size">My Account</p>
+                                </div>
+                            </a>
+                            <div class="dropdown-menu font-size" aria-labelledby="user-options">
+                                {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
-                                    <a href="{% url 'add_product' %}" class="dropdown-item">Add Product</a>
+                                <a href="{% url 'add_product' %}" class="dropdown-item border-bottom">Add Product</a>
                                 {% endif %}
                                 {% if not request.user.is_superuser %}
-                                    <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                                <a href="{% url 'profile' %}" class="dropdown-item border-bottom">My Profile</a>
                                 {% endif %}
-                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                            {% else %}
-                                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                            {% endif %}
-                            <a href="{% url 'contact' %}" class="dropdown-item">Contact Us</a>
-                        </div>
-                    </li>
-                    <!-- Shopping bag -->
-                    <li class="list-inline-item font-size pr-sm-2 pr-lg-4">
-                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link p-0"
-                            href="{% url 'view_bag' %}">
-                            <div class="text-center">
-                                <div><i class="fas fa-shopping-bag fa-lg text-dark"></i></div>
-                                <p class="my-0 text-dark">
-                                    {% if grand_total %}
-                                        ${{ grand_total|floatformat:2 }}
-                                    {% else %}
-                                        $0.00
-                                    {% endif %}
-                                </p>
+                                <a href="{% url 'account_logout' %}" class="dropdown-item border-bottom">Logout</a>
+                                {% else %}
+                                <a href="{% url 'account_signup' %}" class="dropdown-item border-bottom">Register</a>
+                                <a href="{% url 'account_login' %}" class="dropdown-item border-bottom">Login</a>
+                                {% endif %}
+                                <a href="{% url 'contact' %}" class="dropdown-item">Contact Us</a>
                             </div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+                        </li>
+                        <!-- Shopping bag -->
+                        <li class="list-inline-item font-size pr-sm-2 pr-lg-4">
+                            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link p-0"
+                                href="{% url 'view_bag' %}">
+                                <div class="text-center">
+                                    <div><i class="fas fa-shopping-bag fa-lg text-dark"></i></div>
+                                    <p class="my-0 text-dark">
+                                        {% if grand_total %}
+                                        ${{ grand_total|floatformat:2 }}
+                                        {% else %}
+                                        $0.00
+                                        {% endif %}
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
         </nav>
     </header>
 
     {% if messages %}
-        <div class="message-container">
-            {% for message in messages %}
-                {% with message.level as level %}
-                    {% if level == 40 %}
-                        {% include 'toasts/toast_error.html' %}
-                    {% elif level == 30 %}
-                        {% include 'toasts/toast_warning.html' %}
-                    {% elif level == 25 %}
-                        {% include 'toasts/toast_success.html' %}
-                    {% else %}
-                        {% include 'toasts/toast_info.html' %}
-                    {% endif %}
-                {% endwith %}
-            {% endfor %}
-        </div>
+    <div class="message-container">
+        {% for message in messages %}
+        {% with message.level as level %}
+        {% if level == 40 %}
+        {% include 'toasts/toast_error.html' %}
+        {% elif level == 30 %}
+        {% include 'toasts/toast_warning.html' %}
+        {% elif level == 25 %}
+        {% include 'toasts/toast_success.html' %}
+        {% else %}
+        {% include 'toasts/toast_info.html' %}
+        {% endif %}
+        {% endwith %}
+        {% endfor %}
+    </div>
     {% endif %}
 
     {% block page_header %}
@@ -170,39 +179,77 @@
     {% endblock %}
 
     <!-- Footer -->
-    <footer class="container main-content">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-12 col-md-6 margin-b">
-                    <h2 class="text-uppercase">Newsletter</h2>
-                    <hr>
-                    <div class="col-12 col-md-6">
-                        <p class="">Get exclusive offers and discount codes by subscribing to our monthly newsletter!</p>
-                        <!-- Mailchimp signup form -->
+    <footer class="container-fluid main-content">
+        <div class="row text-center">
+            <div class="col-12 col-md-6 margin-b">
+                <h2 class="text-uppercase">Newsletter</h2>
+                <hr>
+                <p class=""><strong>Subscribe</strong> to our monthly newsletter to receive exclusive offers and discount codes!</p>
+                <!-- Mailchimp signup form -->
+                <div id="mc_embed_shell">
+                    <div id="mc_embed_signup">
+                        <form
+                            action="https://herokuapp.us22.list-manage.com/subscribe/post?u=7bee5fa1f71aea2ee6c16978f&amp;id=2135c49f5b&amp;f_id=00cec1e1f0"
+                            method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+                            class="validate" target="_blank">
+                            <div id="mc_embed_signup_scroll">
+                                <div class="mc-field-group"><label for="mce-EMAIL">Email Address <span
+                                            class="asterisk">*</span></label><input type="email" name="EMAIL"
+                                        class="required email" id="mce-EMAIL" required="" value=""><span
+                                        id="mce-EMAIL-HELPERTEXT" class="helper_text"></span></div>
+                                <div id="mce-responses" class="clear foot">
+                                    <div class="response" id="mce-error-response" style="display: none;"></div>
+                                    <div class="response" id="mce-success-response" style="display: none;">
+                                    </div>
+                                </div>
+                                <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                                    /* real people should not fill this in and expect good things - do not
+                                    remove this or risk form bot signups */
+                                    <input type="text" name="b_7bee5fa1f71aea2ee6c16978f_2135c49f5b"
+                                        tabindex="-1" value="">
+                                </div>
+                                <div class="optionalParent">
+                                    <div class="clear foot">
+                                        <input type="submit" name="subscribe" id="mc-embedded-subscribe"
+                                            class="button" value="Subscribe">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
-                <div class="col-12 col-md-6">
+            </div>
+            <div class="col-12 col-md-6">
                 <h2 class="text-uppercase">Contact Us</h2>
                 <hr>
-                <a href="{% url 'contact' %}" class="btn shop-btn border contact-home">Contact</a>
-                <a class="fb-btn" href="https://www.facebook.com/profile.php?id=61557981383837" target="_blank"><i class="fab fa-facebook-square"></i> Follow us on Facebook!</a>
-                </div>
+                <a href="{% url 'contact' %}" class="btn add-btn border contact-home">Contact</a>
+                <a class="fb-btn" href="https://www.facebook.com/profile.php?id=61557981383837" target="_blank" rel="noopener">
+                    <i class="fab fa-facebook-square"></i>
+                    Follow us on Facebook!</a>
             </div>
+        </div>
+        <div id="privacy">
+            <a href="https://www.termsfeed.com/live/1aa8b294-b8fa-463a-9dc5-0f295ca0eec9" target="_blank" rel="noopener">Privacy Policy</a>
         </div>
     </footer>
 
     {% block postloadjs %}
-        <script>
-            $(document).ready(function() {
-                $('.toast').toast({ autohide: false });
+    <script>
+        $(document).ready(function () {
+            $('.toast').toast({ autohide: false });
 
-                $('.toast').toast('show');
-            
-                $('.toast .close').on('click', function() {
-                    $(this).closest('.toast').toast('hide');
-                });
+            $('.toast').toast('show');
+
+            $('.toast .close').on('click', function () {
+                $(this).closest('.toast').toast('hide');
             });
-        </script>
+        });
+    </script>
+    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+    <script
+    type="text/javascript">(function ($) { window.fnames = new Array(); window.ftypes = new Array(); fnames[0] = 'EMAIL'; ftypes[0] = 'email'; fnames[1] = 'FNAME'; ftypes[1] = 'text'; fnames[2] = 'LNAME'; ftypes[2] = 'text'; fnames[3] = 'ADDRESS'; ftypes[3] = 'address'; fnames[4] = 'PHONE'; ftypes[4] = 'phone'; fnames[5] = 'BIRTHDAY'; ftypes[5] = 'birthday'; }(jQuery)); var $mcj = jQuery.noConflict(true);
+    </script>
     {% endblock %}
 </body>
+
 </html>

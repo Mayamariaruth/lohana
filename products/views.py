@@ -174,25 +174,22 @@ def delete_product(request, product_id):
 
 @login_required
 def add_to_wishlist(request):
-    if request.is_ajax():
-        product_id = request.POST.get('product_id')
-        product = get_object_or_404(Product, id=product_id)
-        user = request.user
-
+    if request.is_ajax() and request.method == 'POST':
         try:
-            if request.POST.get('remove') == 'true':
-                user.wishlist_items.filter(product=product).delete()
+            product_id = request.POST.get('product_id')
+            product = get_object_or_404(Product, id=product_id)
+
+            if WishlistItem.objects.filter(user=request.user, product=product).exists():
+                WishlistItem.objects.filter(user=request.user, product=product).delete()
                 message = 'Product removed from wishlist successfully!'
             else:
-                if user.wishlist_items.filter(product=product).exists():
-                    message = 'This product is already in your wishlist.'
-                else:
-                    WishlistItem.objects.create(user=user, product=product)
-                    message = 'Product added to wishlist successfully!'
+                WishlistItem.objects.create(user=request.user, product=product)
+                message = 'Product added to wishlist successfully!'
+
             return JsonResponse({'success': True, 'message': message})
+        except Product.DoesNotExist:
+            return JsonResponse({'success': False, 'message': 'Product does not exist.'})
         except Exception as e:
-            message = 'Failed to add/remove product to/from wishlist. Error: {}'.format(str(e))
-            return JsonResponse({'success': False, 'message': message})
+            return JsonResponse({'success': False, 'message': 'Failed to add/remove product from wishlist. Error: {}'.format(str(e))})
     else:
-        message = 'Invalid request.'
-        return JsonResponse({'success': False, 'message': message})
+        return JsonResponse({'success': False, 'message': 'Invalid request.'})

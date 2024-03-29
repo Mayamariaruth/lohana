@@ -30,20 +30,6 @@
                     </a>
                 </p>
             {% endif %}
-            {% if request.user.is_authenticated %}
-                {% if not request.user.is_superuser %}
-                    <div class="d-flex flex-row-reverse justify-content-end mt-3">
-                        <a class="wishlist-button" data-product-id="{{ product.id }}">
-                        {% if product.id in wishlist_product_ids %}
-                            <i class="fa-solid fa-heart heart-red"></i>
-                        {% else %}
-                            <i class="fa-regular fa-heart"></i>
-                        {% endif %}
-                        </a>
-                        <p class="text-muted small mr-2">Add to wishlist</p>
-                    </div>
-                {% endif %}
-            {% endif %}
             {% if request.user.is_superuser %}
                 <small class="text-muted">
                     <a href="{% url 'edit_product' product.id %}">Edit</a> |
@@ -52,8 +38,18 @@
                     <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
                 </small>
             {% endif %}
+            {% if request.user.is_authenticated %}
+                {% if not request.user.is_superuser %}
+                    <div class="mb-5">
+                        <button class="wishlist-button btn shop-btn border" data-product-id="{{ product.id }}">
+                            Add to wishlist
+                            <i class="fa-solid fa-heart heart-red"></i>
+                        </button>
+                    </div>
+                {% endif %}
+            {% endif %}
             {% if product.introduction %}
-            <p class="mb-3">{{ product.introduction }}</p>
+            <p class="mb-5">{{ product.introduction }}</p>
             {% endif %}
             <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                 {% csrf_token %}
@@ -82,7 +78,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="col-12 mt-3">
                         <a href="{% url 'products' %}" class="btn border border-dark p-2 mr-2 mb-3 shop-btn">
                             <span class="text-uppercase">Continue Shopping</span>
@@ -133,30 +128,24 @@
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
 <script>
-    $('.wishlist-button').on('click', function (e) {
-        e.preventDefault();
+    $('.wishlist-button').click(function() {
         var productId = $(this).data('product-id');
-        var csrfToken = '{{ csrf_token }}';
-        var isAdded = $(this).find('.fa-solid').length > 0;
-
         $.ajax({
             type: 'POST',
             url: 'add_to_wishlist/',
             data: {
                 'product_id': productId,
-                'csrfmiddlewaretoken': csrfToken,
-                'remove': isAdded ? 'true' : 'false'
+                'csrfmiddlewaretoken': '{{ csrf_token }}'
             },
-            success: function (response) {
-                if ($(event.target).hasClass('add-to-wishlist')) {
-                    $(event.target).removeClass('add-to-wishlist');
-                    $(event.target).find('.fa-regular').show();
-                    $(event.target).find('.fa-solid').hide();
+            success: function(response) {
+                if (response.success) {
+                    alert(response.message);
                 } else {
-                    $(event.target).addClass('add-to-wishlist');
-                    $(event.target).find('.fa-regular').hide();
-                    $(event.target).find('.fa-solid').show();
-                };
+                    alert(response.message);
+                }
+            },
+            error: function(xhr, status, error) {
+                alert('Failed to communicate with the server.');
             }
         });
     });
