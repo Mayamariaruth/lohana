@@ -127,26 +127,19 @@
 {% block postloadjs %}
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
-<script>
+<script type="text/javascript">
     $('.wishlist-button').click(function() {
         var productId = $(this).data('product-id');
-        $.ajax({
-            type: 'POST',
-            url: 'add_to_wishlist/',
-            data: {
-                'product_id': productId,
-                'csrfmiddlewaretoken': '{{ csrf_token }}'
-            },
-            success: function(response) {
-                if (response.success) {
-                    alert(response.message);
-                } else {
-                    alert(response.message);
-                }
-            },
-            error: function(xhr, status, error) {
-                alert('Failed to communicate with the server.');
+        $.post('products/?product_id=/add_to_wishlist/', {'product_id': productId, 'csrfmiddlewaretoken': '{{ csrf_token }}'})
+        .done(function(response) {
+            if (response.success) {
+                alert(response.message);
+            } else {
+                alert(response.message);
             }
+        })
+        .fail(function() {
+            alert('Failed to communicate with the server.');
         });
     });
 </script>

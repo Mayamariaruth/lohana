@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .models import UserProfile, WishlistItem
+from .models import UserProfile
 from .forms import UserDetailsForm
 from checkout.models import Order
 

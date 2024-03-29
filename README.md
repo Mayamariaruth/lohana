@@ -372,65 +372,57 @@ Even though I worked on this project alone, using Agile principles helped me tra
 ### AllAuth
 
 #### Register
-![Register](docs/images/features/register.png)
+![Register]()
 
 #### Login
-![Login](docs/images/features/login.png)
+![Login]()
 
 #### Logout
-![Logout](docs/images/features/logout.png)
-
-### 
-- 
-
-![]()
+![Logout]()
 
 ### Contact form
-- 
+- 'POST' contact form for all shoppers to contact the store.
+- All messages displayed in the admin panel.
 
 ![Contact form]()
 
-### User
-
-#### 
-- 
-
-![]()
-
+### Logged in user
 #### Profile
-- CRUD - User profile only accessible by the user (not admin).
-- Highlights the user account details.
-- Highlights the user's booking details.
-- Buttons to edit/delete the account.
-- Buttons to edit/delete the bookings (on smaller screens the buttons are removed to save space and one main action button is added with a dropdown list of the actions).
-- Success messages under navigation bar after completed actions (edit/delete).
+- User profile only accessible by the logged in user.
+- Three tabs for each section of the page.
+- Delivery details tab with the user's saved delivery details and a form to update the details.
+- Order history tab displaying all previous orders and ability to click on the order number to go back to the checkout success page.
+- Wishlist tab displaying all the user's saved products (with a link back to 'All products', a product count of all wishlist items and the sort box) and ability to remove them.
 
-This is the CRUD operation of the site, where a user can view, edit and delete information.
-For future features, I wanted to create a similar profile for the admin instead of just the admin panel built by Django.
+- Success/error messages after each action.
 
-![Profile]()
+![Profile delivery]()
+![Profile orders]()
+![Profile wishlist]()
 
-#### Edit/delete account
-- Edit user account details form.
-- Error messages under each field if the new account details are already in use.
-- Delete account confirmation page with buttons to delete or cancel.
-
-![Edit/delete account](docs/images/features/edit-acc.png)
-
-![Edit/delete bookings](docs/images/features/del-acc.png)
-
-#### 
+### Logged in admin
+#### Add products page
 - 
+
 ![]()
+
+#### Edit products page
+- 
+
+![]()
+
+#### Delete products page
+- 
 
 ![]()
 
 ### Future features
-- 
-- An About page with more information about the restaurant (admin access to customize the page).
-- 
+- Log in page with social accounts login.
+- An About page with more information about the store (admin access to customize the page).
+- Edit/delete account on user profile page.
+- Profile page for the admin to see all contact messages with the senders details.
 
-## Deployment (UPDATE)
+## Deployment (UPDATE)!!!!!!!
 
 To deploy the site to Heroku, I went through below steps: 
 - Go to [Heroku](https://heroku.com/) and log into your account.
@@ -471,30 +463,29 @@ All the testing for this project can be found in a separate document [here](TEST
 - Django AllAuth was used for the user authentication and register, sign-up and login tasks.
 - ElephantSQL was used for the database during development and in deployment.
 - Bootstrap 5.3.2 was used to style HTML and CSS.
+- Cloudinary was used for media file storage.
+- Whitenoise was used to serve static files.
 
 ### Code 
 
 - I drew help from the walk-through of the Boutique Ado project. There is directly copied code from the project, as well as similarities in some of the code but I adapted it to fit the aims of this project as much as possible.
 
 Below are links that helped me adapt/build certain features:
-- []()
-- 
+- [How To Create a Scroll Back To Top Button](https://www.w3schools.com/howto/howto_js_scroll_to_top.asp)
+- [Navs](https://getbootstrap.com/docs/4.6/components/navs/#tabs)
+- [Wishlist](https://www.youtube.com/watch?v=kD2vWOZFFcw&ab_channel=SharmaCoder)
+- [Ajax change icon color add/remove wishlist](https://stackoverflow.com/questions/35716745/ajax-change-icon-color-add-remove-wishlist)
 
 ### Content 
 
 - The wireframes were created with Balsamiq.
-
-
-- The Facebook 
-
-
 - The ERD diagram was created with [Smartdraw](https://www.smartdraw.com/entity-relationship-diagram/er-diagram-tool.htm).
 - Fonts were acquired from [Google Fonts](https://fonts.google.com/).
 - The icons were taken from [Font Awesome](https://fontawesome.com/).
 
 ### Media
 
-- The prducts, product images and product details were all taken from [Gorjana](https://www.gorjana.com/).
+- The products, product images and product details were all taken from [Gorjana](https://www.gorjana.com/).
 - The hero image was acquired from [Unsplash](https://unsplash.com/).
 - The color palette was generated with the image on [Coolors](https://coolors.co/).
 - [Am I Responsive](https://ui.dev/amiresponsive) was used to generate the initial image of the ReadME to showcase how the site looks on different screens.
