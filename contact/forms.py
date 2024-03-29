@@ -8,3 +8,10 @@ class ContactForm(forms.ModelForm):
         fields = ['name', 'email', 'user_order', 'subject', 'message']
 
         labels = {'user_order': 'Order Number'}
+        placeholders = {
+            'name': 'First & Lastname',
+            'email': 'Emailaddress',
+            'user_order': 'Order number',
+            'subject': 'Subject',
+            'message': 'Message'
+        }

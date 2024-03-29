@@ -6,17 +6,17 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid">
-    <div class="row">
+<div class="container-fluid text-center">
+    <div class="row mb-4">
         <div class="col">
             <h1>Thank you for contacting us!</h1>
             <hr>
         </div>
     </div>
-    <div class="col">
+    <div class="col mb-5">
         <p>We have received your inquiry and we aim to get back to you within 2 business days.</p>
-        <p class="mt-2 mb-3">Have a look at our products while you wait.</p>
-        <a href="{% url 'products' %}" class="btn border btn-lg border-dark p-2 mr-2 mb-3 shop-btn">
+        <p class="mt-4 mb-3">Why don't you check out our products while you wait?</p>
+        <a href="{% url 'products' %}" class="btn btn-lg px-3 mr-2 mb-5 shop-btn">
             <span class="text-uppercase">Continue Shopping</span>
         </a>
     </div>

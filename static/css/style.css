@@ -309,6 +309,10 @@ ul {
     width: 100%;
 }
 
+.contact-btn {
+    font-size: 1.3rem;
+}
+
 /* Footer / Mailchimp */
 footer {
     background-color: white;
@@ -316,11 +320,14 @@ footer {
 }
 
 #mc_embed_signup .button {
-    background: rgba(0, 0, 0, 0.557) !important;
+    background-color: white !important;
+    color: black !important;
+    border: solid 1px black !important;
 }
 
 #mc_embed_signup .button:hover {
-    background: rgba(0, 0, 0, 0.7) !important;
+    background: rgba(0, 0, 0, 0.557) !important;
+    color: white !important;
 }
 
 .margin-b {
@@ -338,7 +345,7 @@ footer {
 .fb-btn {
     position: relative;
     top: 4.5rem;
-    right: 5.2rem;
+    right: 5.5rem;
 }
 
 #mc_embed_signup div.response {
@@ -478,5 +485,9 @@ footer {
 
     .p-left {
         padding-left: 5.5rem;
+    }
+
+    .fb-btn {
+        right: 5.7rem;
     }
 }
