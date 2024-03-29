@@ -12,7 +12,7 @@
                 <h1 class="mt-2 mb-4">{{ title }}</h1>
                 {% if title == 'Products' %}
                     {% for c in current_categories %}
-                        <a class="c-name p-2 shop-btn mr-1 rounded" href="{% url 'products' %}?category={{ c.name }}">
+                        <a class="c-name py-2 px-3 shop-btn mr-1 rounded" href="{% url 'products' %}?category={{ c.name }}">
                             <span>{{ c.name|title }}</span>
                         </a>
                     {% endfor %}

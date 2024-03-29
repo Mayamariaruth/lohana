@@ -40,7 +40,7 @@
             {% endif %}
             {% if request.user.is_authenticated %}
                 {% if not request.user.is_superuser %}
-                    <div class="mb-5 mt-4">
+                    <div class="mb-3 mt-4">
                         <button class="wishlist-button btn shop-btn" data-product-id="{{ product.id }}">
                             Add to wishlist
                             <i class="fa-solid fa-heart heart-red"></i>
@@ -78,11 +78,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 mt-3">
-                        <a href="{% url 'products' %}" class="btn p-2 mr-2 mb-3 shop-btn">
+                    <div class="col-12 mt-3 d-flex flex-column max-w">
+                        <input type="submit" class="btn border text-uppercase py-2 px-4 mb-3 add-btn" value="Add to Bag">
+                        <a href="{% url 'products' %}" class="btn py-2 px-4 mb-3 shop-btn">
                             <span class="text-uppercase">Continue Shopping</span>
                         </a>
-                        <input type="submit" class="btn border text-uppercase p-2 mb-3 add-btn" value="Add to Bag">
                     </div>
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 </div>
@@ -101,21 +101,23 @@
                 {% if reviews %}
                     <p class="small mb-3">{{ reviews|length }} Reviews</p>
                 {% else %}
-                    <p>No reviews yet.</p>
+                    <p class="ml-3 mt-3">No reviews yet.</p>
                 {% endif %}
                 {% for review in reviews %}
-                    <div class="border-bottom p-4 mb-2 bg-color rounded">
+                    <div class="border-bottom p-4 mb-2 bg-color b-shadow rounded">
                         <p><strong>{{ review.review_name }}</strong> - {{ review.created_on }}</p>
                         <p class="mt-3">{{ review.review_text }}</p>
                     </div>
                 {% endfor %}
                 </div>
                 <div class="col-12 col-md-6">
-                    <p class="mt-2">Write a review</p>
+                    <p class="mt-md-2 mt-5 text-center product-name">Leave a review here!</p>
                     <form method="post" class="form mt-4">
                         {% csrf_token %}
                         {{ form|crispy }}
-                        <button type="submit" class="btn add-btn">Add Review</button>
+                        <div class="text-center">
+                            <button type="submit" class="btn px-4 py-2 shop-btn">Add Review</button>
+                        </div>
                     </form>
                 </div>
             </div>

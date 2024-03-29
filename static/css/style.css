@@ -207,6 +207,15 @@ ul {
 .review-container {
     font-family: 'Montserrat', sans-serif;
     overflow: scroll;
+    max-height: 500px;
+}
+
+.max-w {
+    max-width: 400px;
+}
+
+.b-shadow {
+    box-shadow: 0px 1px 3px -1px #676767e1;
 }
 
 /* Shopping bag */
@@ -323,11 +332,23 @@ footer {
     background-color: white !important;
     color: black !important;
     border: solid 1px black !important;
+    padding: 1rem 1.4rem;
+    line-height: 1px;
 }
 
 #mc_embed_signup .button:hover {
     background: rgba(0, 0, 0, 0.557) !important;
     color: white !important;
+}
+
+#mc_embed_signup div.response {
+    margin-bottom: 1rem;
+    padding: 0;
+    width: 100%;
+}
+
+#mc_embed_signup .helper_text {
+    background-color: #F1EEE9 !important;
 }
 
 .margin-b {
@@ -339,7 +360,7 @@ footer {
     position: relative;
     left: 5.8rem;
     margin-top: 1rem;
-    padding: 5px 30px;
+    padding: 4px 30px;
 }
 
 .fb-btn {
@@ -348,19 +369,9 @@ footer {
     right: 5.5rem;
 }
 
-#mc_embed_signup div.response {
-    margin-bottom: 1rem;
-    padding: 0;
-    width: 100%;
-}
-
 #privacy {
     margin-top: 3rem;
     padding-left: 0.5rem;
-}
-
-#mc_embed_signup .helper_text {
-    background-color: #F1EEE9 !important;
 }
 
 /* Media queries */
