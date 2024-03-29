@@ -1,11 +1,24 @@
 /* General styles */
-body {
-    font-family: 'Noto Serif', sans-serif;
+html, body {
+    max-width: 2000px;
+    font-family: 'Playfair Display', sans-serif;
+}
+
+.bg-color {
+    background-color: #F1EEE9 !important;
+}
+
+h1 {
+    font-weight: 400;
 }
 
 /* Header */
-.bg-color {
+header {
     background-color: #F1EEE9;
+}
+
+.box-shadow {
+    box-shadow: 0 3px 4px -2px rgba(0,0,0,0.5);
 }
 
 #logo {
@@ -44,11 +57,11 @@ ul {
 
 .top {
     position: relative;
-    top: 12px;
+    top: 8px;
 }
 
 .header-margin {
-    margin-top: 9rem;
+    margin-top: 8rem;
 }
 
 .header-margin1 {
@@ -56,7 +69,7 @@ ul {
 }
 
 .header-margin2 {
-    margin-top: 10rem;
+    margin-top: 9rem;
 }
 
 .header-margin3 {
@@ -72,12 +85,13 @@ ul {
 }
 
 #delivery {
-    background-color: rgba(182, 151, 135, 0.7);
+    background-color: #b697879c;
+    height: 38px;
 }
 
 /* Hero image */
 .main-content {
-    margin-bottom: 7rem;
+    margin-bottom: 9rem;
 }
 
 .hero-image {
@@ -100,7 +114,10 @@ ul {
 }
 
 .hero-content a {
+    font-size: 1.3rem;
     background-color: white;
+    padding: 10px 2rem;
+    border-radius: 40px;
 }
 
 /* Products page */
@@ -119,9 +136,8 @@ ul {
 
 .c-name {
     font-size: 13px;
-    font-weight: bold;
-    color: #777;
-    box-shadow: 0.4px 0.4px 0.8px 0.8px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 3px 5px -2px rgba(0,0,0,0.5);
+    text-decoration: none;
 }
 
 .c-name:hover,
@@ -130,6 +146,13 @@ ul {
 .shop-btn:hover {
     background: rgba(0, 0, 0, 0.557);
     color: white;
+    text-decoration: none;
+}
+
+.shop-btn {
+    background-color: white;
+    color: black;
+    border: solid 1px black;
 }
 
 .top-btn {
@@ -154,12 +177,17 @@ ul {
     font-size: 14px;
     padding: 8px 20px;
     background-color: white;
+    border-radius: 10px;
 }
 
 .heart-red {
     color: #6f1200;
     font-size: 1.2rem;
     padding-left: 0.3rem;
+}
+
+.margin-top {
+    margin-top: 2rem !important;
 }
 
 /* Product details page */
@@ -185,10 +213,6 @@ ul {
 .review-container {
     font-family: 'Montserrat', sans-serif;
     overflow: scroll;
-}
-
-.bg-color-reviews {
-    background-color: #f9f7f4;
 }
 
 /* Shopping bag */
@@ -298,6 +322,11 @@ ul {
 }
 
 /* Footer / Mailchimp */
+footer {
+    background-color: white;
+    padding-top: 4rem;
+}
+
 #mc_embed_signup .button {
     background: rgba(0, 0, 0, 0.557) !important;
 }
@@ -331,14 +360,26 @@ ul {
 }
 
 #privacy {
-    position: relative;
-    top: 7rem;
+    margin-top: 3rem;
+    padding-left: 0.5rem;
+}
+
+#mc_embed_signup .helper_text {
+    background-color: #F1EEE9 !important;
 }
 
 /* Media queries */
 @media (min-width: 576px) {
     .header-margin {
+        margin-top: 9rem;
+    }
+
+    .header-margin2 {
         margin-top: 10rem;
+    }
+
+    .top {
+        top: 11px;
     }
 
     .hero-image {
@@ -394,10 +435,14 @@ ul {
     }
 
     .top {
-        top: 14px;
+        top: 13px;
     }
 
     .header-margin {
+        margin-top: 10rem;
+    }
+
+    .header-margin2 {
         margin-top: 11rem;
     }
 

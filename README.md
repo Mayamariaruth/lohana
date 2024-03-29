@@ -320,7 +320,7 @@ As a result, I'm only displaying the wireframes for the critical pages below. De
 ![ERD](docs/images/erd.png)
 
 ### Color scheme
-I adapted the colors on the site to my hero image so it would look more cohesive across the site and the colors are also very Caribbean-themed.
+I wanted a simple and elegant color scheme to match the theme of the site. After creating a basic logo, I decided to use the 
 I generated the colors from the hero image on [Coolors](https://coolors.co/).
 
 I utilized the Contrast grid by Eightshapes to test my color combos so the colors complied with the highest accessibility.
@@ -328,10 +328,9 @@ I utilized the Contrast grid by Eightshapes to test my color combos so the color
 ![Color](docs/images/eightshapes.png)
 
 ### Typography
-I used three different fonts across the page:
- * Protest Riot, for the title and landing page headings.
- * Playfair Display, for most of the content on the site.
- * Dancing script, for the hero image quote.
+I used two different fonts across the page:
+ * Noto Serif, for most texts on the site.
+ * Montserrat, for the reviews to separate them from the rest of the text on the site.
 
 The fonts were sourced from Google Fonts.
 
@@ -344,8 +343,6 @@ I decided not to use sprints in this project due to it being more of a team logi
 Even though I worked on this project alone, using Agile principles helped me track progress effectively and ensure future maintenance.
 
 ## Features 
-
-
 
 ### Navigation
 - 
@@ -368,6 +365,11 @@ Even though I worked on this project alone, using Agile principles helped me tra
 - 
 
 ![Hero image]()
+
+### Footer
+- 
+
+![Footer]()
 
 ### AllAuth
 

@@ -25,9 +25,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Reddit+Mono:wght@200..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <!-- Mailchimp -->
     <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
     {% endblock %}
@@ -56,16 +54,16 @@
 </head>
 
 <body>
-    <header class="container-fluid fixed-top bg-color pr-2">
+    <header class="container-fluid fixed-top box-shadow pr-2">
         <div id="delivery" class="row text-center">
             <div class="col w-100">
-                <p class="my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</p>
+                <p class="my-2">Free delivery on orders over ${{ free_delivery_threshold }}!</p>
             </div>
         </div>
         <nav class="navbar p-0">
             <!-- Logo -->
             <div class="">
-                <a href="{% url 'home' %}">
+                <a href="{% url 'home' %}" class="text-uppercase">
                     <img src="{% static 'images/header.png' %}" alt="Lohana logo image" id="logo">
                 </a>
             </div>
@@ -81,10 +79,10 @@
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="searchDropdown">
                         <form method="GET" action="{% url 'products' %}" class="p-1 px-3">
                             <div class="form-group">
-                                <input class="form-control border border-black rounded-0 font-size" type="text" name="q"
+                                <input class="form-control border font-size" type="text" name="q"
                                     placeholder="Search our site">
                             </div>
-                            <button class="btn border shop-btn" type="submit">Search</button>
+                            <button class="btn border add-btn" type="submit">Search</button>
                         </form>
                     </div>
                 </div>
@@ -114,21 +112,21 @@
                             <a class="nav-link p-0" href="#" id="user-options" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
                                 <div class="pr-sm-2 pr-lg-4 top">
-                                    <p class="text-dark font-size">My Account</p>
+                                    <p class="btn p-0 font-size">My Account</p>
                                 </div>
                             </a>
                             <div class="dropdown-menu font-size" aria-labelledby="user-options">
                                 {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
-                                <a href="{% url 'add_product' %}" class="dropdown-item border-bottom">Add Product</a>
+                                <a href="{% url 'add_product' %}" class="dropdown-item">Add Product</a>
                                 {% endif %}
                                 {% if not request.user.is_superuser %}
-                                <a href="{% url 'profile' %}" class="dropdown-item border-bottom">My Profile</a>
+                                <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                                 {% endif %}
-                                <a href="{% url 'account_logout' %}" class="dropdown-item border-bottom">Logout</a>
+                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                                 {% else %}
-                                <a href="{% url 'account_signup' %}" class="dropdown-item border-bottom">Register</a>
-                                <a href="{% url 'account_login' %}" class="dropdown-item border-bottom">Login</a>
+                                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
                                 {% endif %}
                                 <a href="{% url 'contact' %}" class="dropdown-item">Contact Us</a>
                             </div>
@@ -179,7 +177,7 @@
     {% endblock %}
 
     <!-- Footer -->
-    <footer class="container-fluid main-content">
+    <footer class="container-fluid bg-color">
         <div class="row text-center">
             <div class="col-12 col-md-6 margin-b">
                 <h2 class="text-uppercase">Newsletter</h2>
@@ -227,9 +225,9 @@
                     <i class="fab fa-facebook-square"></i>
                     Follow us on Facebook!</a>
             </div>
-        </div>
-        <div id="privacy">
-            <a href="https://www.termsfeed.com/live/1aa8b294-b8fa-463a-9dc5-0f295ca0eec9" target="_blank" rel="noopener">Privacy Policy</a>
+            <div id="privacy">
+                <a href="https://www.termsfeed.com/live/1aa8b294-b8fa-463a-9dc5-0f295ca0eec9" target="_blank" rel="noopener">Privacy Policy</a>
+            </div>
         </div>
     </footer>
 

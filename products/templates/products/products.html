@@ -12,12 +12,12 @@
                 <h1 class="mt-2 mb-4">{{ title }}</h1>
                 {% if title == 'Products' %}
                     {% for c in current_categories %}
-                        <a class="c-name p-2 border mr-2" href="{% url 'products' %}?category={{ c.name }}">
+                        <a class="c-name p-2 shop-btn mr-1" href="{% url 'products' %}?category={{ c.name }}">
                             <span>{{ c.name|title }}</span>
                         </a>
                     {% endfor %}
                 {% endif %}
-                <hr>
+                <hr class="margin-top">
             </div>
         </div>
         <!-- Sorting box -->
@@ -25,7 +25,7 @@
             <div class="col-12 col-md-6 my-auto d-flex justify-content-center justify-content-md-end">
                 <div class="w-50">
                     <select id="sort-selector"
-                        class="custom-select custom-select-sm rounded-0 border border-{% if sort_by %}info{% else %}black{% endif %}">
+                        class="custom-select custom-select-sm rounded-0 border border-{% if sort_by %}info{% else %}secondary{% endif %}">
                         <option value="reset">Sort by...</option>
                         <option value="name_asc">Name (A-Z)</option>
                         <option value="name_desc">Name (Z-A)</option>
@@ -39,7 +39,7 @@
                 </div>
             </div>
             <div class="col-12 col-md-6 order-md-first">
-                <p class="text-muted mt-2 text-center text-md-left">
+                <p class="mt-3 text-center text-md-left">
                     <span class="small"><a href="{% url 'products' %}">All Products</a> | </span>
                     {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
                 </p>
@@ -77,7 +77,7 @@
                                     {% if request.user.is_authenticated %}
                                         {% if not request.user.is_superuser %}
                                             <div>
-                                                <button class="wishlist-button btn shop-btn border" data-product-id="{{ product.id }}">
+                                                <button class="wishlist-button btn shop-btn" data-product-id="{{ product.id }}">
                                                     Add to wishlist
                                                     <i class="fa-solid fa-heart heart-red"></i>
                                                 </button>

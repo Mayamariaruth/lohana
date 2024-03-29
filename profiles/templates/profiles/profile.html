@@ -218,9 +218,12 @@
     </script>
     <!-- Wishlist button -->
     <script type="text/javascript">
-        $('.wishlist-button').click(function() {
-            var productId = $(this).data('product-id');
-            $.post('profile/add_to_wishlist/', {'product_id': productId, 'csrfmiddlewaretoken': '{{ csrf_token }}'})
+        $(document).on('click', '.wishlist-button', function() {
+            var button = $(this);
+            var productId = button.data('product-id');
+            var url = '/profile/add_to_wishlist/';
+            
+            $.post(url, {'product_id': productId, 'csrfmiddlewaretoken': '{{ csrf_token }}'})
             .done(function(response) {
                 if (response.success) {
                     alert(response.message);
