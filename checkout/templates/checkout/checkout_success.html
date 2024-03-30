@@ -17,14 +17,18 @@
             <p>A confirmation email has been sent to <strong>{{ order.email }}</strong>, make sure to double check your
                 spam folder if you cannot find the email.</p>
             <p class="mt-2">Please contact us if anything isn't correct with your order information below!</p>
-            <a href="{% url 'products' %}" class="btn btn-lg bg-btn shop-btn mt-3 px-3 py-2">
-                <span>Continue Shopping</span>
-            </a>
-            {% if from_profile %}
-                <a href="{% url 'profile' %}" class="btn btn-lg bg-btn shop-btn mb-5">
-                    <span>Go back</span>
+            <div>
+                <a href="{% url 'products' %}" class="btn btn-lg add-btn mt-3 px-5 py-2">
+                    <span>Contact Us</span>
                 </a>
-            {% endif %}
+            </div>
+            <div>
+                {% if from_profile %}
+                    <a href="{% url 'profile' %}" class="btn btn-lg shop-btn mb-5 mt-2 px-5 py-2">
+                        <span>Go back</span>
+                    </a>
+                {% endif %}
+            </div>
         </div>
     </div>
     <div class="row mb-5 px-md-5 mx-lg-5">

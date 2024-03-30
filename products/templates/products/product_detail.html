@@ -91,7 +91,7 @@
             <p class="mb-2 ml-1 detail-title">Reviews</p>
             <hr>
             <div class="row">
-                <div class="col-12 col-md-6 review-container mt-2">
+                <div class="col-12 col-md-6 review-container mt-2 px-4">
                 {% if reviews %}
                     <p class="small mb-4">{{ reviews|length }} Reviews</p>
                 {% else %}
@@ -104,7 +104,7 @@
                     </div>
                 {% endfor %}
                 </div>
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-6 px-5">
                     <p class="mt-md-2 mt-5 text-center product-name">Leave a review here!</p>
                     <form method="post" class="form mt-4">
                         {% csrf_token %}

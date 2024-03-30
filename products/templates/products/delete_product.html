@@ -8,30 +8,32 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid">
+<div class="container-fluid text-center main-content">
     <div class="row">
         <div class="col">
             <h1>Delete Product</h1>
             <hr>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-6 mt-2">
-            <p class="mb-4">Are you sure you want to delete <strong>{{ product.name }}</strong>?</p>
+    <div class="row mb-5">
+        <div class="col mt-2">
+            <p class="mb-4 product-name">Are you sure you want to delete <u><mark>{{ product.name }}</mark></u>?</p>
             <form method="post" action="{% url 'delete_product' product.id %}">
                 {% csrf_token %}
-                <button type="submit" class="btn btn-danger">Delete</button>
-                <a href="{% url 'product_detail' product.id %}" class="btn btn-secondary">Cancel</a>
+                <button type="submit" class="btn btn-lg px-5 py-2 btn-danger">Delete</button>
+                <a href="{% url 'product_detail' product.id %}" class="btn btn-secondary btn-lg px-5 py-2">Cancel</a>
             </form>
         </div>
-        <div class="col-md-6">
+    </div>
+    <div class="row">
+        <div class="col">
             {% if product.image %}
                 <a href="{{ product.image.url }}" target="_blank">
-                    <img class="img-fluid w-75" src="{{ product.image.url }}" alt="{{ product.name }}">
+                    <img class="img-fluid w-50" src="{{ product.image.url }}" alt="{{ product.name }}">
                 </a>
             {% else %}
-                <a href="">
-                    <img class="img-fluid w-75" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                <a href="{{ MEDIA_URL }}noimage.png">
+                    <img class="img-fluid w-50" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                 </a>
             {% endif %}
         </div>

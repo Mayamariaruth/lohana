@@ -102,38 +102,40 @@
             <!-- Order history -->
             <div class="tab-pane fade" id="order-history" role="tabpanel" aria-labelledby="order-history-tab">
                 {% if orders %}
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Date</th>
-                                <th>Order Number</th>
-                                <th>Items</th>
-                                <th>Order Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for order in orders %}
+                    <div class="main-content mt-4">
+                        <table class="table">
+                            <thead>
                                 <tr>
-                                    <td>{{ order.date }}</td>
-                                    <td>
-                                        <a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number }}">
-                                            {{ order.order_number }}
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <ul class="list-unstyled">
-                                            {% for item in order.lineitems.all %}
-                                            <li>
-                                                {{ item.product.name }} x {{ item.quantity }}
-                                            </li>
-                                            {% endfor %}
-                                        </ul>
-                                    </td>
-                                    <td>${{ order.grand_total }}</td>
+                                    <th>Date</th>
+                                    <th>Order Number</th>
+                                    <th>Items</th>
+                                    <th>Order Total</th>
                                 </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                {% for order in orders %}
+                                    <tr>
+                                        <td>{{ order.date }}</td>
+                                        <td>
+                                            <a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number }}">
+                                                {{ order.order_number }}
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <ul class="list-unstyled">
+                                                {% for item in order.lineitems.all %}
+                                                <li>
+                                                    {{ item.product.name }} x {{ item.quantity }}
+                                                </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </td>
+                                        <td>${{ order.grand_total }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
                 {% else %}
                     <div class="main-content">
                         <p class="mt-5 ml-2 product-name">You have no orders.</p>

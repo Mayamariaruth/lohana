@@ -89,6 +89,14 @@ TEMPLATES = [
     },
 ]
 
+# Summernote editor styling
+SUMMERNOTE_CONFIG = {
+    'iframe': True,
+
+    'summernote': {
+        'width': '100%',
+    }
+}
 
 AUTHENTICATION_BACKENDS = (
     # Needed to login by username in Django admin, regardless of `allauth`

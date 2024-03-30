@@ -8,19 +8,25 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid">
+<div class="container-fluid d-flex flex-column mb-5">
     <div class="row">
-        <div class="col">
+        <div class="col text-center">
             <h1>Add Product</h1>
+            <p class="mt-4">Add new products here with as much details as possible before submitting.</p>
+            <p>The new product will immediately be uploaded to the site.</p>
             <hr>
         </div>
     </div>
-    <div>
-        <form method="POST" action="{% url 'add_product' %}" class="form w-50 ml-4" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ form|crispy }}
-            <button class="btn border mb-5 mt-3" type="submit">Add Product</button>
-        </form>
+    <div class="row px-5">
+        <div class="col text-left px-5">
+            <form method="POST" action="{% url 'add_product' %}" class="form" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <div class="text-center">
+                    <button class="btn btn-lg mb-3 px-5 py2 add-btn mt-3 contact-btn" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 {% endblock %}

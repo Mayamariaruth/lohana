@@ -13,6 +13,10 @@ h1 {
     font-weight: 400;
 }
 
+note-editor {
+    width: auto;
+}
+
 /* Header */
 header {
     background-color: #F1EEE9;
@@ -59,10 +63,6 @@ ul {
 .top {
     position: relative;
     top: 8px;
-}
-
-.header-margin {
-    margin-top: 8rem;
 }
 
 .header-margin2 {
@@ -134,7 +134,6 @@ ul {
 }
 
 .c-name:hover,
-.top-btn:hover,
 .bg-btn:hover,
 .shop-btn:hover {
     background: rgba(0, 0, 0, 0.557);
@@ -371,10 +370,6 @@ footer {
 
 /* Media queries */
 @media (min-width: 576px) {
-    .header-margin {
-        margin-top: 9rem;
-    }
-
     .header-margin2 {
         margin-top: 10rem;
     }
@@ -462,10 +457,6 @@ footer {
 
     .top {
         top: 13px;
-    }
-
-    .header-margin {
-        margin-top: 10rem;
     }
 
     .header-margin2 {
