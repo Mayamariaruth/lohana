@@ -316,7 +316,7 @@ ul {
 }
 
 /* Signup/Login */
-#id_email, 
+p #id_email, 
 #id_email2,
 #id_username,
 #id_password1,
@@ -335,15 +335,14 @@ footer {
 }
 
 #mc_embed_signup .button {
-    background-color: white !important;
-    color: black !important;
-    border: solid 1px black !important;
+    background: rgba(0, 0, 0, 0.557) !important;
+    color: white !important;
     padding: 1rem 1.4rem;
     line-height: 1px;
 }
 
 #mc_embed_signup .button:hover {
-    background: rgba(0, 0, 0, 0.557) !important;
+    background: rgba(0, 0, 0, 0.7) !important;
     color: white !important;
 }
 
@@ -363,16 +362,6 @@ footer {
 
 .contact-home {
     font-size: 1.3rem;
-    position: relative;
-    left: 5.8rem;
-    margin-top: 1rem;
-    padding: 4px 30px;
-}
-
-.fb-btn {
-    position: relative;
-    top: 4.5rem;
-    right: 5.5rem;
 }
 
 #privacy {

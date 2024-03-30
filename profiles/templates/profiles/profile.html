@@ -135,7 +135,13 @@
                         </tbody>
                     </table>
                 {% else %}
-                    <p class="mt-4 ml-4">You have no orders.</p>
+                    <div class="main-content">
+                        <p class="mt-5 ml-2 product-name">You have no orders.</p>
+                        <p class="mt-5 ml-2">Find our products here and make a purchase!</p>
+                        <a href="{% url 'products' %}" class="btn py-2 px-4 mb-3 shop-btn">
+                            <span class="text-uppercase">Continue Shopping</span>
+                        </a>
+                    </div>
                 {% endif %}
             </div>
             <!-- Wishlist -->
@@ -161,13 +167,13 @@
                     <div class="col-12 col-md-6 order-md-first">
                         <p class="mt-2 text-center text-md-left">
                             <span class="small"><a href="{% url 'products' %}">All Products</a> | </span>
-                            {{ wishlist_items|length }}
+                            {{ wishlist_items|length }} Products
                         </p>
                     </div>
                 </div>
                 <!-- Products -->   
-                <div class="row mt-4">
-                    {% if wishlist_items %}
+                <div class="row mt-4 text-left">
+                    {% if item in wishlist_items %}
                         {% for item in wishlist_items %}
                             <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                                 <div class="card mb-5">
@@ -180,11 +186,11 @@
                                             <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
                                         </a>
                                     {% endif %}
-                                    <div class="card-body">
+                                    <div class="card-body px-1">
                                         <p class="product-name">{{ item.product.name }}</p>
                                         <p>{{ item.product.introduction }}</p>
                                     </div>
-                                    <div class="card-footer">
+                                    <div class="card-footer px-1">
                                         <div class="row">
                                             <div class="col">
                                                 <p class="lead text-left font-weight-bold mb-1">${{ item.product.price }}</p>
@@ -212,7 +218,9 @@
                             </div>
                         {% endfor %}
                     {% else %}
-                    <p class="mb-5">You have no products in your wishlist.</p>
+                    <div class="main-content">
+                        <p class="mb-5 ml-3 product-name">You have no products in your wishlist.</p>
+                    </div>
                     {% endif %}
                 </div>
             </div>
