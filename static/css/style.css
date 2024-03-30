@@ -2,6 +2,7 @@
 html, body {
     max-width: 1200px;
     font-family: 'Playfair Display', sans-serif;
+    margin: auto;
 }
 
 .bg-color {
@@ -64,16 +65,8 @@ ul {
     margin-top: 8rem;
 }
 
-.header-margin1 {
-    margin-top: 8rem;
-}
-
 .header-margin2 {
     margin-top: 9rem;
-}
-
-.header-margin3 {
-    margin-top: 11rem;
 }
 
 .collapse:not(.show) {

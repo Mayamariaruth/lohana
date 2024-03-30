@@ -174,27 +174,22 @@ def delete_product(request, product_id):
 
 @login_required
 def add_to_wishlist(request):
-    if request.is_ajax() and request.method == 'POST':
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest' and request.method == 'POST':
         try:
             product_id = request.POST.get('product_id')
             product = get_object_or_404(Product, id=product_id)
 
             if WishlistItem.objects.filter(user=request.user, product=product).exists():
                 WishlistItem.objects.filter(user=request.user, product=product).delete()
-                messages.success(request, 'Product removed from wishlist successfully!')
                 message = 'Product removed from wishlist successfully!'
             else:
                 WishlistItem.objects.create(user=request.user, product=product)
-                messages.success(request, 'Product added to wishlist successfully!')
                 message = 'Product added to wishlist successfully!'
 
             return JsonResponse({'success': True, 'message': message})
         except Product.DoesNotExist:
-            messages.error(request, 'Product does not exist.')
             return JsonResponse({'success': False, 'message': 'Product does not exist.'})
         except Exception as e:
-            messages.error(request, 'Failed to add/remove product from wishlist.')
             return JsonResponse({'success': False, 'message': 'Failed to add/remove product from wishlist. Error: {}'.format(str(e))})
     else:
-        messages.error(request, 'Invalid request.')
         return JsonResponse({'success': False, 'message': 'Invalid request.'})

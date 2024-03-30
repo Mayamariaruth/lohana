@@ -148,20 +148,18 @@
 </script>
 <!-- Wishlist button -->
 <script type="text/javascript">
-    $(document).ready(function() {
-        $('.wishlist-button').click(function() {
-            var productId = $(this).data('product-id');
-            $.post('add_to_wishlist/', {'product_id': productId, 'csrfmiddlewaretoken': '{{ csrf_token }}'})
-            .done(function(response) {
-                if (response.success) {
-                    alert(response.message);
-                } else {
-                    alert(response.message);
-                }
-            })
-            .fail(function() {
-                alert('Failed to communicate with the server.');
-            });
+    $('.wishlist-button').click(function() {
+        var productId = $(this).data('product-id');
+        $.post('add_to_wishlist/', {'product_id': productId, 'csrfmiddlewaretoken': '{{ csrf_token }}'})
+        .done(function(response) {
+            if (response.success) {
+                alert(response.message);
+            } else {
+                alert(response.message);
+            }
+        })
+        .fail(function() {
+            alert('Failed to communicate with the server.');
         });
     });
 </script>
