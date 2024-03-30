@@ -4,7 +4,7 @@
 
 
 
-Link to the live site here - [Lohana]()
+Link to the live site here - [Lohana](https://lohana-df1411a79e72.herokuapp.com/)
 
 ![Responsive Mockup]()
 
@@ -66,111 +66,6 @@ As a site user, I can navigate the site content from the landing page so that I 
     * Have buttons in each section to access the different pages
 
 
-As a site user, I can register an account so that I can make a table booking
-
-- Acceptance Criteria
-    * Have a page for users to register an account
-
-    * They use their details to register
-
-    * Details are authenticated
-
-
-As a site user/admin, I can log in and log out of my account so that I can access the booking system
-
-- Acceptance Criteria
-    * Have a login page
-
-    * They enter their login details
-
-    * Login details are authenticated
-
-    * They are taken to their account profile and can access the booking form
-
-
-As a admin user, I can log in to an admin account so that I can confirm/cancel requests and see all current/previous bookings
-
-- Acceptance Criteria
-    * Have an admin login with an admin panel
-
-    * See all booking requests, confirmed bookings and canceled bookings
-
-    * Ability to filter all bookings based on status and date
-
-
-As a site user, I can access my account so that I can edit my details or delete my account
-
-- Acceptance Criteria
-    * Have a profile dashboard
-
-    * See my account details
-
-    * Edit my account details
-
-    * Delete my account
-
-
-As a site user, I can send a booking request with all my details so that I can book a table with all the necessary details
-
-- Acceptance Criteria
-    * Booking request form includes my personal details, time, date and guest options
-
-    * Form is prepopulated with my account details
-
-    * Special request section
-
-
-As a site user, I can book a table based on the requirements so that I properly book a table and have a high chance of having it approved
-
-- Acceptance Criteria 
-
-    * There is enough information on the page so I understand the form requirements
-
-    * I get an error if I've chosen an incorrect date, time or guest amount
-
-    * I get an error if I've already made an identical booking
-
-
-As a site user, I can edit/cancel my booking requests so that I can customize my requests and have control over my bookings
-
-- Acceptance Criteria
-    * See all my requests on my profile
-
-    * Edit the requests
-
-    * Cancel the requests
-
-
-As a admin user, I can access each booking so that I can cancel/confirm the requests and see special requests/contact details for the user
-
-- Acceptance Criteria
-    * Admin access to every booking
-
-    * Cancel/confirm requests
-
-    * Ability to see all customer details and booking request details in each booking
-
-
-As a site user, I can access the menu for the restaurant so that I can see what food they have
-
-- Acceptance Criteria
-    * Link to the menu from the landing page and navigation bar
-
-    * A page with all menu items and prices
-
-    * Clear headings and descriptive names of each menu item
-
-
-As a site user/admin, I can receive confirmations on my actions on the site so that I know the actions have been fulfilled
-
-- Acceptance Criteria
-    * Confirmation when I've sent a booking request
-
-    * Confirmation when I've edited/deleted my account
-
-    * Confirmation when I've edited/deleted my requests
-
-
 #### Dropped
 As an admin user, I can access the menu page so that I can edit/delete menu items
 
@@ -182,95 +77,41 @@ As an admin user, I can access the menu page so that I can edit/delete menu item
     * Delete menu items
 
 
-As a site user, I can access an About page for the restaurant so that I can get more information about the restaurant
-
-- Acceptance Criteria
-    * Page accessible from the navigation bar and landing page
-
-    * Displaying the restaurant's story and details about the staff and food
-
-    * Images of the restaurant and the Caribbean
-
-
-As an admin user, I can edit the About page so that I can control what information is displayed
-
-- Acceptance Criteria
-    * Admin access to the About page
-
-    * Ability to edit content
-
-    * Add/delete images
-
-
-As a site user, I can contact the restaurant through the site so that I can easier get into contact with the restaurant
-
-- Acceptance Criteria
-    * A contact page accessible from the navigation bar
-
-    * A form to fill out with my message and details
-
-    * Pre-populated user details for logged in users
-
-
-As a site user, I can access other people's reviews and add my own reviews on the site so that I can see what people think about the restaurant and add my own opinion to the mix
-
-- Acceptance Criteria
-    * Reviews section on the landing page
-
-    * Other people's reviews are displayed
-
-    * I can add my own reviews
-
-    * I can edit/delete my own reviews
-
-
 ### Site aims 
-The primary goal of the website is to increase the visibility of Calima online and to streamline online reservations. 
 
-By having a strong online presence, we aim to attract more customers, especially tourists and locals searching for unique Caribbean dining experiences where they would never expect it!
-By having a platform for engaging with customers beyond their dining experience and enabling efficient table bookings helps Calima better manage resources and provide a seamless experience for both staff and guests.
-
-The website should reflect the ambiance of Calima and through high-quality visuals and user-friendly design, we aim to convey the restaurant's personality genuinely.
 
 ### Scope
 
 The following is a prioritized list outlining the scope of the project. These priorities were determined considering the project's limited time frame and the key features essential for its aim (MVP).
 
-#### 1. Book Table form
+#### 1. 
 
-* Login functionality: Login authentication for users to access the booking system.
-* Booking validation: Ensure no double bookings and restrict bookings to available times.
+* 
 
-#### 2. User profile
+#### 2. 
 
-* User registration: Allow users to create accounts with personal details.
-* Profile management: Enable users to update their account information.
-* User bookings management: View, modify, or cancel bookings.
+* 
 
-#### 3. Admin Panel
+#### 3. 
 
-* Admin authentication: Secure login for administrators with appropriate permissions.
-* Booking management: Full control over bookings, including adding, editing, and canceling bookings.
-* User management: Ability to view and manage user accounts.
+* 
 
-#### 4. Navigation Bar
 
-* Essential links: Home, Menu, Book, Register, Login.
-* Essential links based on authentication: User Profile, Admin Panel.
+#### 4. 
 
-#### 5. Footer
+* 
 
-* Important information: Location, opening hours, contact email and social media links.
+#### 5. 
 
-#### 6. Landing Page
+* 
 
-* Inspiring look: Showcase the restaurant's ambiance through high-quality visuals and user-friendly design.
-* Description of Restaurant: Brief description of the restaurant.
-* Links: Sections with links to the menu and booking form.
+#### 6. 
 
-#### 7. Menu
+* 
 
-* Menu: Provide a comprehensive menu with categories and pricing.
+#### 7. 
+
+* 
 
 ### Wireframes
 
