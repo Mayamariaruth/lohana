@@ -402,20 +402,17 @@ The lower scores were for two main reasons:
 ## Wave accessibility evaluation
 
 I also used the Wave evaluation tool to make sure I covered all my bases. 
-
 The evaluation is free from errors on all pages.
 
-![Wave evaluation](docs/images/wave.png)
+![Wave evaluation]()
 
 ## Bugs
 
 See more feature related bugs in the [user story section](#user-stories).
 
-- New CSS styling was not displaying properly in deployed project after changes.
-    - Manually updated the staticfiles directory with "python3 manage.py collectstatic".
-- Project deployment failed due to database error.
-    - Added the elephantSQL instance link in project Config Vars section.
+- 
+    - 
 
 ### Unfixed Bugs
-- When there are too many bookings displayed on the user's profile, there is no space between the white box containing the bookings and the footer. However, the actual content remains visible. 
-I chose not to address this issue because the staff will routinely clear all unnecessary bookings from the system on a weekly basis. Additionally, it's unlikely that users will have an excessive number of bookings simultaneously.
+- This might be more of an unfixed feature but when the logged in user adds a product to their wishlist, a JSON response message pops up instead of a toast message. I tried adding the toast messages too but they did not display until I reloaded the page so given the time constraint of the deadline, I decided to remove them completely and keep the JSON messages.
+This would of course be one of the first things I would change with more time, so as to keep the messages cohesive across the site.

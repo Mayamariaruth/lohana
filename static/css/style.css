@@ -1,6 +1,6 @@
 /* General styles */
 html, body {
-    max-width: 2000px;
+    max-width: 1200px;
     font-family: 'Playfair Display', sans-serif;
 }
 
@@ -18,7 +18,7 @@ header {
 }
 
 .box-shadow {
-    box-shadow: 0 3px 4px -2px rgba(0,0,0,0.5);
+    box-shadow: 0 3px 4px -2px rgba(0, 0, 0, 0.5);
 }
 
 #logo {
@@ -101,9 +101,9 @@ ul {
 }
 
 .hero-content {
-    position: absolute;
-    top: 100%;
-    left: 30%;
+    position: relative;
+    bottom: 12rem;
+    left: 25%;
     transform: translate(-40%, -50%);
 }
 
@@ -301,7 +301,7 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgb(182, 151, 135, 0.85);
+    background: rgba(182, 151, 135, 0.851);
     z-index: 9999;
 }
 
@@ -320,6 +320,19 @@ ul {
 
 .contact-btn {
     font-size: 1.3rem;
+}
+
+/* Signup/Login */
+#id_email, 
+#id_email2,
+#id_username,
+#id_password1,
+#id_password2 {
+    width: 50%;
+}
+
+form li {
+    list-style-type: none;
 }
 
 /* Footer / Mailchimp */
@@ -393,6 +406,19 @@ footer {
         margin-left: 3rem;
     }
 
+    .hero-content {
+        bottom: 15rem;
+        left: 14%;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-content a {
+        font-size: 1.3rem;
+    }
+
     #logo {
         height: 90px;
         width: 260px;
@@ -414,8 +440,16 @@ footer {
         margin-left: 10rem;
     }
 
+    .hero-content {
+        left: 20%;
+    }
+
     .hero-content h1 {
-        font-size: 2.5rem;
+        font-size: 2.3rem;
+    }
+
+    .hero-content a {
+        font-size: 1.5rem;
     }
 
     .margin-b {
@@ -466,14 +500,18 @@ footer {
     }
 
     .hero-content {
-        top: 92%;
-        left: 26%;
+        left: 34%;
+        bottom: 16rem;
     }
 
     .hero-content h1 {
         font-size: 3rem;
         margin-bottom: 2rem;
         font-weight: 300;
+    }
+
+    .hero-content a {
+        font-size: 1.6rem;
     }
 
     .margin-top {
@@ -500,5 +538,21 @@ footer {
 
     .fb-btn {
         right: 5.7rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .hero-content {
+        bottom: 17rem;
+        left: 33%;
+        
+    }
+    .hero-content h1 {
+        font-size: 3.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-content a {
+        font-size: 1.8rem;
     }
 }

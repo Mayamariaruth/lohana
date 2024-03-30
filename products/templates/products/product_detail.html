@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_title %} - Product Details{% endblock %}
+
 {% block page_header %}
 <div class="header-margin2"></div>
 {% endblock %}
@@ -39,16 +41,6 @@
                     <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
                 </small>
             </div>
-            {% endif %}
-            {% if request.user.is_authenticated %}
-                {% if not request.user.is_superuser %}
-                    <div class="mb-3 mt-4">
-                        <button class="wishlist-button btn shop-btn" data-product-id="{{ product.id }}">
-                            Add to wishlist
-                            <i class="fa-solid fa-heart heart-red"></i>
-                        </button>
-                    </div>
-                {% endif %}
             {% endif %}
             {% if product.introduction %}
             <p class="mb-5">{{ product.introduction }}</p>
@@ -131,25 +123,4 @@
 {% block postloadjs %}
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
-<script type="text/javascript">
-    $(document).ready(function() {
-        $(document).on('click', '.wishlist-button', function() {
-            var button = $(this);
-            var productId = button.data('product-id');
-            var url = 'add_to_wishlist/';
-            
-            $.post(url, {'product_id': productId, 'csrfmiddlewaretoken': '{{ csrf_token }}'})
-            .done(function(response) {
-                if (response.success) {
-                    alert(response.message);
-                } else {
-                    alert(response.message);
-                }
-            })
-            .fail(function() {
-                alert('Failed to communicate with the server.');
-            });
-        });
-    });
-</script>
 {% endblock %}

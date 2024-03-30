@@ -115,9 +115,6 @@ The following is a prioritized list outlining the scope of the project. These pr
 
 ### Wireframes
 
-All pages on the site, except for the landing page, feature a consistent design style, characterized by a shared background image and a clean white text box containing the content. 
-As a result, I'm only displaying the wireframes for the critical pages below. Despite minor differences, the overall appearance turned out pretty identical.
-
 - **Landing page**
 ---
 ![Landing page desktop](docs/wireframes/land-desk.png)
@@ -145,20 +142,15 @@ As a result, I'm only displaying the wireframes for the critical pages below. De
 ![Menu mobile](docs/wireframes/menu-mob.png)
 
 
+
+
 ### Database schema
  I used Django's built-in User Model for the user accounts and I created three custom models for reviews, wishlist and a contact form (the rest were based off the walkthrough project Boutique Ado). 
- 
- 
 
-![ERD]()
+![ERD](docs/erd.png)
 
 ### Color scheme
-I wanted a simple and elegant color scheme to match the theme of the site. 
-I generated the colors from the logo on [Coolors](https://coolors.co/).
-
-I utilized the Contrast grid by Eightshapes to test my color combos so the colors complied with the highest accessibility.
-
-![Color]()
+I wanted a simple and elegant color scheme to match the feel of a jewelry e-commerce website. I started by creating a unique logo and I then generated the colors from the logo on [Coolors](https://coolors.co/).
 
 ### Typography
 I used two different fonts across the page:
@@ -166,6 +158,74 @@ I used two different fonts across the page:
  * Montserrat, for the reviews to separate them from the rest of the text on the site.
 
 The fonts were sourced from Google Fonts.
+
+
+
+
+## Business Model
+
+
+
+
+## SEO
+I utilized [Moz](https://moz.com/explorer) and Google to research valuable keywords for Lohana and below is the list of long-tail and short-tail keywords that I included in the meta tags.
+
+[Keywords]()
+
+Even though keywords relating to physical locations such as 'store', 'near me', and so on are highly searched, Lohana does not have a physical store so I opted not to use those so as to not be misleading.
+
+I added extra titles on every page, as well as added a sitemap file and a robots.txt file to improve the SEO.
+
+
+
+
+## Marketing Strategy
+### Brand Identity
+
+Identify what sets Lohana apart from other gold jewelry stores. Is it the quality of craftsmanship, unique designs, ethical sourcing, or exceptional customer service?
+Craft a compelling brand story and messaging that resonates with your target audience's values and aspirations.
+
+### Demographic
+
+Conduct market research to understand the demographics, preferences, and purchasing behavior of your target customers. Are they primarily young professionals, fashion enthusiasts, or gift buyers?
+Create detailed buyer personas to represent different segments of your audience, including their needs, motivations, and pain points.
+
+### Competitors
+Analyze your competitors' marketing strategies to identify their strengths, weaknesses, opportunities, and threats. This competitive analysis can provide valuable insights into market trends, customer preferences, and potential gaps in the market that your business can exploit.
+
+
+Some of these brands were also in the top of my keyword search lists when digging into which keywords would work best for SEO.
+
+### Unique Selling Proposition (USP)
+
+Determine what sets your products or services apart from the competition. Your USP should clearly communicate the unique value and benefits that you offer to customers. This can help differentiate your brand and attract customers in a crowded marketplace.
+
+### Goals
+
+Determine specific, measurable goals for your marketing efforts. These could include increasing website traffic, improving conversion rates, growing sales revenue, or expanding brand awareness within your target market.
+Your goals should be specific, measurable, achievable, relevant, and time-bound (SMART). For example, your goals might include increasing brand awareness, driving website traffic, generating leads, or boosting sales.
+
+### Marketing 
+
+Select the most effective marketing channels to reach and engage your target audience. This might include:
+Social Media Marketing: Utilize platforms like Instagram, Facebook, and Pinterest to showcase your jewelry, share user-generated content, run targeted ads, and engage with followers.
+Content Marketing: Create engaging content such as blog posts, tutorials, style guides, and videos that educate and inspire your audience while subtly promoting your products.
+Email Marketing: Build and segment your email list to send personalized promotions, product recommendations, exclusive offers, and updates about new arrivals or sales.
+Influencer Partnerships: Collaborate with fashion influencers, bloggers, or celebrities to showcase your jewelry to their followers and leverage their influence to increase brand visibility.
+Search Engine Optimization (SEO): Optimize your website content and product listings to rank higher in search engine results pages (SERPs) and attract organic traffic from people searching for gold jewelry online.
+Paid Advertising: Invest in pay-per-click (PPC) advertising on platforms like Google Ads or social media channels to target specific keywords, demographics, or interests and drive relevant traffic to your website.
+Execute your marketing tactics effectively across chosen channels. This may involve creating and scheduling social media posts, launching email campaigns, optimizing your website for search engines, running online ads, attending industry events, and other activities.
+
+[Facebook profile](docs/fb-profile.png)
+[Facebook profile](docs/fb-profile1.png)
+
+### Content 
+
+Develop visually appealing and high-quality content that showcases your gold jewelry in the best light. Use professional product photography, lifestyle images, and videos to highlight the craftsmanship, details, and versatility of your pieces.
+Tell stories behind your jewelry designs, share customer testimonials and reviews, and provide styling tips or care instructions to enhance the value proposition and build trust with your audience.
+
+
+
 
 ## Agile
 
@@ -176,7 +236,6 @@ I decided not to use sprints in this project due to it being more of a team logi
 Even though I worked on this project alone, using Agile principles helped me track progress effectively and ensure future maintenance.
 
 ## Features 
-
 ### Navigation
 - 
 
@@ -216,6 +275,7 @@ Even though I worked on this project alone, using Agile principles helped me tra
 ![Logout]()
 
 ### Contact form
+
 - 'POST' contact form for all shoppers to contact the store.
 - All messages displayed in the admin panel.
 
@@ -223,6 +283,7 @@ Even though I worked on this project alone, using Agile principles helped me tra
 
 ### Logged in user
 #### Profile
+
 - User profile only accessible by the logged in user.
 - Three tabs for each section of the page.
 - Delivery details tab with the user's saved delivery details and a form to update the details.
@@ -236,6 +297,7 @@ Even though I worked on this project alone, using Agile principles helped me tra
 ![Profile wishlist]()
 
 ### Logged in admin
+
 #### Add products page
 - 
 
@@ -252,20 +314,22 @@ Even though I worked on this project alone, using Agile principles helped me tra
 ![]()
 
 ### Future features
+
+- Wishlist button on the Products Detail page, this was something I started implementing on this project but had to abandon due to the time I had left until the deadline. 
+I instead focused on making sure the button was functional and displayed on the Products page and Profile page (where the wishlist is displayed), which I decided was the better choice for the site so the user could quickly add the product to their wishlist instead of having to click to another page.
 - Log in page with social accounts login.
 - An About page with more information about the store (admin access to customize the page).
 - Edit/delete account on user profile page.
-- Profile page for the admin to see all contact messages with the senders details.
 
-## Deployment (UPDATE)!!!!!!!
+## Deployment
 
 To deploy the site to Heroku, I went through below steps: 
 - Go to [Heroku](https://heroku.com/) and log into your account.
 - Click "Create new app" on the front page.
-- Give your app a name (every name has to be unique on Heroku so it's ok if you can't name your project the same as on GitHub).
-- Choose your region (USA or Europe) and click "Create app".
+- Give your app a name.
+- Choose your region and click "Create app".
 - You're then taken to the dashboard of your app where you have a navigation bar. Click on the Settings tab and scroll down to "Config Vars".
-- Click "Reveal Config Vars" and input any necessary environment variables (such as your database URL or secret key).
+- Click "Reveal Config Vars" and input any necessary environment variables. In my case due to the use of below [technologies](#technologies), I added my database URL, Cloudinary URL, Gmail details, Stripe keys (including webhook) and project secret key.
 - Go back to the navigation bar and select "Deploy".
 - Scroll down to the "Connect to GitHub" section and click on the Connect button.
 - After allowing Heroku access to GitHub, the "Connect to GitHub" section will allow you to search for the repository you wish to connect.
@@ -273,7 +337,7 @@ To deploy the site to Heroku, I went through below steps:
 - You can now choose automatic deploys (Heroku deploys your app after every GitHub push you make) or manual deploys.
 - After choosing a deployment method, click the deploy button and make sure you deploy from the correct branch.
 
-Live link to the site - [Calima](https://calima-665aec414d74.herokuapp.com/)
+Live link to the site - [Lohana](https://lohana-df1411a79e72.herokuapp.com/)
 
 ### Cloning
 
@@ -286,20 +350,22 @@ I used the cloning method to use the VSCode desktop IDE with GitHub, below are t
 - VSCode will now clone the repository and you can choose to open it in your current window or in a new window.
 
 ## Testing
-
 All the testing for this project can be found in a separate document [here](TESTING.md).
 
 ## Credits 
-
 ### Technologies
 
 - The packages installed for this project can be found in [the requirements.txt](requirements.txt).
 - Django was used as the Python framework.
+- HTML/CSS for the templates and styling.
+- JavaScript/JQuery to manipulate the DOM.
+- Bootstrap 4.4 (as used in the Boutique Ado walkthrough to simplify utilizing that code) to simplify the styling.
 - Django AllAuth was used for the user authentication and register, sign-up and login tasks.
 - ElephantSQL was used for the database during development and in deployment.
 - Bootstrap 5.3.2 was used to style HTML and CSS.
 - Cloudinary was used for media file storage.
 - Whitenoise was used to serve static files.
+- Stripe for handling payments.
 
 ### Code 
 
@@ -309,7 +375,6 @@ Below are links that helped me adapt/build certain features:
 - [How To Create a Scroll Back To Top Button](https://www.w3schools.com/howto/howto_js_scroll_to_top.asp)
 - [Navs](https://getbootstrap.com/docs/4.6/components/navs/#tabs)
 - [Wishlist](https://www.youtube.com/watch?v=kD2vWOZFFcw&ab_channel=SharmaCoder)
-- [Ajax change icon color add/remove wishlist](https://stackoverflow.com/questions/35716745/ajax-change-icon-color-add-remove-wishlist)
 
 ### Content 
 
@@ -322,12 +387,14 @@ Below are links that helped me adapt/build certain features:
 
 - The products, product images and product details were all taken from [Gorjana](https://www.gorjana.com/).
 - The hero image was acquired from [Unsplash](https://unsplash.com/).
-- The color palette was generated with the image on [Coolors](https://coolors.co/).
+- The color palette was generated with the logo on [Coolors](https://coolors.co/).
 - [Am I Responsive](https://ui.dev/amiresponsive) was used to generate the initial image of the ReadME to showcase how the site looks on different screens.
 
-### General references:
+### General references
+
 - [W3Schools](https://www.w3schools.com/)
 - [Stack Overflow](https://stackoverflow.com/)
 - [Geeks for Geeks](https://www.geeksforgeeks.org/)
 - [Bootstrap Documentation](https://getbootstrap.com/)
 - [Django Documentation](https://docs.djangoproject.com/en/3.2/)
+- [Youtube](https://www.youtube.com/)
