@@ -2,23 +2,15 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="header-margin1"></div>
+    <div class="header-margin2"></div>
 {% endblock %}
 
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h1 class="shop-title">The page you are looking for isn't available</h1>
-                <hr>
-            </div>
-        </div>
-        <div class="row h-100">
-            <div class="col-7 col-md-6 my-auto">
-                <a href="{% url 'products' %}" class="btn btn-lg text-uppercase">
-                    <span>Return to site</span>
-                </a>
-            </div>
-        </div>
+    <div class="container text-center w-75 main-content">
+        <h1>The page you are looking for isn't available</h1>
+        <hr>
+        <a href="{% url 'products' %}" class="btn btn-lg add-btn text-uppercase mt-3 mb-5 px-5">
+            <span>Return to site</span>
+        </a>
     </div>
 {% endblock %}
