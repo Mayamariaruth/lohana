@@ -182,10 +182,8 @@ def delete_product(request, product_id):
 
 @login_required
 def add_to_wishlist(request):
-    if request.headers.get(
-        'x-requested-with'
-    ) == 'XMLHttpRequest' and request.method == 'POST':
-        try:
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+        if request.method == 'POST':
             product_id = request.POST.get('product_id')
             product = get_object_or_404(Product, id=product_id)
 
@@ -201,16 +199,10 @@ def add_to_wishlist(request):
                 message = 'Product added to wishlist successfully!'
 
             return JsonResponse({'success': True, 'message': message})
-        except Product.DoesNotExist:
+        else:
             return JsonResponse({
                 'success': False,
-                'message': 'Product does not exist.'
+                'message': 'Failed to add/remove product from wishlist.'
             })
-        except Exception as e:
-            return JsonResponse({
-                'success': False,
-                'message': 'Failed to add/remove product from wishlist. \
-                    Error: {}'.format(str(e))
-                })
     else:
         return JsonResponse({'success': False, 'message': 'Invalid request.'})

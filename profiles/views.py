@@ -14,11 +14,10 @@ def profile(request):
     """
     if request.user.is_superuser:
         messages.error(request, "You are not allowed to access user profiles.")
-        return redirect('home') 
-    
+        return redirect('home')
+
     profile = get_object_or_404(UserProfile, user=request.user)
     wishlist_items = profile.user.wishlist_items.all()
-
 
     if request.method == 'POST':
         form = UserDetailsForm(request.POST, instance=profile)
