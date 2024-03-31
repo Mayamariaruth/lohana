@@ -29,6 +29,9 @@
                 {% endif %}
                 {% endfor %}
                 <div class="text-center">
+                    <a href="{% url 'product_detail' product.id %}" class="btn btn-lg py-2 mr-2 px-4 shop-btn">
+                        <span class="text-uppercase">Go Back</span>
+                    </a>
                     <button class="btn btn-lg mb-3 px-5 py2 add-btn mt-3 contact-btn" type="submit">Update</button>
                 </div>
             </form>
