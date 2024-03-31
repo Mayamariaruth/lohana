@@ -13,7 +13,7 @@ import stripe
 import json
 
 
-# Create your views here.
+# Create your views here
 @require_POST
 def cache_checkout_data(request):
     """

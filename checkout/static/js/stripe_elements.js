@@ -5,6 +5,8 @@
     CSS from here: 
     https://stripe.com/docs/stripe-js
 
+    Code from Boutique Ado walkthrough and Stripe
+
 */
 var stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
 var clientSecret = $('#id_client_secret').text().slice(1, -1);
