@@ -146,7 +146,7 @@
             <div class="main-content">
                 <p class="mt-5 ml-2 product-name">You have no orders.</p>
                 <p class="mt-5 ml-2">Find our products here and make a purchase!</p>
-                <a href="{% url 'products' %}" class="btn py-2 px-4 mb-3 shop-btn">
+                <a href="{% url 'products' %}?category=earrings,necklaces,bracelets" class="btn py-2 px-4 mb-3 shop-btn">
                     <span class="text-uppercase">Continue Shopping</span>
                 </a>
             </div>
@@ -172,7 +172,7 @@
                 </div>
                 <div class="col-12 col-md-6 order-md-first">
                     <p class="mt-2 text-center text-md-left">
-                        <span class="small"><a href="{% url 'products' %}">All Products</a> | </span>
+                        <span class="small"><a href="{% url 'products' %}?category=earrings,necklaces,bracelets">All Products</a> | </span>
                         <span class="wishlist-items-count">{{ wishlist_items|length }} Products</span>
                     </p>
                 </div>

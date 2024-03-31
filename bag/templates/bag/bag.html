@@ -96,7 +96,7 @@
                     </tr>
                     <tr>
                         <td colspan="5" class="text-right">
-                            <a href="{% url 'products' %}" class="btn mb-3 shop-btn px-3 py-2">
+                            <a href="{% url 'products' %}?category=earrings,necklaces,bracelets" class="btn mb-3 shop-btn px-3 py-2">
                                 <span>Continue Shopping</span>
                             </a>
                             <a href="{% url 'checkout' %}" class="btn mb-3 add-btn btn-lg">
@@ -112,7 +112,7 @@
             {% else %}
             <div class="text-center main-content">
                 <p class="product-name">Your shopping bag is empty!</p>
-                <a href="{% url 'products' %}" class="btn bg-btn shop-btn mt-2 px-4 py-2">
+                <a href="{% url 'products' %}?category=earrings,necklaces,bracelets" class="btn bg-btn shop-btn mt-2 px-4 py-2">
                     <span>Continue Shopping</span>
                 </a>
             </div>

@@ -33,42 +33,32 @@ I manually tested this site in multiple ways highlighted below:
 
 |passed | **View all site products so that I can purchase them**
 |:---:|:---|
-|&check;| Can access the site via the deployed URL on the desktop.
-|&check;| Can access the site via the deployed URL on mobile.
-|&check;| Can access the site via the deployed URL on a tablet.
-|&check;| All images and styles are tacked and as expected.
+|&check;| List of all products on the site
+|&check;| Navigation to Products from navigation bar
+|&check;| Navigation to Products from landing page
+|&check;| Products displayed with name, price, image, category and introduction
+|&check;| Able to click on products to get to the Product Details page
+|&check;| Back to top button to simplify page scrolling
+|&check;| Number of products displayed on page
 
 
-As a shopper I can view all site products so that I can purchase them
-
-- Acceptance Criteria
-    * Access the products from the first page or navigation bar
-
-    * All products listed on the page
-
-    * Products listed with price, image and rating
-
-    * Click products for more details and to purchase
+|passed | **View all categories of products so that I can purchase specific items based on my needs**
+|:---:|:---|
+|&check;| All categories highlighted in navigation bar
+|&check;| All categories highlighted on Products page under title
+|&check;| Click each category button/link and see the list of products in that category
+|&check;| Each product has a category tag
+|&check;| Click the category tag and the list of products in that category displays
 
 
-As a shopper I can view all categories of products so that I can purchase specific items based on my needs
-
-- Acceptance Criteria
-    * All categories highlighted on home page and navigation bar
-
-    * See a list of products based on category
-
-    * Able to identify on each product what category it is
-
-
-As a shopper I can view every products details on a separate page so that I can find more information and select them to purchase
-
-- Acceptance Criteria
-    * Click on each product to view the products details
-
-    * Product details including price, rating, description, images and sizes where applicable
-
-    * Able to select quantity to purchase and add it to bag
+|passed | **View every products details on a separate page so that I can find more information and select them to purchase**
+|:---:|:---|
+|&check;| Click on a product from Products page to get to Product Details page
+|&check;| The page contains all details, price, image, name, introduction, category tag and description
+|&check;| Can select quantity between 1-99 of product to add to bag
+|&check;| Add to bag button adds product to the shopping bag
+|&check;| Success message displays shopping bag summary with added products and details
+|&check;| Continue Shopping button
 
 
 #### EPIC - Register and User profile
@@ -82,6 +72,12 @@ As a site user I can create an account so that I can have a personal account
 
     * Have a personal profile
 
+|passed | **View all site products so that I can purchase them**
+|:---:|:---|
+|&check;| List of all products on the site
+|&check;| 
+|&check;| 
+|&check;| 
 
 As a site user I can login/logout out of my account so that I can access my account
 
@@ -92,6 +88,12 @@ As a site user I can login/logout out of my account so that I can access my acco
 
     * Get access to my personal profile
 
+|passed | **View all site products so that I can purchase them**
+|:---:|:---|
+|&check;| List of all products on the site
+|&check;| 
+|&check;| 
+|&check;| 
 
 As a site user I can access a personal user profile so that I can view my orders and personal details
 
@@ -104,6 +106,12 @@ As a site user I can access a personal user profile so that I can view my orders
 
     * List of user orders and link to order confirmation
 
+|passed | **View all site products so that I can purchase them**
+|:---:|:---|
+|&check;| List of all products on the site
+|&check;| 
+|&check;| 
+|&check;| 
 
 As a site user I can save products to my wishlist on my profile so that I can save products that I would like to buy
 
@@ -114,6 +122,30 @@ As a site user I can save products to my wishlist on my profile so that I can sa
 
     * List of the products I have saved
 
+
+|passed | **View all site products so that I can purchase them**
+|:---:|:---|
+|&check;| List of all products on the site
+|&check;| 
+|&check;| 
+|&check;| 
+
+
+As a shopper I can add a review on the products so that I can share my opinions about the products
+
+- Acceptance Criteria
+    * Able to add a review on the product details page
+
+    * Include a name, date of review and review
+
+    * Possible to see how many reviews exist
+
+|passed | **View all site products so that I can purchase them**
+|:---:|:---|
+|&check;| List of all products on the site
+|&check;| 
+|&check;| 
+|&check;| 
 
 #### EPIC - Search and sort 
 
@@ -127,6 +159,14 @@ As a shopper I can search for products so that I can easily find what I'm lookin
     * See how many products are available and what I've searched for
 
 
+|passed | **View all site products so that I can purchase them**
+|:---:|:---|
+|&check;| List of all products on the site
+|&check;| 
+|&check;| 
+|&check;| 
+
+
 As a shopper I can sort the products so that I can quickly identify what I'm looking for
 
 - Acceptance Criteria
@@ -136,6 +176,13 @@ As a shopper I can sort the products so that I can quickly identify what I'm loo
 
     * See how many products are available
 
+
+|passed | **View all site products so that I can purchase them**
+|:---:|:---|
+|&check;| List of all products on the site
+|&check;| 
+|&check;| 
+|&check;| 
 
 #### EPIC - Shopping bag and checkout
 
@@ -149,6 +196,13 @@ As a shopper I can view my shopping bag so that I can ensure I make the correct 
     * Click shopping bag and get a full view of my items
 
 
+|passed | **View all site products so that I can purchase them**
+|:---:|:---|
+|&check;| List of all products on the site
+|&check;| 
+|&check;| 
+|&check;| 
+
 As a shopper I can edit/delete my order in the shopping bag so that I can purchase what I want
 
 - Acceptance Criteria
@@ -158,6 +212,12 @@ As a shopper I can edit/delete my order in the shopping bag so that I can purcha
 
     * Add/remove items from my bag
 
+|passed | **View all site products so that I can purchase them**
+|:---:|:---|
+|&check;| List of all products on the site
+|&check;| 
+|&check;| 
+|&check;| 
 
 As a shopper I can make an order purchase so that I can buy the items I want safely
 
@@ -170,6 +230,12 @@ As a shopper I can make an order purchase so that I can buy the items I want saf
 
     * My personal and payment information is safe and secure
 
+|passed | **View all site products so that I can purchase them**
+|:---:|:---|
+|&check;| List of all products on the site
+|&check;| 
+|&check;| 
+|&check;| 
 
 As a shopper I can receive an order confirmation after checkout so that I know my order has been processed
 
@@ -180,6 +246,12 @@ As a shopper I can receive an order confirmation after checkout so that I know m
 
     * Able to contact the store if something is not correct with my order
 
+|passed | **View all site products so that I can purchase them**
+|:---:|:---|
+|&check;| List of all products on the site
+|&check;| 
+|&check;| 
+|&check;| 
 
 #### EPIC - Admin management
 
@@ -192,6 +264,12 @@ As an admin I can edit/delete products from the site so that I have control over
 
     * Delete products
 
+|passed | **View all site products so that I can purchase them**
+|:---:|:---|
+|&check;| List of all products on the site
+|&check;| 
+|&check;| 
+|&check;| 
 
 As an admin I can add products to the site so that I can add relevant inventory
 
@@ -202,6 +280,12 @@ As an admin I can add products to the site so that I can add relevant inventory
 
     * Input images, price, description and necessary product information
 
+|passed | **View all site products so that I can purchase them**
+|:---:|:---|
+|&check;| List of all products on the site
+|&check;| 
+|&check;| 
+|&check;| 
 
 #### EPIC - Contact
 
@@ -214,18 +298,12 @@ As a shopper I can contact the store so that I can communicate with the store ab
 
     * Form submission to admin panel
 
-
-#### EPIC - Review
-
-As a shopper I can add a review on the products so that I can share my opinions about the products
-
-- Acceptance Criteria
-    * Able to add a review on the product details page
-
-    * Include a name, date of review and review
-
-    * Possible to see how many reviews exist
-
+|passed | **View all site products so that I can purchase them**
+|:---:|:---|
+|&check;| List of all products on the site
+|&check;| 
+|&check;| 
+|&check;| 
 
 ## Validator testing 
 
