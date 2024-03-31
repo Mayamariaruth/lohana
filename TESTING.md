@@ -31,9 +31,12 @@ I manually tested this site in multiple ways highlighted below:
 
 #### EPIC - View Products
 
-|passed | Access a live url so that I can use the site on any device.
+|passed | **View all site products so that I can purchase them**
 |:---:|:---|
-|&check;|
+|&check;| Can access the site via the deployed URL on the desktop.
+|&check;| Can access the site via the deployed URL on mobile.
+|&check;| Can access the site via the deployed URL on a tablet.
+|&check;| All images and styles are tacked and as expected.
 
 
 As a shopper I can view all site products so that I can purchase them

@@ -1,15 +1,16 @@
 /* General styles */
 html, body {
-    max-width: 2000px;
+    max-width: 1200px;
     font-family: 'Playfair Display', sans-serif;
+    margin: auto;
 }
 
 .bg-color {
     background-color: #F1EEE9 !important;
 }
 
-h1 {
-    font-weight: 400;
+.main-content {
+    margin-bottom: 9rem;
 }
 
 /* Header */
@@ -18,7 +19,7 @@ header {
 }
 
 .box-shadow {
-    box-shadow: 0 3px 4px -2px rgba(0,0,0,0.5);
+    box-shadow: 0 3px 4px -2px rgba(0, 0, 0, 0.5);
 }
 
 #logo {
@@ -60,20 +61,12 @@ ul {
     top: 8px;
 }
 
-.header-margin {
-    margin-top: 8rem;
-}
-
 .header-margin1 {
-    margin-top: 8rem;
+    margin-top: 7rem;
 }
 
 .header-margin2 {
     margin-top: 9rem;
-}
-
-.header-margin3 {
-    margin-top: 11rem;
 }
 
 .collapse:not(.show) {
@@ -90,34 +83,44 @@ ul {
 }
 
 /* Hero image */
-.main-content {
-    margin-bottom: 9rem;
-}
-
 .hero-image {
-    background: url('../images/hero-mobile.jpg') no-repeat center center/cover;
-    height: 600px;
-    margin-left: 10rem;
+    background: url('../images/hero-mobile.jpg');
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background-size: cover;
+    background-position: 50% 50%;
 }
 
 .hero-content {
     position: absolute;
-    top: 100%;
-    left: 33%;
-    transform: translate(-40%, -50%);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgb(193 181 181 / 25%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
-.hero-content h1 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
+.hero-title {
+    font-size: 2.4rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.hero-heading {
     font-weight: 300;
+    margin-bottom: 2rem;
+    font-size: 1.3rem;
 }
 
-.hero-content a {
-    font-size: 1.3rem;
-    background-color: white;
-    padding: 10px 2rem;
-    border-radius: 40px;
+.home-btn {
+    font-size: 1rem;
+    padding: 12px 40px;
 }
 
 /* Products page */
@@ -141,7 +144,6 @@ ul {
 }
 
 .c-name:hover,
-.top-btn:hover,
 .bg-btn:hover,
 .shop-btn:hover {
     background: rgba(0, 0, 0, 0.557);
@@ -165,12 +167,6 @@ ul {
     padding: 12px;
     font-size: 18px;
     background: white;
-}
-
-.bg-btn {
-    font-size: 17px;
-    font-weight: 600;
-    box-shadow: 0.5px 0.5px 2px 2px rgba(0, 0, 0, 0.4);
 }
 
 .wishlist-button {
@@ -213,12 +209,39 @@ ul {
 .review-container {
     font-family: 'Montserrat', sans-serif;
     overflow: scroll;
+    max-height: 500px;
+}
+
+.max-w {
+    max-width: 400px;
+}
+
+.b-shadow {
+    box-shadow: 0px 1px 3px -1px #676767e1;
 }
 
 /* Shopping bag */
 .update-link,
 .remove-item {
     cursor: pointer;
+}
+
+.bg-btn {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.bag-name {
+    font-size: 1.2rem;
+}
+
+/* Checkout success */
+.p-left {
+    padding-left: 3rem;
+}
+
+.summary-color {
+    background-color: #e1e1e1e1;
 }
 
 /* Toasts */
@@ -237,10 +260,6 @@ ul {
 
 .message-line {
     height: 2px;
-}
-
-.margin-left {
-    margin-left: 2rem;
 }
 
 .wrapper {
@@ -284,7 +303,7 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgb(182, 151, 135, 0.85);
+    background: rgba(182, 151, 135, 0.851);
     z-index: 9999;
 }
 
@@ -296,29 +315,28 @@ ul {
     height: 100%;
 }
 
-/* Checkout success  */
-.delivery-title {
-    font-size: 1.7rem;
-    font-weight: 500;
-    margin-bottom: 1rem;
-}
-
-.delivery-details-container {
-    position: relative;
-    top: 2rem;
-}
-
-.overflow {
-    overflow-wrap: anywhere;
-}
-
-#font {
-    font-size: 1.3rem;
-}
-
 /* Contact form */
 .form-control {
     width: 100%;
+}
+
+.contact-btn {
+    font-size: 1.3rem;
+}
+
+/* Signup/Login */
+form ul {
+    margin-top: 1rem;
+}
+
+form li {
+    list-style-type: none;
+    text-align: center !important;
+}
+
+#hint_id_password,
+#div_id_remember {
+    text-align: center;
 }
 
 /* Footer / Mailchimp */
@@ -329,28 +347,14 @@ footer {
 
 #mc_embed_signup .button {
     background: rgba(0, 0, 0, 0.557) !important;
+    color: white !important;
+    padding: 1rem 1.4rem;
+    line-height: 1px;
 }
 
 #mc_embed_signup .button:hover {
     background: rgba(0, 0, 0, 0.7) !important;
-}
-
-.margin-b {
-    margin-bottom: 5rem;
-}
-
-.contact-home {
-    font-size: 1.3rem;
-    position: relative;
-    left: 5.8rem;
-    margin-top: 1rem;
-    padding: 5px 30px;
-}
-
-.fb-btn {
-    position: relative;
-    top: 4.5rem;
-    right: 5.2rem;
+    color: white !important;
 }
 
 #mc_embed_signup div.response {
@@ -359,19 +363,27 @@ footer {
     width: 100%;
 }
 
+#mc_embed_signup .helper_text {
+    background-color: #F1EEE9 !important;
+}
+
+.margin-b {
+    margin-bottom: 5rem;
+}
+
+.contact-home {
+    font-size: 1.3rem;
+}
+
 #privacy {
     margin-top: 3rem;
     padding-left: 0.5rem;
 }
 
-#mc_embed_signup .helper_text {
-    background-color: #F1EEE9 !important;
-}
-
 /* Media queries */
 @media (min-width: 576px) {
-    .header-margin {
-        margin-top: 9rem;
+    .header-margin1 {
+        margin-top: 8rem;
     }
 
     .header-margin2 {
@@ -380,11 +392,6 @@ footer {
 
     .top {
         top: 11px;
-    }
-
-    .hero-image {
-        height: 650px;
-        margin-left: 3rem;
     }
 
     #logo {
@@ -396,20 +403,32 @@ footer {
         font-size: 1rem;
     }
 
-    .home-title {
-        margin-top: 1rem;
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-heading {
+        font-size: 1.5rem;
+    }
+    
+    .home-btn {
+        font-size: 1.6rem;
     }
 }
 
 @media (min-width: 768px) {
     .hero-image {
-        background: url('../images/hero-desktop.jpg') no-repeat center center/cover;
-        height: 680px;
-        margin-left: 10rem;
+        background: url('../images/hero-desktop.jpg');
+        background-size: cover;
+        background-position: 50% 50%;
     }
 
-    .hero-content h1 {
-        font-size: 2.5rem;
+    .hero-title {
+        font-size: 3.2rem;
+    }
+
+    .hero-heading {
+        font-size: 1.6rem;
     }
 
     .margin-b {
@@ -419,15 +438,23 @@ footer {
     .delivery-details-container {
         bottom: 5rem;
     }
+
+    .p-left {
+        padding-left: 3.8rem;
+    }
 }
 
 @media (min-width: 992px) {
-    main {
-        margin-top: 5.4rem;
-    }
-
     #logo {
         height: 100px;
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+    }
+
+    .hero-heading {
+        font-size: 1.7rem;
     }
 
     .font-size {
@@ -438,32 +465,12 @@ footer {
         top: 13px;
     }
 
-    .header-margin {
-        margin-top: 10rem;
-    }
-
     .header-margin2 {
         margin-top: 11rem;
     }
 
     .container {
         max-width: 1200px;
-    }
-
-    .hero-image {
-        height: 700px;
-        margin-left: 19rem;
-    }
-
-    .hero-content {
-        top: 92%;
-        left: 29%;
-    }
-
-    .hero-content h1 {
-        font-size: 3rem;
-        margin-bottom: 2rem;
-        font-weight: 300;
     }
 
     .margin-top {
@@ -479,8 +486,7 @@ footer {
         left: 6rem;
     }
 
-    .fb-btn {
-        top: 5rem;
-        right: 5.1rem;
+    .p-left {
+        padding-left: 5.5rem;
     }
 }
