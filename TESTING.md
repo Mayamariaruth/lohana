@@ -28,279 +28,212 @@ I manually tested this site in multiple ways highlighted below:
 * I used DevTools to easily move between different screen sizes, simulating sizes between 390px to 4000px (but it is also functional on even larger screens given the max-width setting on the Body element to keep the content compact instead of stretched).
 
 ### User stories
-**User Story:** As a site user/admin, I can navigate the site content from the landing page so that I can access all the content easily and find what I'm looking for.
 
-* Expected:
-    * The landing page should include a navigation bar with links to different pages.
-    * Each section on the landing page should have buttons to access the corresponding pages.
-    * Navigation bar pages should be adapted to the logged in user (profile page for users, admin panel for admin user).
+#### EPIC - View Products
 
-* Testing:
-    * Visit the landing page.
-    * Look for a navigation bar at the top of the page.
-    * Check that the navigation bar contains functioning links to all necessary pages (e.g., Home, Menu, Book, Register, Login).
-    * Verify that each section on the landing page includes functioning buttons to access the relevant pages.
-    * After logging in as both admin and user, verify that the authorized pages are showing up.
+|passed | Access a live url so that I can use the site on any device.
+|:---:|:---|
+|&check;|
 
-* Fix:
-    * User profile page is displayed when admin is logged in.
-        * Add a context processor for the Admin user and adjust the conditional statement in the base.html to not include authorization for the admin user.
 
-* Result:
-    * The landing page includes a navigation bar with functioning links and buttons to access all site content smoothly based on authorization.
+As a shopper I can view all site products so that I can purchase them
 
-**User Story:** As a site user, I can register an account so that I can make a table booking.
+- Acceptance Criteria
+    * Access the products from the first page or navigation bar
 
-* Expected:
-    * There should be a page for users to register an account.
-    * Users should be able to enter their details and have them authenticated.
-    * Password is validated.
+    * All products listed on the page
 
-* Testing:
-    * Navigate to the registration page.
-    * Fill out the registration form with valid details.
-    * User is asked to choose a new password if their input is not valid.
-    * Submit the form.
-    * Check that the system registers the user and authenticates their details. 
+    * Products listed with price, image and rating
 
-* Fix:
-    * There were no bugs for the pages created with AllAuth.
+    * Click products for more details and to purchase
 
-* Result:
-    * Users can successfully register accounts, and their details are authenticated.
 
-**User Story:** As a site user/admin, I can log in and log out of my account so that I can access the booking system.
+As a shopper I can view all categories of products so that I can purchase specific items based on my needs
 
-* Expected:
-    * There should be a login page where users/admins can enter their details.
-    * After verification of details, users/admins should be directed to their account profile or received errors for incorrect details.
-    * There should be a clear indication that you've logged in successfully.
-    * Users/admins should be able to log out from their accounts.
+- Acceptance Criteria
+    * All categories highlighted on home page and navigation bar
 
-* Testing:
-    * Visit the login page.
-    * Enter valid login details for both user/admin.
-    * Submit the login form.
-    * Verify that the system authenticates the user/admin.
-    * Receive error message for incorrect details.
-    * Check that the user/admin is redirected to their account profile.
-    * Receive message for successfully logging in.
-    * Display in the navigation bar that the user is logged in.
-    * Log out from the account.
-    * Verify that the user/admin is logged out and redirected to the login page.
-    * Display message for successfully logging out.
+    * See a list of products based on category
 
-* Fix:
-    * There were no bugs for the pages created with AllAuth.
+    * Able to identify on each product what category it is
 
-* Result:
-    * Users/admins can successfully log in and out of their accounts, and authentication is functioning correctly.
 
-**User Story:** As an admin user, I can log in to an admin account so that I can confirm/cancel requests and see all current/previous bookings.
+As a shopper I can view every products details on a separate page so that I can find more information and select them to purchase
 
-* Expected:
-    * Have a separate admin panel for authenticated admin users.
-    * Admin is taken to admin panel upon logging in.
-    * Admins should be able to view all booking requests.
-    * Admins should have the ability to filter bookings based on status, date, name and time.
-    * Admins should be able to approve/deny bookings.
-    * Admins should be able to edit/delete bookings.
+- Acceptance Criteria
+    * Click on each product to view the products details
 
-* Testing:
-    * Login with admin details.
-    * Check that the admin is redirected to the admin panel.
-    * Navigate to the Bookings section.
-    * Verify that all booking requests are displayed.
-    * Test the filtering functionality by filtering bookings based on status, date, name and time.
-    * Click on a booking and approve/deny it or edit/delete it.
+    * Product details including price, rating, description, images and sizes where applicable
 
-* Fix:
-    * Admin panel was created with Django and had no immediate bugs.
+    * Able to select quantity to purchase and add it to bag
 
-* Result:
-    * Admins can successfully log in to the admin account, access the admin panel, view bookings, use the filtering functionality and approve/deny or edit/delete bookings.
 
-**User Story:** As a site user, I can access my account so that I can edit my details or delete my account.
+#### EPIC - Register and User profile
 
-* Expected:
-    * There should be a profile dashboard accessible to logged-in users.
-    * Users should be able to view their account details.
-    * Users should be able to edit their account details.
-    * Account details are verified by checking that they are not already in use.
-    * Users should be able to delete their account.
+As a site user I can create an account so that I can have a personal account
 
-* Testing:
-    * Log in to a user account.
-    * Navigate to the profile page in the navigation bar.
-    * Verify that the user's account details are displayed.
-    * Test the edit functionality by modifying account details.
-    * Receive error message if edited details are already in use.
-    * Verify that changes are saved successfully and highlighted to the user.
-    * Test the delete account functionality.
-    * Confirm that the user account is deleted and highlighted to the user.
+- Acceptance Criteria
+    * Register for an account on the site with my details
 
-* Fix:
-    * Edit details form didn’t update the details that were changed, but instead updated all fields even if they hadn't been changed. This raised the validation error for all fields with validation.
-        * Created an instance model to check for the field that had changed and only validate those details.
-    * The bookings associated to the old user details did not register to the new user details. 
-        * Added the User model in the booking Model with a user field and a Foreignkey and connected the user bookings to the user ID (instead of email as I had done previously) and created a view (update_bookings) to validate the bookings to the new user details.
-    * New user details are not validated for already existing user details.
-        * Use clean method for username/email fields in the EditForm form.
+    * Receive an email confirmation after registering
 
-* Result:
-Users can successfully access their account, view, edit, and delete account details.
+    * Have a personal profile
 
-**User Story:** As a site user/admin, I can send a booking request with all my details so that I can book a table with all the necessary details.
 
-* Expected:
-    * There should be a booking request form accessible to logged-in users.
-    * The booking request form should include fields for personal details, time, date, and guest options.
-    * The form should be pre-populated with the user's account details.
-    * There should be a section for special requests.
+As a site user I can login/logout out of my account so that I can access my account
 
-* Testing:
-    * Log in to a user and admin account.
-    * Navigate to the booking request form.
-    * Verify that the form includes fields for personal details, time, date, and guest options.
-    * Check that the form is pre-populated with the user's account details.
-    * Test that the special request section is not a required field.
-    * Submit the booking request form.
+- Acceptance Criteria
+    * Login/logout from the navigation bar
 
-* Fix:
-    * Booking form is not accessible ti any logged in user.
-        * Use @login_required for the book_table view instead of user.is_authenticated.
-    * Booking form not displaying with Crispy forms.
-        * Change the form tag from {{ BookingForm| crispy }} to {{ form|crispy }}.
+    * Recover my password
 
-* Result:
-    * Users can successfully send a booking request with all necessary details, including personal information and special requests.
+    * Get access to my personal profile
 
-**User Story:** As a site user, I can book a table based on the requirements so that I properly book a table and have a high chance of having it approved.
 
-* Expected:
-    * The booking page should provide sufficient information on form requirements.
-    * Users should receive an error message if they choose an incorrect date, time, or guest amount.
-    * Users should receive an error message if they attempt to make an identical booking.
+As a site user I can access a personal user profile so that I can view my orders and personal details
 
-* Testing:
-    * Navigate to the booking form as a logged in user.
-    * Verify that there is clear information on the page about the form requirements.
-    * Test the form by selecting an incorrect date, time, or guest amount.
-    * Confirm that an error message is displayed on the field.
-    * Attempt to make a booking identical to an existing one.
-    * Confirm that an error message is displayed.
+- Acceptance Criteria
+    * Personalized profile with delivery details, order history and wishlist
 
-* Fix:
-    * The times field receives an error message with every selected time, "Select a valid choice. < time > is not one of the available choices".
-        * Change available_times list to a tuple with the values as ('10:00', '10:00 AM') and change the TimeField model field to a Charfield instead.
+    * Update delivery details from profile
 
-* Result:
-    * Users can successfully book a table based on requirements and receive appropriate error messages for incorrect selections.
+    * Able to save delivery details to my profile when checking out
 
-**User Story:** As a site user, I can edit/cancel my booking requests so that I can customize my requests and have control over my bookings.
+    * List of user orders and link to order confirmation
 
-* Expected:
-    * Users should be able to view all their booking requests on their profile.
-    * Users should have the option to edit their booking requests.
-    * Verify the new booking details by checking that the user doesn't already have an identical booking.
-    * Users should have the option to cancel their booking requests.
 
-* Testing:
-    * Log in to the user account.
-    * Navigate to the profile page.
-    * Verify that all booking requests are displayed.
-    * Test the edit functionality by modifying a booking request.
-    * Receive error message if booking details already exist.
-    * Confirm that changes are saved successfully and highlighted to the user.
-    * Test the cancel functionality by canceling a booking request.
-    * Confirm that the booking request is successfully canceled and highlighted to the user.
+As a site user I can save products to my wishlist on my profile so that I can save products that I would like to buy
 
-* Fix:
-    * New booking details are not validated for already existing bookings.
-        * Use clean method for date/time field in the EditBooking form and create existing_booking in the edit_booking view to filter the booking objects and match the new details to already existing bookings.
+- Acceptance Criteria
+    * Able to save a product from the products list
 
-* Result:
-    * Users can successfully edit and cancel their booking requests, providing them with control over their bookings.
+    * Access the wishlist on my profile
 
-**User Story:** As an admin user, I can access each booking so that I can cancel/confirm the requests and see special requests/contact details for the user.
+    * List of the products I have saved
 
-* Expected:
-    * Admin users should have access to every booking in the admin panel.
-    * Admin users should be able to cancel or confirm booking requests.
-    * Admin users should be able to view all customer details and booking request details for each booking.
 
-* Testing:
-    * Log in to the admin account.
-    * Navigate to the admin panel.
-    * Verify that all booking requests are listed under the Bookings section.
-    * Test the cancel functionality by canceling a booking request.
-    * Confirm that the booking request is successfully canceled and highlighted to the admin user.
-    * Test the confirm functionality by confirming a booking request.
-    * Confirm that the booking request is successfully confirmed and highlighted to the admin user.
-    * Select a booking request and verify that all customer details and booking request details are visible.
+#### EPIC - Search and sort 
 
-* Fix:
-    * Admin panel was created with Django and had no immediate bugs.
+As a shopper I can search for products so that I can easily find what I'm looking for
 
-* Result:
-    * Admin users can successfully access, cancel, and confirm booking requests, and view all relevant details for each booking.
+- Acceptance Criteria
+    * Search option in navigation bar
 
-**User Story:** As a site user, I can access the menu for the restaurant so that I can see what food they have.
+    * Search based on name, description or category
 
-* Expected:
-    * There should be a link to the menu from the landing page and navigation bar.
-    * A page with all menu items and prices should be available.
-    * Clear headings and descriptive names of each menu item should be provided.
+    * See how many products are available and what I've searched for
 
-* Testing:
-    * Navigate to the landing page and verify that there is a section and button to access the menu page.
-    * Look for a link to the menu in the navigation bar.
-    * Click on the menu link and verify that it directs to the menu page.
-    * On the menu page, verify that all menu items and prices are displayed.
-    * Check that each menu item has a clear heading and descriptive name.
 
-* Fix:
-    * This is a static menu and it had no immediate bugs.
+As a shopper I can sort the products so that I can quickly identify what I'm looking for
 
-* Result:
-    * Users can successfully access the restaurant menu and view all menu items with clear descriptions and prices.
+- Acceptance Criteria
+    * Sorting option on products page
 
-**User Story:** As a site user/admin, I can receive confirmations on my actions on the site so that I know the actions have been fulfilled.
+    * Sort based on name, price, rating and category
 
-* Expected:
-    * Users should receive confirmation when they log in.
-    * Users should receive confirmation when they log out.
-    * Users should receive confirmation when they send a booking request.
-    * Users should receive confirmation when they edit or delete their account.
-    * Users should receive confirmation when they edit or delete their booking requests.
+    * See how many products are available
 
-* Testing:
-    * Login/logout as a user.
-    * Send a booking request.
-    * Verify that a confirmation message is displayed after each action.
-    * Edit account details.
-    * Delete account.
-    * Edit a booking request.
-    * Delete a booking request.
-    * Verify that a confirmation message is displayed after each action.
 
-* Fix:
-    * Messages are not displayed with a background color.
-        * Used DevTools to find what class and css styling was being used on the messages alerts and updated those to the stylesheet with green/red colors.
+#### EPIC - Shopping bag and checkout
 
-* Result:
-    * Users/admins receive confirmation messages for various actions.
+As a shopper I can view my shopping bag so that I can ensure I make the correct order
+
+- Acceptance Criteria
+    * View shopping bag in navigation bar
+
+    * See total price of the items selected on icon
+
+    * Click shopping bag and get a full view of my items
+
+
+As a shopper I can edit/delete my order in the shopping bag so that I can purchase what I want
+
+- Acceptance Criteria
+    * View all items in my shopping bag with their details
+
+    * See total price of all items
+
+    * Add/remove items from my bag
+
+
+As a shopper I can make an order purchase so that I can buy the items I want safely
+
+- Acceptance Criteria
+    * Checkout by entering my personal details, payment information and billing details
+
+    * See delivery information (free delivery or delivery fee)
+
+    * Make a card transaction
+
+    * My personal and payment information is safe and secure
+
+
+As a shopper I can receive an order confirmation after checkout so that I know my order has been processed
+
+- Acceptance Criteria
+    * View an order confirmation with all my order details after checkout
+
+    * Receive an email of my order confirmation
+
+    * Able to contact the store if something is not correct with my order
+
+
+#### EPIC - Admin management
+
+As an admin I can edit/delete products from the site so that I have control over the store inventory
+
+- Acceptance Criteria
+    * Access product information
+
+    * Edit product information
+
+    * Delete products
+
+
+As an admin I can add products to the site so that I can add relevant inventory
+
+- Acceptance Criteria
+    * Admin access to site with admin profile
+
+    * Add more products to the site
+
+    * Input images, price, description and necessary product information
+
+
+#### EPIC - Contact
+
+As a shopper I can contact the store so that I can communicate with the store about orders, products or whatever I might need to make a purchase
+
+- Acceptance Criteria
+    * Contact form on the website
+
+    * Input details and message for the store
+
+    * Form submission to admin panel
+
+
+#### EPIC - Review
+
+As a shopper I can add a review on the products so that I can share my opinions about the products
+
+- Acceptance Criteria
+    * Able to add a review on the product details page
+
+    * Include a name, date of review and review
+
+    * Possible to see how many reviews exist
+
 
 ## Validator testing 
 
 - HTML
-  - There were no errors present when passing through the official W3C validator ![W3C validator](docs/images/w3html.png)
+  - There were no errors present when passing through the official W3C validator ![W3C validator](docs/validation/html.png)
 
 - CSS
-  - There were no errors present when passing through the official Jigsaw validator with direct input ![(Jigsaw) validator](docs/images/w3css.png)
+  - There were no errors present when passing through the official Jigsaw validator with direct input ![(Jigsaw) validator](docs/validation/css.png)
 
 - PEP8
-  - There were no errors present when passing through the PEP8 CI Python linter ![PEP8](docs/images/pep8.png)
+  - There were no errors present when passing through the PEP8 CI Python linter ![PEP8](docs/validation/linter.png)
 
 ## Lighthouse testing 
 
@@ -414,5 +347,7 @@ See more feature related bugs in the [user story section](#user-stories).
     - 
 
 ### Unfixed Bugs
-- This might be more of an unfixed feature but when the logged in user adds a product to their wishlist, a JSON response message pops up instead of a toast message. I tried adding the toast messages too but they did not display until I reloaded the page so given the time constraint of the deadline, I decided to remove them completely and keep the JSON messages.
+- This might be more of an unfixed feature but when the logged in user adds a product to their wishlist, a JSON response message pops up instead of a toast message. I tried adding the toast messages too but they did not display properly so given the time constraint of the deadline, I decided to remove them completely and keep the JSON messages for now.
 This would of course be one of the first things I would change with more time, so as to keep the messages cohesive across the site.
+
+- The reset functionality on the sorting box when clicking 'Sort By' was not working properly so I had to abandon that last minute but I plan on fixing it when coming back to the project as well.

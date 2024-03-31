@@ -106,12 +106,6 @@ ul {
     flex-direction: column;
 }
 
-.hero-text {
-    position: absolute;
-    top: 20%;
-    left: 8rem;
-}
-
 .hero-title {
     font-size: 2.4rem;
     font-weight: 500;
@@ -121,11 +115,12 @@ ul {
 .hero-heading {
     font-weight: 300;
     margin-bottom: 2rem;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
 }
 
 .home-btn {
     font-size: 1rem;
+    padding: 12px 40px;
 }
 
 /* Products page */
@@ -433,7 +428,7 @@ footer {
     }
 
     .hero-heading {
-        font-size: 1.7rem;
+        font-size: 1.6rem;
     }
 
     .margin-b {
@@ -457,9 +452,9 @@ footer {
     .hero-title {
         font-size: 3.5rem;
     }
-    
+
     .hero-heading {
-        font-size: 1.9rem;
+        font-size: 1.7rem;
     }
 
     .font-size {
@@ -489,11 +484,6 @@ footer {
     .contact-home {
         font-size: 1.5rem;
         left: 6rem;
-    }
-
-    .fb-btn {
-        top: 5rem;
-        right: 5.1rem;
     }
 
     .p-left {

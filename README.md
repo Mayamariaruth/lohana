@@ -55,41 +55,9 @@ Link to the live site here - [Lohana](https://lohana-df1411a79e72.herokuapp.com/
 
 ## Planning
 
-### EPICS - User stories
+### User stories
 
-#### EPIC 1 
-
-As a site user I can save products to my wishlist so that I can save products that I would like to buy
-
-- Acceptance Criteria
-    * Able to save a product from the products list
-
-    * Access the wishlist on my profile
-
-    * List of the products I have saved
-
-
-
-As an admin I can edit/delete products from the site so that I have control over the store inventory
-
-- Acceptance Criteria
-    * Access product information
-
-    * Edit product information
-
-    * Delete products
-
-
-As a shopper I can search for products so that I can easily find what I'm looking for
-
-- Acceptance Criteria
-    * Search option in navigation bar
-
-    * Search based on name, description or category
-
-    * See how many products are available and what I've searched for
-
-
+#### EPIC - View products
 
 As a shopper I can view all site products so that I can purchase them
 
@@ -103,7 +71,6 @@ As a shopper I can view all site products so that I can purchase them
     * Click products for more details and to purchase
 
 
-
 As a shopper I can view all categories of products so that I can purchase specific items based on my needs
 
 - Acceptance Criteria
@@ -112,8 +79,6 @@ As a shopper I can view all categories of products so that I can purchase specif
     * See a list of products based on category
 
     * Able to identify on each product what category it is
-
-
 
 
 As a shopper I can view every products details on a separate page so that I can find more information and select them to purchase
@@ -126,6 +91,71 @@ As a shopper I can view every products details on a separate page so that I can 
     * Able to select quantity to purchase and add it to bag
 
 
+As a shopper I can add a review on the products so that I can share my opinions about the products
+
+- Acceptance Criteria
+    * Able to add a review on the product details page
+
+    * Include a name, date of review and review
+
+    * Possible to see how many reviews exist
+
+
+#### EPIC - Register and User profile
+
+As a site user I can create an account so that I can have a personal account
+
+- Acceptance Criteria
+    * Register for an account on the site with my details
+
+    * Receive an email confirmation after registering
+
+    * Have a personal profile
+
+
+As a site user I can login/logout out of my account so that I can access my account
+
+- Acceptance Criteria
+    * Login/logout from the navigation bar
+
+    * Recover my password
+
+    * Get access to my personal profile
+
+
+As a site user I can access a personal user profile so that I can view my orders and personal details
+
+- Acceptance Criteria
+    * Personalized profile with delivery details, order history and wishlist
+
+    * Update delivery details from profile
+
+    * Able to save delivery details to my profile when checking out
+
+    * List of user orders and link to order confirmation
+
+
+As a site user I can save products to my wishlist on my profile so that I can save products that I would like to buy
+
+- Acceptance Criteria
+    * Able to save a product from the products list
+
+    * Access the wishlist on my profile
+
+    * List of the products I have saved
+
+
+#### EPIC - Search and sort 
+
+As a shopper I can search for products so that I can easily find what I'm looking for
+
+- Acceptance Criteria
+    * Search option in navigation bar
+
+    * Search based on name, description or category
+
+    * See how many products are available and what I've searched for
+
 
 As a shopper I can sort the products so that I can quickly identify what I'm looking for
 
@@ -137,6 +167,7 @@ As a shopper I can sort the products so that I can quickly identify what I'm loo
     * See how many products are available
 
 
+#### EPIC - Shopping bag and checkout
 
 As a shopper I can view my shopping bag so that I can ensure I make the correct order
 
@@ -146,7 +177,6 @@ As a shopper I can view my shopping bag so that I can ensure I make the correct 
     * See total price of the items selected on icon
 
     * Click shopping bag and get a full view of my items
-
 
 
 As a shopper I can edit/delete my order in the shopping bag so that I can purchase what I want
@@ -159,7 +189,6 @@ As a shopper I can edit/delete my order in the shopping bag so that I can purcha
     * Add/remove items from my bag
 
 
-
 As a shopper I can make an order purchase so that I can buy the items I want safely
 
 - Acceptance Criteria
@@ -167,87 +196,53 @@ As a shopper I can make an order purchase so that I can buy the items I want saf
 
     * See delivery information (free delivery or delivery fee)
 
-Make a card transaction
+    * Make a card transaction
 
-My personal and payment information is safe and secure
-
+    * My personal and payment information is safe and secure
 
 
 As a shopper I can receive an order confirmation after checkout so that I know my order has been processed
 
-Acceptance Criteria
-View an order confirmation with all my order details after checkout
+- Acceptance Criteria
+    * View an order confirmation with all my order details after checkout
 
-Receive an email of my order confirmation
+    * Receive an email of my order confirmation
 
-Able to contact the store if something is not correct with my order
-
-
-
-As a site user I can create an account so that I can have a personal account
-
-Acceptance Criteria
-Register for an account on the site with my details
-
-Receive an email confirmation after registering
-
-Have a personal profile
+    * Able to contact the store if something is not correct with my order
 
 
-As a site user I can login/logout out of my account so that I can access my account
+#### EPIC - Admin management
 
-Acceptance Criteria
-Login/logout from the navigation bar
+As an admin I can edit/delete products from the site so that I have control over the store inventory
 
-Recover my password
+- Acceptance Criteria
+    * Access product information
 
-Get access to my personal profile
+    * Edit product information
 
-
-
-
-
-As a site user I can access a personal user profile so that I can view my orders and personal details
-
-Acceptance Criteria
-Access to profile from navigation bar
-
-Personalized profile with my profile details, order history and payment details
-
-Able to save my payment details to my profile when checking out
-
+    * Delete products
 
 
 As an admin I can add products to the site so that I can add relevant inventory
 
-Acceptance Criteria
-Admin access to site with admin profile
+- Acceptance Criteria
+    * Admin access to site with admin profile
 
-Add more products to the site
+    * Add more products to the site
 
-Input images, price, description and necessary product information
+    * Input images, price, description and necessary product information
 
 
+#### EPIC - Contact
 
 As a shopper I can contact the store so that I can communicate with the store about orders, products or whatever I might need to make a purchase
 
-Acceptance Criteria
-Contact form on the website
+- Acceptance Criteria
+    * Contact form on the website
 
-Input details and message for the store
+    * Input details and message for the store
 
-Form submission to admin panel
-
-
-
-As a shopper I can add a review on the products**** so that I can share my opinions about the products
-
-Acceptance Criteria
-Able to add a review on the product details page
-
-Include a name, date of review and review
-
-Possible to see how many reviews exist
+    * Form submission to admin panel
 
 
 #### Dropped
@@ -480,9 +475,7 @@ Even though I worked on this project alone, using Agile principles helped me tra
 ![Navigation bar]()
 
 ### Landing page
-
-#### Hero image
-- 
+-
 
 ![Hero image]()
 
@@ -502,50 +495,91 @@ Even though I worked on this project alone, using Agile principles helped me tra
 #### Logout
 ![Logout]()
 
-### Contact form
+### Products
+- 
+
+![]()
+
+### Product Details
+- 
+
+![]()
+
+### Contact Form
 
 - 'POST' contact form for all shoppers to contact the store.
 - All messages displayed in the admin panel.
 
 ![Contact form]()
 
-### Logged in user
-#### Profile
+### Contact Form Success
+
+- 
+![Contact form success]()
+
+### User - Profile Delivery Details
 
 - User profile only accessible by the logged in user.
 - Three tabs for each section of the page.
 - Delivery details tab with the user's saved delivery details and a form to update the details.
 - Order history tab displaying all previous orders and ability to click on the order number to go back to the checkout success page.
-- Wishlist tab displaying all the user's saved products (with a link back to 'All products', a product count of all wishlist items and the sort box) and ability to remove them.
-
-- Success/error messages after each action.
+- Wishlist tab displaying all the user's saved products (with a link back to 'All products', a product count of all wishlist items and the sort box) and ability to remove them. 
+(I purposely didn't add the wishlist to the admin panel since it's not meant to be accessed/customized by the admin)
 
 ![Profile delivery]()
+
+### User - Profile Order History
+
+
+
 ![Profile orders]()
+
+### User - Profile Wishlist
+
+
+
 ![Profile wishlist]()
 
-### Logged in admin
-
-#### Add products page
+### Admin - Add Products
 - 
 
 ![]()
 
-#### Edit products page
+### Admin - Edit Products
 - 
 
 ![]()
 
-#### Delete products page
+### Admin - Delete Products
 - 
 
 ![]()
+
+### Shopping Bag
+- 
+
+![]()
+
+### Checkout
+- 
+
+![]()
+
+### Checkout Success
+- 
+
+![]()
+
+### Messages 
+
+I created toasts (as taught from the Boutique Ado walkthrough project) to display all the messages across the site, except the wishlist messages. Those messages did not display properly and I did not have enough time to dig into why but that would be one of the first things I would fix when I come back to this project to make sure all messages on the site are cohesive in style (I mentioned this in the [TESTING.md](TESTING.md) documentation in the 'Unfixed bugs' section as well).
+
+I've added comprehensive messages to all app views to make sure the user is kept informed of all actions.
 
 ### Future features
 
 - Wishlist button on the Products Detail page, this was something I started implementing on this project but had to abandon due to the time I had left until the deadline. 
-I instead focused on making sure the button was functional and displayed on the Products page and Profile page (where the wishlist is displayed), which I decided was the better choice for the site so the user could quickly add the product to their wishlist instead of having to click to another page.
-- Log in page with social accounts login.
+I instead focused on making sure the button was functional and displayed on the Products page and Profile page (where the wishlist is displayed), which I decided was the better choice for the site so the user could quickly add the product to their wishlist from the products list instead of having to make another click to the Product Details page.
 - An About page with more information about the store (admin access to customize the page).
 - Edit/delete account on user profile page.
 
