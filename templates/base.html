@@ -2,14 +2,13 @@
 
 <!doctype html>
 <html lang="en">
-
 <head>
     {% block meta %}
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Meta tags for search engines -->
-    <meta name="description" content="Jewelry store Lohana."> <!-- ADD MORE CONTENT -->
+    <meta name="description" content="Jewelry store Lohana.">
     <meta name="keywords"
         content="Jewelry, gold jewelry, necklaces, earrings, bracelets, jewelry brand, jewelry for women, jewelry stores, gift ideas for jewelry, jewelry stores near me, christmas gift ideas, gifts for mom">
     {% endblock %}
@@ -25,7 +24,9 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
     <!-- Mailchimp -->
     <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
     {% endblock %}
@@ -52,9 +53,9 @@
 
     <title>Lohana Jewelry {% block extra_title %}{% endblock %}</title>
 </head>
-
 <body>
     <header class="container-fluid fixed-top box-shadow pr-2">
+        <!-- Delivery banner -->
         <div id="delivery" class="row text-center">
             <div class="col w-100">
                 <p class="my-2">Free delivery on orders over ${{ free_delivery_threshold }}!</p>
@@ -151,6 +152,7 @@
                         </li>
                     </ul>
                 </div>
+            </div>
         </nav>
     </header>
 
@@ -184,7 +186,8 @@
             <div class="col-12 col-md-6 margin-b">
                 <h2 class="text-uppercase">Newsletter</h2>
                 <hr>
-                <p class=""><strong>Subscribe</strong> to our monthly newsletter to receive exclusive offers and discount codes!</p>
+                <p class=""><strong>Subscribe</strong> to our monthly newsletter to receive exclusive offers and
+                    discount codes!</p>
                 <!-- Mailchimp signup form -->
                 <div id="mc_embed_shell">
                     <div id="mc_embed_signup">
@@ -198,20 +201,21 @@
                                         class="required email" id="mce-EMAIL" required="" value=""><span
                                         id="mce-EMAIL-HELPERTEXT" class="helper_text"></span></div>
                                 <div id="mce-responses" class="clear foot ml-0 text-center">
-                                    <div class="response mt-0 pt-0" id="mce-error-response" style="display: none;"></div>
+                                    <div class="response mt-0 pt-0" id="mce-error-response" style="display: none;">
+                                    </div>
                                     <div class="response mt-0 pt-0" id="mce-success-response" style="display: none;">
                                     </div>
                                 </div>
                                 <div aria-hidden="true" style="position: absolute; left: -5000px;">
                                     /* real people should not fill this in and expect good things - do not
                                     remove this or risk form bot signups */
-                                    <input type="text" name="b_7bee5fa1f71aea2ee6c16978f_2135c49f5b"
-                                        tabindex="-1" value="">
+                                    <input type="text" name="b_7bee5fa1f71aea2ee6c16978f_2135c49f5b" tabindex="-1"
+                                        value="">
                                 </div>
                                 <div class="optionalParent">
                                     <div class="clear foot d-block text-center">
-                                        <input type="submit" name="subscribe" id="mc-embedded-subscribe"
-                                            class="button" value="Subscribe">
+                                        <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button"
+                                            value="Subscribe">
                                     </div>
                                 </div>
                             </div>
@@ -219,6 +223,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Contact us -->
             <div class="col-12 col-md-6">
                 <h2 class="text-uppercase">Contact Us</h2>
                 <hr>
@@ -234,8 +239,10 @@
                     </a>
                 </div>
             </div>
+            <!-- Privacy Policy -->
             <div id="privacy">
-                <a href="https://www.termsfeed.com/live/1aa8b294-b8fa-463a-9dc5-0f295ca0eec9" target="_blank" rel="noopener">Privacy Policy</a>
+                <a href="https://www.termsfeed.com/live/1aa8b294-b8fa-463a-9dc5-0f295ca0eec9" target="_blank"
+                    rel="noopener">Privacy Policy</a>
             </div>
         </div>
     </footer>
@@ -253,8 +260,7 @@
         });
     </script>
     <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-    <script
-    type="text/javascript">(function ($) { window.fnames = new Array(); window.ftypes = new Array(); fnames[0] = 'EMAIL'; ftypes[0] = 'email'; fnames[1] = 'FNAME'; ftypes[1] = 'text'; fnames[2] = 'LNAME'; ftypes[2] = 'text'; fnames[3] = 'ADDRESS'; ftypes[3] = 'address'; fnames[4] = 'PHONE'; ftypes[4] = 'phone'; fnames[5] = 'BIRTHDAY'; ftypes[5] = 'birthday'; }(jQuery)); var $mcj = jQuery.noConflict(true);
+    <script type="text/javascript">(function ($) { window.fnames = new Array(); window.ftypes = new Array(); fnames[0] = 'EMAIL'; ftypes[0] = 'email'; fnames[1] = 'FNAME'; ftypes[1] = 'text'; fnames[2] = 'LNAME'; ftypes[2] = 'text'; fnames[3] = 'ADDRESS'; ftypes[3] = 'address'; fnames[4] = 'PHONE'; ftypes[4] = 'phone'; fnames[5] = 'BIRTHDAY'; ftypes[5] = 'birthday'; }(jQuery)); var $mcj = jQuery.noConflict(true);
     </script>
     {% endblock %}
 </body>

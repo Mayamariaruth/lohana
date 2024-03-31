@@ -11,11 +11,14 @@ def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            form.save() 
+            form.save()
             messages.success(request, 'Your inquiry was sent successfully!')
             return redirect('contact_success')
         else:
-            messages.error(request, 'Sending the inquiry failed. Please try again.')
+            messages.error(
+                request,
+                'Sending the inquiry failed. Please try again.'
+            )
     else:
         form = ContactForm()
 

@@ -6,7 +6,6 @@ from checkout.webhook_handler import StripeWH_Handler
 import stripe
 
 
-# Code from Boutique Ado walkthrough and Stripe
 @require_POST
 @csrf_exempt
 def webhook(request):

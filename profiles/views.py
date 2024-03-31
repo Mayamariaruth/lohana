@@ -21,7 +21,11 @@ def profile(request):
             form.save()
             messages.success(request, 'Delivery details updated successfully!')
         else:
-            messages.error(request, 'Updating your delivery details failed. Please ensure all fields are valid.')
+            messages.error(
+                request,
+                'Updating your delivery details failed. \
+                    Please ensure all fields are valid.'
+            )
     else:
         form = UserDetailsForm(instance=profile)
 

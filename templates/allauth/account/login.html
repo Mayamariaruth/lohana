@@ -14,7 +14,8 @@
   <h1>{% trans "Sign In" %}</h1>
   <hr>
   <p>{% blocktrans %}If you have not created an account yet, then please
-  <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+    <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
+  </p>
   <div class="px-5">
     <form class="login px-5 text-left" method="POST" action="{% url 'account_login' %}">
       {% csrf_token %}
@@ -23,7 +24,8 @@
       <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
       {% endif %}
       <div class="text-center">
-        <button type="submit" class="primaryAction text-uppercase add-btn btn px-5 py-2 mt-2">{% trans "Sign In" %}</butto>
+        <button type="submit" class="primaryAction text-uppercase add-btn btn px-5 py-2 mt-2">{% trans "Sign In" %}
+          </butto>
       </div>
     </form>
   </div>

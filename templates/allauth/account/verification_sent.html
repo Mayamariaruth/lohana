@@ -1,4 +1,5 @@
-{% extends "account/base.html" %}
+{% extends "base.html" %}
+{% load static %}
 
 {% load i18n %}
 
@@ -12,7 +13,8 @@
 <div class="container main-content text-center w-75">
     <h1>{% trans "Verify Your E-mail Address" %}</h1>
     <hr>
-    <p>{% blocktrans %}We have sent an e-mail to you for verification. Follow the link provided to finalize the signup process. Please contact us if you do not receive it within a few minutes.{% endblocktrans %}</p>
+    <p>{% blocktrans %}We have sent an e-mail to you for verification. Follow the link provided to finalize the signup
+        process. Please contact us if you do not receive it within a few minutes.{% endblocktrans %}</p>
     <div class="text-center">
         <a href="{% url 'contact' %}" class="btn add-btn contact-home">Contact</a>
     </div>

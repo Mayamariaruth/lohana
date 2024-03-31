@@ -24,9 +24,9 @@ class UserDetailsForm(forms.ModelForm):
         }
 
         self.fields['user_phone_number'].widget.attrs['autofocus'] = True
-        
+
         for field_name, field in self.fields.items():
-            if field_name != 'user_country': 
+            if field_name != 'user_country':
                 if field.required:
                     placeholder = f'{placeholders[field_name]} *'
                 else:

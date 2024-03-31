@@ -4,7 +4,7 @@
 {% block extra_title %} - Profile{% endblock %}
 
 {% block page_header %}
-    <div class="header-margin2"></di>
+<div class="header-margin2"></div>
 {% endblock %}
 
 {% block content %}
@@ -16,248 +16,259 @@
         </div>
     </div>
     {% if request.user.is_authenticated %}
-        <!-- User profile navigation tabs (Tabs from W3Schools https://getbootstrap.com/docs/4.6/components/navs/#tabs) -->
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
-              <button class="nav-link border-right active" id="delivery-details-tab" data-toggle="tab" data-target="#delivery-details" type="button" role="tab" aria-controls="delivery-details" aria-selected="true">Delivery Details</button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link border-right" id="order-history-tab" data-toggle="tab" data-target="#order-history" type="button" role="tab" aria-controls="order-history" aria-selected="false">Order history</button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link border-right" id="wishlist-tab" data-toggle="tab" data-target="#wishlist" type="button" role="tab" aria-controls="wishlist" aria-selected="false">Wishlist</button>
-            </li>
-        </ul>
-        <!-- Tab content -->
-        <div class="tab-content" id="myTabContent">
-            <!-- Delivery details -->
-            <div class="tab-pane fade row d-flex active show" id="delivery-details" role="tabpanel" aria-labelledby="delivery-details-tab">
-                <div class="col-md-6 mt-4 text-center">
-                    <div class="bg-color py-4 b-shadow mt-4">
-                        <h3 class="mb-3">My details</h3>
-                        <hr class="w-75">
-                        <div class="row mb-3">
-                            <div class="col-6">
-                                <p class="font-weight-bold">Phone</p>
-                            </div>
-                            <div class="col-6">
-                                <p>{{ profile.user_phone_number }}</p>
-                            </div>
+    <!-- User profile navigation tabs (Tabs from W3Schools https://getbootstrap.com/docs/4.6/components/navs/#tabs) -->
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link border-right active" id="delivery-details-tab" data-toggle="tab"
+                data-target="#delivery-details" type="button" role="tab" aria-controls="delivery-details"
+                aria-selected="true">Delivery Details</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link border-right" id="order-history-tab" data-toggle="tab" data-target="#order-history"
+                type="button" role="tab" aria-controls="order-history" aria-selected="false">Order history</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link border-right" id="wishlist-tab" data-toggle="tab" data-target="#wishlist"
+                type="button" role="tab" aria-controls="wishlist" aria-selected="false">Wishlist</button>
+        </li>
+    </ul>
+    <!-- Tab content -->
+    <div class="tab-content" id="myTabContent">
+        <!-- Delivery details -->
+        <div class="tab-pane fade row d-flex active show" id="delivery-details" role="tabpanel"
+            aria-labelledby="delivery-details-tab">
+            <div class="col-md-6 mt-4 text-center">
+                <div class="bg-color py-4 b-shadow mt-4">
+                    <h3 class="mb-3">My details</h3>
+                    <hr class="w-75">
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <p class="font-weight-bold">Phone</p>
                         </div>
-                        <div class="row mb-3">
-                            <div class="col-6">
-                                <p class="font-weight-bold">Address</p>
-                            </div>
-                            <div class="col-6">
-                                <p>{{ profile.user_street_address1 }}{% if profile.user_street_address2 %}, {{ profile.user_street_address2 }}{% endif %}</p>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-6">
-                                <p class="font-weight-bold">City</p>
-                            </div>
-                            <div class="col-6">
-                                <p>{{ profile.user_town_or_city }}</p>
-                            </div>
-                        </div>
-                        {% if profile.user_county %}
-                        <div class="row mb-3">
-                            <div class="col-6">
-                                <p class="font-weight-bold">County</p>
-                            </div>
-                            <div class="col-6">
-                                <p>{{ profile.user_county }}</p>
-                            </div>
-                        </div>
-                        {% endif %}
-                        {% if profile.user_postcode %}
-                        <div class="row mb-3">
-                            <div class="col-6">
-                                <p class="font-weight-bold">Postcode</p>
-                            </div>
-                            <div class="col-6">
-                                <p>{{ profile.user_postcode }}</p>
-                            </div>
-                        </div>
-                        {% endif %}
-                        <div class="row mb-3">
-                            <div class="col-6">
-                                <p class="font-weight-bold">Country</p>
-                            </div>
-                            <div class="col-6">
-                                <p>{{ profile.user_country }}</p>
-                            </div>
+                        <div class="col-6">
+                            <p>{{ profile.user_phone_number }}</p>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6 mt-4">
-                    <p class="mb-4 product-name">Update your delivery details below</p>
-                    <form class="" action="{% url 'profile' %}" method="POST" id="update-details">
-                        {% csrf_token %}
-                        {{ form|crispy }}
-                        <button class="btn add-btn px-4 py-2 mt-2 mb-3">Update Details</button>
-                    </form>
-                </div>
-            </div>
-            <!-- Order history -->
-            <div class="tab-pane fade" id="order-history" role="tabpanel" aria-labelledby="order-history-tab">
-                {% if orders %}
-                    <div class="main-content mt-4">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Date</th>
-                                    <th>Order Number</th>
-                                    <th>Items</th>
-                                    <th>Order Total</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {% for order in orders %}
-                                    <tr>
-                                        <td>{{ order.date }}</td>
-                                        <td>
-                                            <a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number }}">
-                                                {{ order.order_number }}
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <ul class="list-unstyled">
-                                                {% for item in order.lineitems.all %}
-                                                <li>
-                                                    {{ item.product.name }} x {{ item.quantity }}
-                                                </li>
-                                                {% endfor %}
-                                            </ul>
-                                        </td>
-                                        <td>${{ order.grand_total }}</td>
-                                    </tr>
-                                {% endfor %}
-                            </tbody>
-                        </table>
-                    </div>
-                {% else %}
-                    <div class="main-content">
-                        <p class="mt-5 ml-2 product-name">You have no orders.</p>
-                        <p class="mt-5 ml-2">Find our products here and make a purchase!</p>
-                        <a href="{% url 'products' %}" class="btn py-2 px-4 mb-3 shop-btn">
-                            <span class="text-uppercase">Continue Shopping</span>
-                        </a>
-                    </div>
-                {% endif %}
-            </div>
-            <!-- Wishlist -->
-            <div class="tab-pane fade container-fluid mt-3" id="wishlist" role="tabpanel" aria-labelledby="wishlist-tab">
-                <!-- Sorting box -->
-                <div class="row justify-content-center justify-content-md-end">
-                    <div class="col-12 col-md-6 my-auto d-flex justify-content-center justify-content-md-end">
-                        <div class="w-50">
-                            <select id="sort-selector"
-                                class="custom-select custom-select-sm rounded-0 border-{% if sort_by %}info{% else %}secondary{% endif %}">
-                                <option value="reset">Sort by...</option>
-                                <option value="name_asc">Name (A-Z)</option>
-                                <option value="name_desc">Name (Z-A)</option>
-                                <option value="price_asc">Price (low to high)</option>
-                                <option value="price_desc">Price (high to low)</option>
-                                <option value="rating_asc">Rating (low to high)</option>
-                                <option value="rating_desc">Rating (high to low)</option>
-                                <option value="category_asc">Category (A-Z)</option>
-                                <option value="category_desc">Category (Z-A)</option>
-                            </select>
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <p class="font-weight-bold">Address</p>
+                        </div>
+                        <div class="col-6">
+                            <p>{{ profile.user_street_address1 }}{% if profile.user_street_address2 %}, {{
+                                profile.user_street_address2 }}{% endif %}</p>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 order-md-first">
-                        <p class="mt-2 text-center text-md-left">
-                            <span class="small"><a href="{% url 'products' %}">All Products</a> | </span>
-                            {{ wishlist_items|length }} Products
-                        </p>
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <p class="font-weight-bold">City</p>
+                        </div>
+                        <div class="col-6">
+                            <p>{{ profile.user_town_or_city }}</p>
+                        </div>
                     </div>
-                </div>
-                <!-- Products -->   
-                <div class="row mt-4 text-left">
-                    {% if item in wishlist_items %}
-                        {% for item in wishlist_items %}
-                            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                                <div class="card mb-5">
-                                    {% if item.product.image %}
-                                        <a href="{% url 'product_detail' item.product.id %}">
-                                            <img class="card-img-top img-fluid" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
-                                        </a>
-                                    {% else %}
-                                        <a href="{% url 'product_detail' item.product.id %}">
-                                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
-                                        </a>
-                                    {% endif %}
-                                    <div class="card-body px-1">
-                                        <p class="product-name">{{ item.product.name }}</p>
-                                        <p>{{ item.product.introduction }}</p>
-                                    </div>
-                                    <div class="card-footer px-1">
-                                        <div class="row">
-                                            <div class="col">
-                                                <p class="lead text-left font-weight-bold mb-1">${{ item.product.price }}</p>
-                                                {% if item.product.category %}
-                                                    <p class="small">
-                                                        <a class="text-muted" href="{% url 'products' %}?category={{ item.product.category.name }}">
-                                                            <i class="fas fa-tag mr-1"></i>{{ item.product.category.name|title }}
-                                                        </a>
-                                                    </p>
-                                                {% endif %}
-                                                {% if request.user.is_authenticated %}
-                                                    {% if not request.user.is_superuser %}
-                                                        <div class="mb-5 wishlist-item">
-                                                            <button class="wishlist-button btn shop-btn" data-product-id="{{ item.product.id }}">
-                                                                Remove from wishlist
-                                                                <i class="fa-solid fa-heart heart-red"></i>
-                                                            </button>
-                                                        </div>
-                                                    {% endif %}
-                                                {% endif %}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        {% endfor %}
-                    {% else %}
-                    <div class="main-content">
-                        <p class="mb-5 ml-3 product-name">You have no products in your wishlist.</p>
+                    {% if profile.user_county %}
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <p class="font-weight-bold">County</p>
+                        </div>
+                        <div class="col-6">
+                            <p>{{ profile.user_county }}</p>
+                        </div>
                     </div>
                     {% endif %}
+                    {% if profile.user_postcode %}
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <p class="font-weight-bold">Postcode</p>
+                        </div>
+                        <div class="col-6">
+                            <p>{{ profile.user_postcode }}</p>
+                        </div>
+                    </div>
+                    {% endif %}
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <p class="font-weight-bold">Country</p>
+                        </div>
+                        <div class="col-6">
+                            <p>{{ profile.user_country }}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!-- Back to top button -->
-            <div class="top-btn shadow-sm border">
-                <a class="">
-                    <i class="fas fa-arrow-up mx-auto my-auto"></i>
-                </a>
+            <div class="col-md-6 mt-4">
+                <p class="mb-4 product-name">Update your delivery details below</p>
+                <form class="" action="{% url 'profile' %}" method="POST" id="update-details">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button class="btn add-btn px-4 py-2 mt-2 mb-3">Update Details</button>
+                </form>
             </div>
         </div>
+        <!-- Order history -->
+        <div class="tab-pane fade" id="order-history" role="tabpanel" aria-labelledby="order-history-tab">
+            {% if orders %}
+            <div class="main-content mt-4">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Order Number</th>
+                            <th>Items</th>
+                            <th>Order Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for order in orders %}
+                        <tr>
+                            <td>{{ order.date }}</td>
+                            <td>
+                                <a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number }}">
+                                    {{ order.order_number }}
+                                </a>
+                            </td>
+                            <td>
+                                <ul class="list-unstyled">
+                                    {% for item in order.lineitems.all %}
+                                    <li>
+                                        {{ item.product.name }} x {{ item.quantity }}
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </td>
+                            <td>${{ order.grand_total }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% else %}
+            <div class="main-content">
+                <p class="mt-5 ml-2 product-name">You have no orders.</p>
+                <p class="mt-5 ml-2">Find our products here and make a purchase!</p>
+                <a href="{% url 'products' %}" class="btn py-2 px-4 mb-3 shop-btn">
+                    <span class="text-uppercase">Continue Shopping</span>
+                </a>
+            </div>
+            {% endif %}
+        </div>
+        <!-- Wishlist -->
+        <div class="tab-pane fade container-fluid mt-3" id="wishlist" role="tabpanel" aria-labelledby="wishlist-tab">
+            <!-- Sorting box -->
+            <div class="row justify-content-center justify-content-md-end">
+                <div class="col-12 col-md-6 my-auto d-flex justify-content-center justify-content-md-end">
+                    <div class="w-50">
+                        <select id="sort-selector"
+                            class="custom-select custom-select-sm rounded-0 border-{% if sort_by %}info{% else %}secondary{% endif %}">
+                            <option value="reset">Sort by...</option>
+                            <option value="name_asc">Name (A-Z)</option>
+                            <option value="name_desc">Name (Z-A)</option>
+                            <option value="price_asc">Price (low to high)</option>
+                            <option value="price_desc">Price (high to low)</option>
+                            <option value="rating_asc">Rating (low to high)</option>
+                            <option value="rating_desc">Rating (high to low)</option>
+                            <option value="category_asc">Category (A-Z)</option>
+                            <option value="category_desc">Category (Z-A)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 order-md-first">
+                    <p class="mt-2 text-center text-md-left">
+                        <span class="small"><a href="{% url 'products' %}">All Products</a> | </span>
+                        {{ wishlist_items|length }} Products
+                    </p>
+                </div>
+            </div>
+            <!-- Products -->
+            <div class="row mt-4 text-left">
+                {% if item in wishlist_items %}
+                {% for item in wishlist_items %}
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                    <div class="card mb-5">
+                        {% if item.product.image %}
+                        <a href="{% url 'product_detail' item.product.id %}">
+                            <img class="card-img-top img-fluid" src="{{ item.product.image.url }}"
+                                alt="{{ item.product.name }}">
+                        </a>
+                        {% else %}
+                        <a href="{% url 'product_detail' item.product.id %}">
+                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png"
+                                alt="{{ item.product.name }}">
+                        </a>
+                        {% endif %}
+                        <div class="card-body px-1">
+                            <p class="product-name">{{ item.product.name }}</p>
+                            <p>{{ item.product.introduction }}</p>
+                        </div>
+                        <div class="card-footer px-1">
+                            <div class="row">
+                                <div class="col">
+                                    <p class="lead text-left font-weight-bold mb-1">${{ item.product.price }}</p>
+                                    {% if item.product.category %}
+                                    <p class="small">
+                                        <a class="text-muted"
+                                            href="{% url 'products' %}?category={{ item.product.category.name }}">
+                                            <i class="fas fa-tag mr-1"></i>{{ item.product.category.name|title }}
+                                        </a>
+                                    </p>
+                                    {% endif %}
+                                    {% if request.user.is_authenticated %}
+                                    {% if not request.user.is_superuser %}
+                                    <div class="mb-5 wishlist-item">
+                                        <button class="wishlist-button btn shop-btn"
+                                            data-product-id="{{ item.product.id }}">
+                                            Remove from wishlist
+                                            <i class="fa-solid fa-heart heart-red"></i>
+                                        </button>
+                                    </div>
+                                    {% endif %}
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% else %}
+                <div class="main-content">
+                    <p class="mb-5 ml-3 product-name">You have no products in your wishlist.</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        <!-- Back to top button -->
+        <div class="top-btn shadow-sm border">
+            <a class="">
+                <i class="fas fa-arrow-up mx-auto my-auto"></i>
+            </a>
+        </div>
+    </div>
     {% endif %}
 </div>
 {% endblock %}
-{% block postloadjs %}
-    <script>
-        $('#myTab button').on('click', function (e) {
-            e.preventDefault();
-            $(this).tab('show');
-            $('#delivery-details').removeClass('d-flex');
 
-            if ($(this).attr('aria-controls') === 'delivery-details') {
-                $('#delivery-details').addClass('d-flex');
-            }
-        });
-    </script>
-    <!-- Wishlist button -->
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $(document).on('click', '.wishlist-button', function() {
-                const button = $(this);
-                let productId = button.data('product-id');
-                let url = '/profile/add_to_wishlist/';
-                
-                $.post(url, {'product_id': productId, 'csrfmiddlewaretoken': '{{ csrf_token }}'})
-                .done(function(response) {
+{% block postloadjs %}
+<script>
+    $('#myTab button').on('click', function (e) {
+        e.preventDefault();
+        $(this).tab('show');
+        $('#delivery-details').removeClass('d-flex');
+
+        if ($(this).attr('aria-controls') === 'delivery-details') {
+            $('#delivery-details').addClass('d-flex');
+        }
+    });
+</script>
+<!-- Wishlist button -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(document).on('click', '.wishlist-button', function () {
+            const button = $(this);
+            let productId = button.data('product-id');
+            let url = '/profile/add_to_wishlist/';
+
+            $.post(url, { 'product_id': productId, 'csrfmiddlewaretoken': '{{ csrf_token }}' })
+                .done(function (response) {
                     if (response.success) {
                         alert(response.message);
                         button.closest('.card').remove();
@@ -265,10 +276,10 @@
                         alert(response.message);
                     }
                 })
-                .fail(function() {
+                .fail(function () {
                     alert('Failed to communicate with the server.');
                 });
-            });
         });
-    </script>
+    });
+</script>
 {% endblock %}

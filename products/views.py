@@ -20,10 +20,12 @@ def all_products(request):
     sort_by = request.GET.get('sort_by')
 
     if request.user.is_authenticated:
-        wishlist_product_ids = request.user.wishlist_items.values_list('product_id', flat=True)
+        wishlist_product_ids = request.user.wishlist_items.values_list(
+            'product_id', flat=True
+        )
     else:
         wishlist_product_ids = []
-        
+
     if request.GET:
         if 'sort_by' in request.GET:
             if sort_by == 'name_asc':
@@ -46,15 +48,16 @@ def all_products(request):
             title = categories[0].name.capitalize()
 
             if len(categories) == Category.objects.count():
-                title = 'Products' 
+                title = 'Products'
 
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
                 messages.error(request, "Please add a valid search criteria!")
                 return redirect(reverse('products'))
-            
-            queries = Q(category__name__icontains=query) | Q(description__icontains=query) | Q(name__icontains=query)
+
+            queries = Q(
+                category__name__icontains=query) | Q(description__icontains=query) | Q(name__icontains=query)
             products = products.filter(queries)
 
     context = {
@@ -81,11 +84,12 @@ def product_detail(request, product_id):
         if form.is_valid():
             review = form.save(commit=False)
             review.product = product
-            review.save() 
+            review.save()
             messages.success(request, 'Your review was added successfully!')
             return redirect('product_detail', product_id=product_id)
         else:
-            messages.error(request, 'Adding the review failed. Please try again.')
+            messages.error(request,
+                           'Adding the review failed. Please try again.')
     else:
         form = ReviewForm()
 
@@ -106,7 +110,7 @@ def add_product(request):
     if not request.user.is_superuser:
         messages.error(request, 'Only store owners are allowed to do that.')
         return redirect(reverse('home'))
-    
+
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
@@ -114,7 +118,9 @@ def add_product(request):
             messages.success(request, 'The product was added successfully!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Adding the new product failed. Please ensure all fields are valid.')
+            messages.error(request,
+                           'Adding the new product failed. \
+                            Please ensure all fields are valid.')
     else:
         form = ProductForm()
 
@@ -129,7 +135,7 @@ def edit_product(request, product_id):
     if not request.user.is_superuser:
         messages.error(request, 'Only store owners are allowed to do that.')
         return redirect(reverse('home'))
-    
+
     product = get_object_or_404(Product, pk=product_id)
 
     if request.method == 'POST':
@@ -139,7 +145,9 @@ def edit_product(request, product_id):
             messages.success(request, 'The product was successfully updated!')
             return redirect('product_detail', product_id=product_id)
         else:
-            messages.error(request, 'Updating the product failed. Please ensure all fields are valid.')
+            messages.error(request,
+                           'Updating the product failed. \
+                            Please ensure all fields are valid.')
     else:
         form = ProductForm(instance=product)
 
@@ -159,7 +167,7 @@ def delete_product(request, product_id):
     if not request.user.is_superuser:
         messages.error(request, 'Only store owners are allowed to do that.')
         return redirect(reverse('home'))
-    
+
     product = get_object_or_404(Product, pk=product_id)
 
     if request.method == 'POST':
@@ -167,18 +175,26 @@ def delete_product(request, product_id):
         messages.success(request, 'The product was successfully deleted!')
         return redirect('products')
 
-    return render(request, 'products/delete_product.html', {'product': product})
+    return render(request,
+                  'products/delete_product.html',
+                  {'product': product})
 
 
 @login_required
 def add_to_wishlist(request):
-    if request.headers.get('x-requested-with') == 'XMLHttpRequest' and request.method == 'POST':
+    if request.headers.get(
+        'x-requested-with'
+    ) == 'XMLHttpRequest' and request.method == 'POST':
         try:
             product_id = request.POST.get('product_id')
             product = get_object_or_404(Product, id=product_id)
 
-            if WishlistItem.objects.filter(user=request.user, product=product).exists():
-                WishlistItem.objects.filter(user=request.user, product=product).delete()
+            if WishlistItem.objects.filter(
+                user=request.user, product=product
+            ).exists():
+                WishlistItem.objects.filter(
+                    user=request.user, product=product
+                ).delete()
                 message = 'Product removed from wishlist successfully!'
             else:
                 WishlistItem.objects.create(user=request.user, product=product)
@@ -186,8 +202,15 @@ def add_to_wishlist(request):
 
             return JsonResponse({'success': True, 'message': message})
         except Product.DoesNotExist:
-            return JsonResponse({'success': False, 'message': 'Product does not exist.'})
+            return JsonResponse({
+                'success': False,
+                'message': 'Product does not exist.'
+            })
         except Exception as e:
-            return JsonResponse({'success': False, 'message': 'Failed to add/remove product from wishlist. Error: {}'.format(str(e))})
+            return JsonResponse({
+                'success': False,
+                'message': 'Failed to add/remove product from wishlist. \
+                    Error: {}'.format(str(e))
+                })
     else:
         return JsonResponse({'success': False, 'message': 'Invalid request.'})
