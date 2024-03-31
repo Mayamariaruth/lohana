@@ -115,33 +115,77 @@ The following is a prioritized list outlining the scope of the project. These pr
 
 ### Wireframes
 
-- **Landing page**
+- **Home**
 ---
 ![Landing page desktop](docs/wireframes/land-desk.png)
 ![Landing page ipad](docs/wireframes/land-ipad.png)
 ![Landing page mobile](docs/wireframes/land-mob.png)
 
-
-- **Booking form**
+- **Products**
 ---
 ![Booking form desktop](docs/wireframes/form-desk.png)
 ![Booking form ipad](docs/wireframes/form-ipad.png)
 ![Booking form mobile](docs/wireframes/form-mob.png)
 
-- **Profile**
+- **Product Details**
 ---
 ![Profile desktop](docs/wireframes/prof-desk.png)
 ![Profile ipad](docs/wireframes/prof-ipad.png)
 ![Profile mobile](docs/wireframes/prof-mob.png)
 
-
-- **Menu**
+- **User Profile**
 ---
 ![Menu desktop](docs/wireframes/menu-desk.png)
 ![Menu ipad](docs/wireframes/menu-ipad.png)
 ![Menu mobile](docs/wireframes/menu-mob.png)
 
+- **Contact Form**
+---
+![Menu desktop](docs/wireframes/menu-desk.png)
+![Menu ipad](docs/wireframes/menu-ipad.png)
+![Menu mobile](docs/wireframes/menu-mob.png)
 
+- **Contact Form Success**
+---
+![Menu desktop](docs/wireframes/menu-desk.png)
+![Menu ipad](docs/wireframes/menu-ipad.png)
+![Menu mobile](docs/wireframes/menu-mob.png)
+
+- **Add Product**
+---
+![Menu desktop](docs/wireframes/menu-desk.png)
+![Menu ipad](docs/wireframes/menu-ipad.png)
+![Menu mobile](docs/wireframes/menu-mob.png)
+
+- **Edit Product**
+---
+![Menu desktop](docs/wireframes/menu-desk.png)
+![Menu ipad](docs/wireframes/menu-ipad.png)
+![Menu mobile](docs/wireframes/menu-mob.png)
+
+- **Delete Product**
+---
+![Menu desktop](docs/wireframes/menu-desk.png)
+![Menu ipad](docs/wireframes/menu-ipad.png)
+![Menu mobile](docs/wireframes/menu-mob.png)
+
+- **Shopping Bag**
+---
+![Menu desktop](docs/wireframes/menu-desk.png)
+![Menu ipad](docs/wireframes/menu-ipad.png)
+![Menu mobile](docs/wireframes/menu-mob.png)
+
+- **Checkout**
+---
+![Menu desktop](docs/wireframes/menu-desk.png)
+![Menu ipad](docs/wireframes/menu-ipad.png)
+![Menu mobile](docs/wireframes/menu-mob.png)
+
+- **Checkout Success**
+---
+![Menu desktop](docs/wireframes/menu-desk.png)
+![Menu ipad](docs/wireframes/menu-ipad.png)
+![Menu mobile](docs/wireframes/menu-mob.png)
 
 
 ### Database schema

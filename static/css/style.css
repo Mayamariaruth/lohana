@@ -13,10 +13,6 @@ h1 {
     font-weight: 400;
 }
 
-note-editor {
-    width: auto;
-}
-
 /* Header */
 header {
     background-color: #F1EEE9;
@@ -315,16 +311,18 @@ ul {
 }
 
 /* Signup/Login */
-p #id_email, 
-#id_email2,
-#id_username,
-#id_password1,
-#id_password2 {
-    width: 50%;
+form ul {
+    margin-top: 1rem;
 }
 
 form li {
     list-style-type: none;
+    text-align: center !important;
+}
+
+#hint_id_password,
+#div_id_remember {
+    text-align: center;
 }
 
 /* Footer / Mailchimp */

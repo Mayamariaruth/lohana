@@ -38,8 +38,6 @@ def all_products(request):
                 products = products.order_by('category__name')
             elif sort_by == 'category_desc':
                 products = products.order_by('-category__name')
-        if sort_by == 'reset':
-            sort_by = None
 
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
