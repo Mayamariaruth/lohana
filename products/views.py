@@ -72,6 +72,15 @@ def all_products(request):
     return render(request, 'products/products.html', context)
 
 
+def all_categories_url(request):
+    """
+    Show individual product detail
+    """
+    categories = Product.objects.values_list('category', flat=True).distinct()
+    category_string = ",".join(categories)
+    return redirect(f'/products/?category={category_string}')
+
+
 def product_detail(request, product_id):
     """
     Show individual product detail

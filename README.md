@@ -582,6 +582,7 @@ I've added comprehensive messages to all app views to make sure the user is kept
 I instead focused on making sure the button was functional and displayed on the Products page and Profile page (where the wishlist is displayed), which I decided was the better choice for the site so the user could quickly add the product to their wishlist from the products list instead of having to make another click to the Product Details page.
 - An About page with more information about the store (admin access to customize the page).
 - Edit/delete account on user profile page.
+- Improve the reviews section on the Product Details page to only allow customer's with a valid order number to be able to submit a review, as well as allow site user's to edit/delete their review.
 
 ## Deployment
 

@@ -33,51 +33,52 @@ I manually tested this site in multiple ways highlighted below:
 
 |passed | **View all site products so that I can purchase them**
 |:---:|:---|
-|&check;| List of all products on the site
+|&check;| List of all products on the Products page
 |&check;| Navigation to Products from navigation bar
 |&check;| Navigation to Products from landing page
 |&check;| Products displayed with name, price, image, category and introduction
 |&check;| Able to click on products to get to the Product Details page
-|&check;| Back to top button to simplify page scrolling
-|&check;| Number of products displayed on page
+|&check;| Back to top button exists to simplify page scrolling
+|&check;| Number of products displayed on the page is highlighted
 
 
 |passed | **View all categories of products so that I can purchase specific items based on my needs**
 |:---:|:---|
 |&check;| All categories highlighted in navigation bar
 |&check;| All categories highlighted on Products page under title
-|&check;| Click each category button/link and see the list of products in that category
+|&check;| Every category button/link displays the list of products in that category
 |&check;| Each product has a category tag
-|&check;| Click the category tag and the list of products in that category displays
+|&check;| The category tag displays the list of products in that category
 
 
 |passed | **View every products details on a separate page so that I can find more information and select them to purchase**
 |:---:|:---|
 |&check;| Click on a product from Products page to get to Product Details page
 |&check;| The page contains all details, price, image, name, introduction, category tag and description
-|&check;| Can select quantity between 1-99 of product to add to bag
+|&check;| Can select quantity between 1-99 of product to add to shopping bag
+|&check;| Error displays if value is incorrect
 |&check;| Add to bag button adds product to the shopping bag
 |&check;| Success message displays shopping bag summary with added products and details
-|&check;| Continue Shopping button
+|&check;| Continue Shopping button directs back to Products page
+
+
+|passed | **Add a review on the products so that I can share my opinions about the products**
+|:---:|:---|
+|&check;| Any shopper/site user can submit a review on the Product Details page
+|&check;| Review displays after submitting with name, review and time 
+|&check;| Overflow property sets the review container to scroll
+|&check;| Review count updates correctly after each added review (as well as after being deleted in the admin panel)
 
 
 #### EPIC - Register and User profile
 
-As a site user I can create an account so that I can have a personal account
-
-- Acceptance Criteria
-    * Register for an account on the site with my details
-
-    * Receive an email confirmation after registering
-
-    * Have a personal profile
-
-|passed | **View all site products so that I can purchase them**
+|passed | **Create an account so that I can have a personal account on the site**
 |:---:|:---|
-|&check;| List of all products on the site
-|&check;| 
-|&check;| 
-|&check;| 
+|&check;| Register page highlighted in the navigation bar
+|&check;| Functioning Allauth authorization page (with error messages if incorrect values are added)
+|&check;| Receive email confirmation through Gmail to verify the email
+|&check;| Functioning Confirm email link and page
+|&check;| Access to personal user profile from the navigation bar
 
 As a site user I can login/logout out of my account so that I can access my account
 
@@ -88,10 +89,10 @@ As a site user I can login/logout out of my account so that I can access my acco
 
     * Get access to my personal profile
 
-|passed | **View all site products so that I can purchase them**
+|passed | **Sign In/Sign Out out of my account so that I can access my account**
 |:---:|:---|
-|&check;| List of all products on the site
-|&check;| 
+|&check;| Sign In/Sign Out pages highlighted in the navigation bar
+|&check;| Functioning Allauth authorization pages (with error messages if incorrect values are added)
 |&check;| 
 |&check;| 
 
@@ -130,22 +131,6 @@ As a site user I can save products to my wishlist on my profile so that I can sa
 |&check;| 
 |&check;| 
 
-
-As a shopper I can add a review on the products so that I can share my opinions about the products
-
-- Acceptance Criteria
-    * Able to add a review on the product details page
-
-    * Include a name, date of review and review
-
-    * Possible to see how many reviews exist
-
-|passed | **View all site products so that I can purchase them**
-|:---:|:---|
-|&check;| List of all products on the site
-|&check;| 
-|&check;| 
-|&check;| 
 
 #### EPIC - Search and sort 
 
@@ -305,6 +290,15 @@ As a shopper I can contact the store so that I can communicate with the store ab
 |&check;| 
 |&check;| 
 
+### Footer 
+
+|passed | **View all site products so that I can purchase them**
+|:---:|:---|
+|&check;| 
+|&check;| 
+|&check;| 
+|&check;| 
+
 ## Validator testing 
 
 - HTML
@@ -432,3 +426,5 @@ See more feature related bugs in the [user story section](#user-stories).
 This would of course be one of the first things I would change with more time, so as to keep the messages cohesive across the site.
 
 - The reset functionality on the sorting box when clicking 'Sort By' was not working properly so I had to abandon that last minute but I plan on fixing it when coming back to the project as well.
+
+- When going to the Products page directly from the [URL](https://lohana-df1411a79e72.herokuapp.com/products/) and not one of the buttons on the page, the page displays without the categories under the title (and without the categories in the URL). This was noticed in the final moments before the deadline of course...
