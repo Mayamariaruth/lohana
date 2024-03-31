@@ -59,11 +59,10 @@ Link to the live site here - [Lohana](https://lohana-df1411a79e72.herokuapp.com/
 
 #### EPIC 1 
 
-
 As a site user I can save products to my wishlist so that I can save products that I would like to buy
 
 - Acceptance Criteria
-    * Able to save a product from its detail page
+    * Able to save a product from the products list
 
     * Access the wishlist on my profile
 
@@ -73,100 +72,100 @@ As a site user I can save products to my wishlist so that I can save products th
 
 As an admin I can edit/delete products from the site so that I have control over the store inventory
 
-Acceptance Criteria
-Access product information
+- Acceptance Criteria
+    * Access product information
 
-Edit product information
+    * Edit product information
 
-Delete products
+    * Delete products
 
 
 As a shopper I can search for products so that I can easily find what I'm looking for
 
-Acceptance Criteria
-Search option in navigation bar
+- Acceptance Criteria
+    * Search option in navigation bar
 
-Search based on name, description or category
+    * Search based on name, description or category
 
-See how many products are available and what I've searched for
+    * See how many products are available and what I've searched for
 
 
 
 As a shopper I can view all site products so that I can purchase them
 
-Acceptance Criteria
-Access the products from the first page or navigation bar
+- Acceptance Criteria
+    * Access the products from the first page or navigation bar
 
-All products listed on the page
+    * All products listed on the page
 
-Products listed with price, image and rating
+    * Products listed with price, image and rating
 
-Click products for more details and to purchase
+    * Click products for more details and to purchase
 
 
 
 As a shopper I can view all categories of products so that I can purchase specific items based on my needs
 
-Acceptance Criteria
-All categories highlighted on home page and navigation bar
+- Acceptance Criteria
+    * All categories highlighted on home page and navigation bar
 
-See a list of products based on category
+    * See a list of products based on category
 
-Able to identify on each product what category it is
+    * Able to identify on each product what category it is
 
 
 
 
 As a shopper I can view every products details on a separate page so that I can find more information and select them to purchase
 
-Acceptance Criteria
-Click on each product to view the products details
+- Acceptance Criteria
+    * Click on each product to view the products details
 
-Product details including price, rating, description, images and sizes where applicable
+    * Product details including price, rating, description, images and sizes where applicable
 
-Able to select quantity to purchase and add it to bag
+    * Able to select quantity to purchase and add it to bag
 
 
 
 As a shopper I can sort the products so that I can quickly identify what I'm looking for
 
-Acceptance Criteria
-Sorting option on products page
+- Acceptance Criteria
+    * Sorting option on products page
 
-Sort based on name, price, rating and category
+    * Sort based on name, price, rating and category
 
-See how many products are available
+    * See how many products are available
 
 
 
 As a shopper I can view my shopping bag so that I can ensure I make the correct order
 
-Acceptance Criteria
-View shopping bag in navigation bar
+- Acceptance Criteria
+    * View shopping bag in navigation bar
 
-See total price of the items selected on icon
+    * See total price of the items selected on icon
 
-Click shopping bag and get a full view of my items
+    * Click shopping bag and get a full view of my items
 
 
 
 As a shopper I can edit/delete my order in the shopping bag so that I can purchase what I want
 
-Acceptance Criteria
-View all items in my shopping bag with their details
+- Acceptance Criteria
+    * View all items in my shopping bag with their details
 
-See total price of all items
+    * See total price of all items
 
-Add/remove items from my bag
+    * Add/remove items from my bag
 
 
 
 As a shopper I can make an order purchase so that I can buy the items I want safely
 
-Acceptance Criteria
-Checkout by entering my personal details, payment information and billing details
+- Acceptance Criteria
+    * Checkout by entering my personal details, payment information and billing details
 
-See delivery information (free delivery or delivery fee)
+    * See delivery information (free delivery or delivery fee)
 
 Make a card transaction
 

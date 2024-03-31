@@ -9,8 +9,8 @@ html, body {
     background-color: #F1EEE9 !important;
 }
 
-h1 {
-    font-weight: 400;
+.main-content {
+    margin-bottom: 9rem;
 }
 
 /* Header */
@@ -61,6 +61,10 @@ ul {
     top: 8px;
 }
 
+.header-margin1 {
+    margin-top: 7rem;
+}
+
 .header-margin2 {
     margin-top: 9rem;
 }
@@ -79,34 +83,49 @@ ul {
 }
 
 /* Hero image */
-.main-content {
-    margin-bottom: 9rem;
-}
-
 .hero-image {
-    background: url('../images/hero-mobile.jpg') no-repeat center center/cover;
-    height: 600px;
-    margin-left: 10rem;
+    background: url('../images/hero-mobile.jpg');
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background-size: cover;
+    background-position: 50% 50%;
 }
 
 .hero-content {
-    position: relative;
-    bottom: 12rem;
-    left: 25%;
-    transform: translate(-40%, -50%);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgb(193 181 181 / 25%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
-.hero-content h1 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
+.hero-text {
+    position: absolute;
+    top: 20%;
+    left: 8rem;
+}
+
+.hero-title {
+    font-size: 2.4rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.hero-heading {
     font-weight: 300;
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
 }
 
-.hero-content a {
-    font-size: 1.3rem;
-    background-color: white;
-    padding: 10px 2rem;
-    border-radius: 40px;
+.home-btn {
+    font-size: 1rem;
 }
 
 /* Products page */
@@ -368,30 +387,16 @@ footer {
 
 /* Media queries */
 @media (min-width: 576px) {
+    .header-margin1 {
+        margin-top: 8rem;
+    }
+
     .header-margin2 {
         margin-top: 10rem;
     }
 
     .top {
         top: 11px;
-    }
-
-    .hero-image {
-        height: 650px;
-        margin-left: 3rem;
-    }
-
-    .hero-content {
-        bottom: 15rem;
-        left: 14%;
-    }
-
-    .hero-content h1 {
-        font-size: 2.2rem;
-    }
-
-    .hero-content a {
-        font-size: 1.3rem;
     }
 
     #logo {
@@ -403,28 +408,32 @@ footer {
         font-size: 1rem;
     }
 
-    .home-title {
-        margin-top: 1rem;
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-heading {
+        font-size: 1.5rem;
+    }
+    
+    .home-btn {
+        font-size: 1.6rem;
     }
 }
 
 @media (min-width: 768px) {
     .hero-image {
-        background: url('../images/hero-desktop.jpg') no-repeat center center/cover;
-        height: 680px;
-        margin-left: 10rem;
+        background: url('../images/hero-desktop.jpg');
+        background-size: cover;
+        background-position: 50% 50%;
     }
 
-    .hero-content {
-        left: 20%;
+    .hero-title {
+        font-size: 3.2rem;
     }
 
-    .hero-content h1 {
-        font-size: 2.3rem;
-    }
-
-    .hero-content a {
-        font-size: 1.5rem;
+    .hero-heading {
+        font-size: 1.7rem;
     }
 
     .margin-b {
@@ -441,12 +450,16 @@ footer {
 }
 
 @media (min-width: 992px) {
-    main {
-        margin-top: 5.4rem;
-    }
-
     #logo {
         height: 100px;
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    
+    .hero-heading {
+        font-size: 1.9rem;
     }
 
     .font-size {
@@ -463,26 +476,6 @@ footer {
 
     .container {
         max-width: 1200px;
-    }
-
-    .hero-image {
-        height: 700px;
-        margin-left: 19rem;
-    }
-
-    .hero-content {
-        left: 34%;
-        bottom: 16rem;
-    }
-
-    .hero-content h1 {
-        font-size: 3rem;
-        margin-bottom: 2rem;
-        font-weight: 300;
-    }
-
-    .hero-content a {
-        font-size: 1.6rem;
     }
 
     .margin-top {
@@ -505,25 +498,5 @@ footer {
 
     .p-left {
         padding-left: 5.5rem;
-    }
-
-    .fb-btn {
-        right: 5.7rem;
-    }
-}
-
-@media (min-width: 1200px) {
-    .hero-content {
-        bottom: 17rem;
-        left: 33%;
-        
-    }
-    .hero-content h1 {
-        font-size: 3.2rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .hero-content a {
-        font-size: 1.8rem;
     }
 }

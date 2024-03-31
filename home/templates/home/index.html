@@ -4,16 +4,16 @@
 {% block extra_title %} - Home{% endblock %}
 
 {% block page_header %}
-    <div class="header-margin2"></div>
+    <div class="header-margin1"></div>
 {% endblock %}
 
 {% block content %}
-    <main class="container mr-sm-0 mb-5 pl-5">
-        <div class="container bg-color ml-3 ml-lg-4 pl-3">
-            <div class="hero-image"></div>
-            <div class="hero-content">
-                <h1 class="text-uppercase">Jewelry For Every Occasion</h1>
-                <a href="{% url 'products' %}" class="btn shop-btn text-uppercase">Discover our collections</a>
+    <main class="hero-image">
+        <div class="hero-content text-center">
+            <div class="hero-text">
+                <h1 class="hero-title">Jewelry For Every Occasion</h1>
+                <h3 class="hero-heading">Elevate your ensemble with <strong><u>goldplated</u></strong> accessories.</h3>
+                <a href="{% url 'products' %}" class="btn shop-btn px-5 py-2 rounded text-uppercase home-btn">Discover our collections</a>
             </div>
         </div>
     </main>
