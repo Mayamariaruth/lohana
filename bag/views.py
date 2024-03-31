@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
 from django.contrib import messages
+from django.http import JsonResponse
 from products.models import Product
 
 
@@ -40,6 +41,15 @@ def adjust_bag(request, item_id):
     """
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
+
+    if quantity > 99:
+        messages.error(request, 'Quantity cannot exceed 99')
+        return redirect(reverse('view_bag'))
+
+    if quantity < 0:
+        messages.error(request, 'Invalid number. Please remove the product with "Remove".')
+        return redirect(reverse('view_bag'))
+
     bag = request.session.get('bag', {})
 
     if quantity > 0:

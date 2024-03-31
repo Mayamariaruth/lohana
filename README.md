@@ -583,6 +583,7 @@ I instead focused on making sure the button was functional and displayed on the 
 - An About page with more information about the store (admin access to customize the page).
 - Edit/delete account on user profile page.
 - Improve the reviews section on the Product Details page to only allow customer's with a valid order number to be able to submit a review, as well as allow site user's to edit/delete their review.
+- Add to bag button on the Products page and not just the Product detail page.
 
 ## Deployment
 

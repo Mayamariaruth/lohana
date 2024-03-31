@@ -78,41 +78,33 @@ I manually tested this site in multiple ways highlighted below:
 |&check;| Functioning Allauth authorization page (with error messages if incorrect values are added)
 |&check;| Receive email confirmation through Gmail to verify the email
 |&check;| Functioning Confirm email link and page
-|&check;| Access to personal user profile from the navigation bar
+|&check;| Personal user profile is created and accessible from the navigation bar
 
-As a site user I can login/logout out of my account so that I can access my account
-
-- Acceptance Criteria
-    * Login/logout from the navigation bar
-
-    * Recover my password
-
-    * Get access to my personal profile
 
 |passed | **Sign In/Sign Out out of my account so that I can access my account**
 |:---:|:---|
 |&check;| Sign In/Sign Out pages highlighted in the navigation bar
 |&check;| Functioning Allauth authorization pages (with error messages if incorrect values are added)
-|&check;| 
-|&check;| 
+|&check;| Recover password works and a link to reset password is on the sign in page
+|&check;| Access to personal user profile with my details from the navigation bar when logged in
 
-As a site user I can access a personal user profile so that I can view my orders and personal details
-
-- Acceptance Criteria
-    * Personalized profile with delivery details, order history and wishlist
-
-    * Update delivery details from profile
-
-    * Able to save delivery details to my profile when checking out
 
     * List of user orders and link to order confirmation
 
 |passed | **View all site products so that I can purchase them**
 |:---:|:---|
-|&check;| List of all products on the site
-|&check;| 
-|&check;| 
-|&check;| 
+|&check;| Access to Profile from navigation bar
+|&check;| Error message if admin tries to access the profile and redirect to sign in page if non-logged in user tries
+|&check;| Functioning tabs for each profile section
+|&check;| User's delivery details are correctly displayed (or set to None if they haven't added them yet)
+|&check;| Update delivery details form works and updates the details properly after submitting
+|&check;| Delivery details saved from the checkout displays properly
+|&check;| Order history tab contains all user's orders
+|&check;| Correctly displays the user order details
+|&check;| Order number links back to the order confirmation (checkout success)
+|&check;| Displays 'You have no orders' if no orders have been made
+|&check;| Continue shopping button directs to Products page
+
 
 As a site user I can save products to my wishlist on my profile so that I can save products that I would like to buy
 
@@ -124,32 +116,30 @@ As a site user I can save products to my wishlist on my profile so that I can sa
     * List of the products I have saved
 
 
-|passed | **View all site products so that I can purchase them**
+|passed | **Save products to my wishlist on my profile so that I can save products that I would like to buy**
 |:---:|:---|
-|&check;| List of all products on the site
-|&check;| 
-|&check;| 
-|&check;| 
+|&check;| Button to Save to Wishlist displays with logged in users (and not admin)
+|&check;| Save to Wishlist button on the Products page under each product
+|&check;| With each click, product is either added or removed from the user's wishlist and JSON success response message displays
+|&check;| If any issues, JSON response displays an error message
+|&check;| Access to Wishlist on the user profile
+|&check;| Products displayed as on the Products page (with price, name, introduction and category tag)
+|&check;| Sort box to sort products by name, price and category
+|&check;| Remove from wishlist button under each product that removes the product
+|&check;| Product count functioning and updates with addition or removal from wishlist 
+|&check;| Link to All Products
 
 
 #### EPIC - Search and sort 
 
-As a shopper I can search for products so that I can easily find what I'm looking for
-
-- Acceptance Criteria
-    * Search option in navigation bar
-
-    * Search based on name, description or category
-
-    * See how many products are available and what I've searched for
-
-
-|passed | **View all site products so that I can purchase them**
+|passed | **Search for products so that I can easily find what I'm looking for**
 |:---:|:---|
-|&check;| List of all products on the site
-|&check;| 
-|&check;| 
-|&check;| 
+|&check;| Search option in navigation bar
+|&check;| Search based on name, description or category
+|&check;| Displays list of products that match
+|&check;| Product count displayed with the search term used
+|&check;| All Products link
+|&check;| Sort box to sort by name, price and category
 
 
 As a shopper I can sort the products so that I can quickly identify what I'm looking for
@@ -162,47 +152,35 @@ As a shopper I can sort the products so that I can quickly identify what I'm loo
     * See how many products are available
 
 
-|passed | **View all site products so that I can purchase them**
+|passed | **Sort the products so that I can quickly identify what I'm looking for**
 |:---:|:---|
-|&check;| List of all products on the site
-|&check;| 
-|&check;| 
-|&check;| 
+|&check;| Sort box displayed on all pages with products (Products page, Category pages, Wishlist)
+|&check;| Sort products based on name, price and category
+|&check;| Displays product count and all products link
+
 
 #### EPIC - Shopping bag and checkout
 
-As a shopper I can view my shopping bag so that I can ensure I make the correct order
-
-- Acceptance Criteria
-    * View shopping bag in navigation bar
-
-    * See total price of the items selected on icon
-
-    * Click shopping bag and get a full view of my items
-
-
-|passed | **View all site products so that I can purchase them**
+|passed | **View shopping bag so that I can ensure I make the correct order**
 |:---:|:---|
-|&check;| List of all products on the site
-|&check;| 
-|&check;| 
-|&check;| 
+|&check;| View shopping bag icon in navigation bar
+|&check;| See total price of the items selected on icon
+|&check;| Shopping bag preview displays in success message after adding product to bag
+|&check;| Secure checkout button in preview to go to shopping page
+|&check;| If order total is below $100, a banner highlights amount left until free delivery
+|&check;| Click shopping bag to be directed to shopping bag page
 
-As a shopper I can edit/delete my order in the shopping bag so that I can purchase what I want
 
-- Acceptance Criteria
-    * View all items in my shopping bag with their details
-
-    * See total price of all items
-
-    * Add/remove items from my bag
-
-|passed | **View all site products so that I can purchase them**
+|passed | **Edit/delete my order in the shopping bag so that I can purchase what I want**
 |:---:|:---|
-|&check;| List of all products on the site
-|&check;| 
-|&check;| 
-|&check;| 
+|&check;| View all items in my shopping bag with name, image, SKU, quantity and subtotal
+|&check;| Quantity buttons disabled at number 1 and 99
+|&check;| Remove button removes the product from the shopping bag
+|&check;| Update button updates the quantity when changed
+|&check;| Bag total, delivery total and grand total displays correctly
+|&check;| Continue shopping button directs to all products
+|&check;| Secure checkout button directs to checkout page 
+
 
 As a shopper I can make an order purchase so that I can buy the items I want safely
 
@@ -215,9 +193,9 @@ As a shopper I can make an order purchase so that I can buy the items I want saf
 
     * My personal and payment information is safe and secure
 
-|passed | **View all site products so that I can purchase them**
+|passed | **Make an order purchase so that I can buy the items I want safely**
 |:---:|:---|
-|&check;| List of all products on the site
+|&check;| Order summary displayed on checkout page with shopping bag details
 |&check;| 
 |&check;| 
 |&check;| 
@@ -416,10 +394,27 @@ The evaluation is free from errors on all pages.
 
 ## Bugs
 
-See more feature related bugs in the [user story section](#user-stories).
-
 - 
     - 
+
+- Summernote description field is not updating after set up /// Update ProductAdmin function from admin.ModelAdmin to SummernoteModelAdmin and add summernote_fields there
+- Summernote field text is displaying as raw HTML content /// Add “|safe” to the HTML tag 
+- After adding title tag for products page, when clicking all products it says necklaces /// add If statement to check if the length of the categories selected match the count of the Category model (template tag includes all categories)
+- Category sorting not working with sorting box on products page /// change elif statement from “order_by(‘category’)” to “order_by(‘category__name’)”
+- toasts disappears after 1 second // add autohide attribute in JS
+- grand total not displaying correctly in admin panel on created orders /// update the model method to calculate the grand_total as the sum of the delivery cost and order total
+- migration fail after changing the Country model field to Django Countries (Error: value too long for type character varying(2)) /// Migration file stored the Country field as Max_length=2 so I updated the max_length to 255 in the file and migrated again
+- User profile tab content being pushed down by Delivery details tab content /// The d-flex class on the Delivery Details content pushed the other content down. Added JS code to add/remove the d-flex class depending on the tab
+- Profile delivery details not displaying users delivery details /// problem with the user profile connection to the order. 
+- After adding a product to the site with Admin Management profile and then removing the product from the admin panel, the whole site errored saying “Page not found (404) No Product matches the given query.” On every site /// Added if statement in bag_contents context processor to only query the Product model when necessary **(with help of ChatGPT)**
+- Error when trying to submit new update in edit_products.template after adding summer note (clean() got an unexpected keyword argument 'styles’) // download Bleach ([Django Summernote clean\(\) got an unexpected keyword argument 'styles' in DjangoForms](https://stackoverflow.com/questions/73789407/django-summernote-clean-got-an-unexpected-keyword-argument-styles-in-djangof))
+- Heorku deployment error when setting up Django-storages (An error occurred (403) when calling the HeadObject operation: Forbidden) /// removed AWS and went with white noise and cloudinary for easier storage
+- register/login error with new users (SMTP.starttls() got an unexpected keyword argument 'keyfile’) /// update to Django 4.2.7 and allauth0.61.0 https://stackoverflow.com/questions/77482831/smtp-starttls-got-an-unexpected-keyword-argument-keyfile
+- error with add_to_wishlist view when using Ajax (AttributeError: 'WSGIRequest' object has no attribute 'is_ajax’) // change is_ajax to **request.headers.get('x-requested-with') == 'XMLHttpRequest'** [AttributeError: 'WSGIRequest' object has no attribute 'is_ajax'](https://stackoverflow.com/questions/70419441/attributeerror-wsgirequest-object-has-no-attribute-is-ajax)
+- NameError when checking out with Stripe (payment.intent.succeeded = 500 server error) // import stripe at the top of web hooks, OOPS!
+- Superuser can access user profile // add if statement in profile view to handle superuser access
+- Emails not sending on heroku, only in local environment /// had set ‘DEVELOPMENT’ variable in heroku config var to False, removed it and everything was fine
+- in shopping bag, can update number of quantity to over 99 or under 1 // 
 
 ### Unfixed Bugs
 - This might be more of an unfixed feature but when the logged in user adds a product to their wishlist, a JSON response message pops up instead of a toast message. I tried adding the toast messages too but they did not display properly so given the time constraint of the deadline, I decided to remove them completely and keep the JSON messages for now.
