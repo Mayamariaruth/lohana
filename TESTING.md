@@ -14,19 +14,35 @@
 1. [**Validator testing**](#validator-testing)
 1. [**Lighthouse testing**](#lighthouse-testing)
     * [***Landing page***](#landing-page)
-   
+    * [***Register***](#register)
+    * [***Sign in***](#sign-in)
+    * [***Sign Out***](#sign-out)
+    * [***Products***](#products)
+    * [***Product Details***](#product-details)
+    * [***User profile - Delivery Details***](#landing-page)
 
+    * [***Landing page***](#landing-page)
+    * [***Landing page***](#landing-page)
+
+    * [***Admin - Add Product***](#landing-page)
+    * [***Admin - Edit Product***](#landing-page)
+    * [***Admin - Delete Product***](#landing-page)
+    * [***Contact Form***](#landing-page)
+    * [***Contact Form Success***](#landing-page)
+    * [***Shopping Bag***](#landing-page)
+    * [***Checkout***](#landing-page)
+    * [***Checkout Success***](#landing-page)
 1. [**Wave accessibility evaluation**](#wave-accessibility-evaluation)
 1. [**Bugs**](#bugs)
     * [***Unfixed Bugs***](#unfixed-bugs)
 
 ## Manual testing
 I manually tested this site in multiple ways highlighted below:
-* I tested every feature and its functionality as highlighted below in the [user stories](#user-stories).
-* I deployed the site in an early stage on Heroku to make sure everything was working as intended. 
-* I received invaluable feedback from my mentor David, students in my community, family members and friends working in the industry.
-* I tested the site for cross-compatibility in the two most used browsers, Chrome and Safari.
-* I used DevTools to easily move between different screen sizes, simulating sizes between 390px to 4000px (but it is also functional on even larger screens given the max-width setting on the Body element to keep the content compact instead of stretched).
+* Tested every feature and its functionality as highlighted below in the [user stories](#user-stories).
+* Deployed the site in an early stage on Heroku to make sure everything was working as intended. 
+* Received invaluable feedback from my mentor David, students in my community, family members and friends working in the industry.
+* Tested the site for cross-compatibility in the two most used browsers, Chrome and Safari.
+* Used DevTools to easily move between different screen sizes, simulating sizes between 390px to 4000px (but it is also functional on even larger screens given the max-width setting on the Body element to keep the content compact instead of stretched).
 
 ### User stories
 
@@ -284,6 +300,18 @@ The lower scores were for two main reasons:
 ![Mobile delete booking](docs/images/lighthouse/del-book-mob.png)
 
 ### **Products**
+
+The performance of the category selected pages were the same scores as below.
+
+- Desktop version:
+
+![Desktop menu](docs/images/lighthouse/menu-desk.png)
+
+- Mobile version:
+
+![Mobile menu](docs/images/lighthouse/menu-mob.png)
+
+### **Product Details**
 
 The performance of the category selected pages were the same scores as below.
 

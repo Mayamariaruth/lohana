@@ -27,6 +27,20 @@ Link to the live site here - [Lohana](https://lohana-df1411a79e72.herokuapp.com/
         * [***Objectives***](#objectives)
         * [***Deliverables***](#deliverables)
     * [***Wireframes***](#wireframes)
+        * [***Landing page***](#landing-page-1)
+        * [***Products***](#products-1)
+        * [***Product Details***](#product-details-1)
+        * [***User Profile - Delivery Details***](#user-profile---delivery-details)
+        * [***User Profile - Order History***](#user-profile---order-history)
+        * [***User Profile - Wishlist***](#user-profile---wishlist)
+        * [***Admin - Add Product***](#admin---add-products)
+        * [***Admin - Edit Product***](#admin---delete-products)
+        * [***Admin - Delete Product***](#admin---edit-products)
+        * [***Contact Form***](#contact-form-1)
+        * [***Contact Form Success***](#contact-form-success-1)
+        * [***Shopping bag***](#shopping-bag-1)
+        * [***Checkout***](#checkout-1)
+        * [***Checkout Success***](#checkout-success-1)
     * [***Database schema***](#database-schema)
     * [***Color scheme***](#color-scheme)
     * [***Typography***](#typography)
@@ -53,9 +67,9 @@ Link to the live site here - [Lohana](https://lohana-df1411a79e72.herokuapp.com/
     * [***Product Details***](#product-details)
     * [***Contact Form***](#contact-form)
     * [***Contact Form Success***](#contact-form-success)
-    * [***User - Profile Delivery Details***](#user---profile-delivery-detailsr)
-    * [***User - Profile Delivery Details***](#user---profile-order-history)
-    * [***User - Profile Wishlist***](#user---profile-wishlist)
+    * [***User Profile - Delivery Details***](#user-profile---delivery-details-1)
+    * [***User Profile - Order History***](#user-profile---order-history-1)
+    * [***User Profile - Wishlist***](#user-profile---wishlist-1t)
     * [***Admin - Add Product***](#admin---add-products)
     * [***Admin - Edit Product***](#admin---edit-products)
     * [***Admin - Delete Product***](#admin---delete-products)
@@ -298,73 +312,85 @@ User-Friendly Experience: We aim to create a user-friendly website that is easy 
 
 ### Wireframes
 
-- **Home**
+#### Landing Page
 ---
 ![Landing page desktop](docs/wireframes/land-desk.png)
 ![Landing page ipad](docs/wireframes/land-ipad.png)
 ![Landing page mobile](docs/wireframes/land-mob.png)
 
-- **Products**
+#### Products
 ---
 ![Booking form desktop](docs/wireframes/form-desk.png)
 ![Booking form ipad](docs/wireframes/form-ipad.png)
 ![Booking form mobile](docs/wireframes/form-mob.png)
 
-- **Product Details**
+#### Product Details
 ---
 ![Profile desktop](docs/wireframes/prof-desk.png)
 ![Profile ipad](docs/wireframes/prof-ipad.png)
 ![Profile mobile](docs/wireframes/prof-mob.png)
 
-- **User Profile**
+#### User Profile - Delivery Details
 ---
 ![Menu desktop](docs/wireframes/menu-desk.png)
 ![Menu ipad](docs/wireframes/menu-ipad.png)
 ![Menu mobile](docs/wireframes/menu-mob.png)
 
-- **Contact Form**
+#### User Profile - Order History
 ---
 ![Menu desktop](docs/wireframes/menu-desk.png)
 ![Menu ipad](docs/wireframes/menu-ipad.png)
 ![Menu mobile](docs/wireframes/menu-mob.png)
 
-- **Contact Form Success**
+#### User Profile - Wishlist
 ---
 ![Menu desktop](docs/wireframes/menu-desk.png)
 ![Menu ipad](docs/wireframes/menu-ipad.png)
 ![Menu mobile](docs/wireframes/menu-mob.png)
 
-- **Add Product**
+#### Admin - Add Product
 ---
 ![Menu desktop](docs/wireframes/menu-desk.png)
 ![Menu ipad](docs/wireframes/menu-ipad.png)
 ![Menu mobile](docs/wireframes/menu-mob.png)
 
-- **Edit Product**
+#### Admin - Edit Product
 ---
 ![Menu desktop](docs/wireframes/menu-desk.png)
 ![Menu ipad](docs/wireframes/menu-ipad.png)
 ![Menu mobile](docs/wireframes/menu-mob.png)
 
-- **Delete Product**
+#### Admin - Delete Product
 ---
 ![Menu desktop](docs/wireframes/menu-desk.png)
 ![Menu ipad](docs/wireframes/menu-ipad.png)
 ![Menu mobile](docs/wireframes/menu-mob.png)
 
-- **Shopping Bag**
+#### Contact Form
 ---
 ![Menu desktop](docs/wireframes/menu-desk.png)
 ![Menu ipad](docs/wireframes/menu-ipad.png)
 ![Menu mobile](docs/wireframes/menu-mob.png)
 
-- **Checkout**
+#### Contact Form Success
 ---
 ![Menu desktop](docs/wireframes/menu-desk.png)
 ![Menu ipad](docs/wireframes/menu-ipad.png)
 ![Menu mobile](docs/wireframes/menu-mob.png)
 
-- **Checkout Success**
+#### Shopping Bag
+---
+![Menu desktop](docs/wireframes/menu-desk.png)
+![Menu ipad](docs/wireframes/menu-ipad.png)
+![Menu mobile](docs/wireframes/menu-mob.png)
+
+#### Checkout
+---
+![Menu desktop](docs/wireframes/menu-desk.png)
+![Menu ipad](docs/wireframes/menu-ipad.png)
+![Menu mobile](docs/wireframes/menu-mob.png)
+
+#### Checkout Success
 ---
 ![Menu desktop](docs/wireframes/menu-desk.png)
 ![Menu ipad](docs/wireframes/menu-ipad.png)
@@ -555,7 +581,7 @@ Even though I worked on this project alone, using Agile principles helped me tra
 - 
 ![Contact form success]()
 
-### User - Profile Delivery Details
+### User Profile - Delivery Details
 
 - User profile only accessible by the logged in user.
 - Three tabs for each section of the page.
@@ -566,13 +592,13 @@ Even though I worked on this project alone, using Agile principles helped me tra
 
 ![Profile delivery]()
 
-### User - Profile Order History
+### User Profile - Order History
 
 
 
 ![Profile orders]()
 
-### User - Profile Wishlist
+### User Profile - Wishlist
 
 
 
@@ -613,6 +639,11 @@ Even though I worked on this project alone, using Agile principles helped me tra
 I created toasts (as taught from the Boutique Ado walkthrough project) to display all the messages across the site, except the wishlist messages. Those messages did not display properly and I did not have enough time to dig into why but that would be one of the first things I would fix when I come back to this project to make sure all messages on the site are cohesive in style (I mentioned this in the [TESTING.md](TESTING.md) documentation in the 'Unfixed bugs' section as well).
 
 I've added comprehensive messages to all app views to make sure the user is kept informed of all actions.
+
+[Messages success]()
+[Messages error]()
+[Messages warning]()
+[Messages info]()
 
 ### Future features
 
@@ -671,7 +702,7 @@ All the testing for this project can be found in a separate document [here](TEST
 
 ### Code 
 
-- I drew help from the walk-through of the Boutique Ado project. There is directly copied code from the project, as well as similarities in some of the code but I adapted it to fit the aims of this project as much as possible.
+- I drew help from the walk-through of the Boutique Ado project. There is directly copied code from the project (e.g. Stripe payments, webhooks etc), as well as similarities in some of the code but I adapted it to fit the aims of this project.
 
 Below are links that helped me adapt/build certain features:
 - [How To Create a Scroll Back To Top Button](https://www.w3schools.com/howto/howto_js_scroll_to_top.asp)
