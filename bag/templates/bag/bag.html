@@ -52,7 +52,7 @@
                                     <div class="input-group input-group-{{ item.item_id }}">
                                         <div class="input-group-prepend">
                                             <button class="decrement-qty btn btn-sm add-btn decrement-qty_{{ item.item_id }}" 
-                                                data-item_id="{{ item.item_id }}">
+                                                data-item_id="{{ item.item_id }}" aria-label="Decrement quantity button">
                                                 <span>
                                                     <i class="fas fa-minus fa-sm"></i>
                                                 </span>
@@ -60,10 +60,10 @@
                                         </div>
                                         <input class="form-control form-control-sm qty_input id_qty_{{ item.item_id }}" 
                                             type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99" step="1" 
-                                            data-item_id="{{ item.item_id }}">
+                                            data-item_id="{{ item.item_id }}" aria-label="Quantity number">
                                         <div class="input-group-append">
                                             <button class="increment-qty btn btn-sm add-btn increment-qty_{{ item.item_id }}" 
-                                                data-item_id="{{ item.item_id }}">
+                                                data-item_id="{{ item.item_id }}" aria-label="Increment quantity button">
                                                 <span>
                                                     <i class="fas fa-plus fa-sm"></i>
                                                 </span>
@@ -72,8 +72,8 @@
                                     </div>
                                 </div>
                             </form>
-                            <a class="update-link text-info"><small>Update</small></a>
-                            <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}">
+                            <a href="#" class="update-link text-info"><small>Update</small></a>
+                            <a href="#" class="remove-item text-danger float-right" id="remove_{{ item.item_id }}">
                                 <small>Remove</small>
                             </a>
                         </td>

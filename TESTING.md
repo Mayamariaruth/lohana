@@ -32,7 +32,6 @@
     * [***Shopping Bag***](#landing-page)
     * [***Checkout***](#landing-page)
     * [***Checkout Success***](#landing-page)
-1. [**Wave accessibility evaluation**](#wave-accessibility-evaluation)
 1. [**Bugs**](#bugs)
     * [***Unfixed Bugs***](#unfixed-bugs)
 
@@ -42,7 +41,7 @@ I manually tested this site in multiple ways highlighted below:
 * Deployed the site in an early stage on Heroku to make sure everything was working as intended. 
 * Received invaluable feedback from my mentor David, students in my community, family members and friends working in the industry.
 * Tested the site for cross-compatibility in the two most used browsers, Chrome and Safari.
-* Used DevTools to easily move between different screen sizes, simulating sizes between 390px to 4000px (but it is also functional on even larger screens given the max-width setting on the Body element to keep the content compact instead of stretched).
+* Used DevTools to easily move between different screen sizes, simulating sizes between 390px to 4000px (but it is also functional on even larger screens given the max-width=1500px setting on the Body element to keep the content compact instead of stretched).
 
 ### User stories
 
@@ -257,8 +256,8 @@ I manually tested this site in multiple ways highlighted below:
 This testing was done in an incognito window in Chrome to make sure the results were not influenced by browser extensions.
 
 The lower scores were for two main reasons:
-- The cdn imports from bootstrap, Google fonts and Font Awesome.
-- Hero image and background image, which were compressed and even resized multiple times without a change in score. It was not possible to edit them further without a bigger change in quality.
+- The cdn imports from bootstrap, Google fonts, Mailchimp, Stripe, JQuery and Font Awesome.
+- Hero image on landing page, which was compressed and resized multiple times without a change in score. It was not possible to edit them further without a bigger change in quality.
 
 ### **Landing page**
 - Desktop version:
@@ -323,7 +322,9 @@ The performance of the category selected pages were the same scores as below.
 
 ![Mobile menu](docs/images/lighthouse/menu-mob.png)
 
-### **User Profile - Delivery Details**
+### **User Profile**
+
+This page is sectioned with tabs so below is the total score for all tab content.
 
 - Desktop version:
 
@@ -333,25 +334,6 @@ The performance of the category selected pages were the same scores as below.
 
 ![Mobile profile](docs/images/lighthouse/prof-mob.png)
 
-### **User Profile - Order History**
-
-- Desktop version:
-
-![Desktop edit account details](docs/images/lighthouse/edit-acc-desk.png)
-
-- Mobile version:
-
-![Mobile edit account details](docs/images/lighthouse/edit-acc-mob.png)
-
-### **User Profile - Wishlist**
-
-- Desktop version:
-
-![Desktop delete account](docs/images/lighthouse/del-acc-desk.png)
-
-- Mobile version:
-
-![Mobile delete account](docs/images/lighthouse/del-acc-mob.png)
 
 ### **Admin - Add product**
 
@@ -415,6 +397,8 @@ The performance of the category selected pages were the same scores as below.
 
 ### **Checkout**
 
+85 in accessability score due to the Stripe element that I cannot change, (**"[aria-hidden="true"] elements contain focusable descendents"**).
+
 - Desktop version:
 
 ![Desktop delete booking](docs/images/lighthouse/del-book-desk.png)
@@ -433,12 +417,6 @@ The performance of the category selected pages were the same scores as below.
 
 ![Mobile delete booking](docs/images/lighthouse/del-book-mob.png)
 
-## Wave accessibility evaluation
-
-I also used the Wave evaluation tool to make sure I covered all my bases. 
-The evaluation is free from errors on all pages.
-
-![Wave evaluation]()
 
 ## Bugs
 

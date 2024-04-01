@@ -1,2 +1,3 @@
 User-agent: *
 Disallow:
+Sitemap: https://lohana-df1411a79e72.herokuapp.com/sitemap.xml

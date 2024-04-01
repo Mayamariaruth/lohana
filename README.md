@@ -10,7 +10,7 @@ Our primary aim is to provide customers with a seamless and enjoyable shopping e
 
 Link to the live site here - [Lohana](https://lohana-df1411a79e72.herokuapp.com/)
 
-![Responsive Mockup]()
+![Responsive Mockup](docs/ami.png)
 
 ## Table of Contents:
 1. [**Introduction**](#introduction)
@@ -44,7 +44,7 @@ Link to the live site here - [Lohana](https://lohana-df1411a79e72.herokuapp.com/
     * [***Database schema***](#database-schema)
     * [***Color scheme***](#color-scheme)
     * [***Typography***](#typography)
-1. [**Business Model**](#business-model)
+1. [**Business-to-Consumer (B2C) business model**](#business-to-consumer-b2c-business-model)
 1. [**SEO**](#seo)
 1. [**Marketing Strategy**](#marketing-strategy)
     * [***Brand Identity***](#brand-identity)
@@ -314,87 +314,87 @@ User-Friendly Experience: We aim to create a user-friendly website that is easy 
 
 #### Landing Page
 ---
-![Landing page desktop](docs/wireframes/land-desk.png)
-![Landing page ipad](docs/wireframes/land-ipad.png)
-![Landing page mobile](docs/wireframes/land-mob.png)
+![Landing page desktop](docs/wireframes/home-desk.png)
+![Landing page ipad](docs/wireframes/home-ipad.png)
+![Landing page mobile](docs/wireframes/home-mob.png)
 
 #### Products
 ---
-![Booking form desktop](docs/wireframes/form-desk.png)
-![Booking form ipad](docs/wireframes/form-ipad.png)
-![Booking form mobile](docs/wireframes/form-mob.png)
+![Products desktop](docs/wireframes/products-desk.png)
+![Products ipad](docs/wireframes/products-ipad.png)
+![Products mobile](docs/wireframes/products-mob.png)
 
 #### Product Details
 ---
-![Profile desktop](docs/wireframes/prof-desk.png)
-![Profile ipad](docs/wireframes/prof-ipad.png)
-![Profile mobile](docs/wireframes/prof-mob.png)
+![Details desktop](docs/wireframes/detail-home.png)
+![Details ipad](docs/wireframes/detail-ipad.png)
+![Details mobile](docs/wireframes/detail-mob.png)
 
 #### User Profile - Delivery Details
 ---
-![Menu desktop](docs/wireframes/menu-desk.png)
-![Menu ipad](docs/wireframes/menu-ipad.png)
-![Menu mobile](docs/wireframes/menu-mob.png)
+![Delivery desktop](docs/wireframes/prof-del-desk.png)
+![Delivery ipad](docs/wireframes/prof-del-ipad.png)
+![Delivery mobile](docs/wireframes/prof-del-mob.png)
 
 #### User Profile - Order History
 ---
-![Menu desktop](docs/wireframes/menu-desk.png)
-![Menu ipad](docs/wireframes/menu-ipad.png)
-![Menu mobile](docs/wireframes/menu-mob.png)
+![Order desktop](docs/wireframes/prof-order-desk.png)
+![Order ipad](docs/wireframes/prof-order-ipad.png)
+![Order mobile](docs/wireframes/prof-order-mob.png)
 
 #### User Profile - Wishlist
 ---
-![Menu desktop](docs/wireframes/menu-desk.png)
-![Menu ipad](docs/wireframes/menu-ipad.png)
-![Menu mobile](docs/wireframes/menu-mob.png)
+![Wishlist desktop](docs/wireframes/prof-wish-desk.png)
+![Wishlist ipad](docs/wireframes/prof-wish-ipad.png)
+![Wishlist mobile](docs/wireframes/prof-wish-mob.png)
 
 #### Admin - Add Product
 ---
-![Menu desktop](docs/wireframes/menu-desk.png)
-![Menu ipad](docs/wireframes/menu-ipad.png)
-![Menu mobile](docs/wireframes/menu-mob.png)
+![Add desktop](docs/wireframes)
+![Add ipad](do)
+![Add mobile](docs/wireframe)
 
 #### Admin - Edit Product
 ---
-![Menu desktop](docs/wireframes/menu-desk.png)
-![Menu ipad](docs/wireframes/menu-ipad.png)
-![Menu mobile](docs/wireframes/menu-mob.png)
+![Edit desktop](docs/wireframes)
+![Edit ipad](docs/wireframes)
+![Edit mobile](docs/wireframe)
 
 #### Admin - Delete Product
 ---
-![Menu desktop](docs/wireframes/menu-desk.png)
-![Menu ipad](docs/wireframes/menu-ipad.png)
-![Menu mobile](docs/wireframes/menu-mob.png)
+![Delete desktop](docs/wireframes)
+![Delete ipad](docs/wireframes)
+![Delete  mobile](docs/wireframe)
 
 #### Contact Form
 ---
-![Menu desktop](docs/wireframes/menu-desk.png)
-![Menu ipad](docs/wireframes/menu-ipad.png)
-![Menu mobile](docs/wireframes/menu-mob.png)
+![Contact desktop](docs/wireframes/cont-desk.png)
+![Contact ipad](docs/wireframes/cont-ipad.png)
+![Contact mobile](docs/wireframes/cont-mob.png)
 
 #### Contact Form Success
 ---
-![Menu desktop](docs/wireframes/menu-desk.png)
-![Menu ipad](docs/wireframes/menu-ipad.png)
-![Menu mobile](docs/wireframes/menu-mob.png)
+![Contact Success desktop](docs/wireframes)
+![Contact Success ipad](docs/wireframes)
+![Contact Success mobile](docs/wireframe)
 
 #### Shopping Bag
 ---
-![Menu desktop](docs/wireframes/menu-desk.png)
-![Menu ipad](docs/wireframes/menu-ipad.png)
-![Menu mobile](docs/wireframes/menu-mob.png)
+![Bag desktop](docs/wireframes)
+![Bag ipad](docs/wireframes)
+![Bag mobile](docs/wireframe)
 
 #### Checkout
 ---
-![Menu desktop](docs/wireframes/menu-desk.png)
-![Menu ipad](docs/wireframes/menu-ipad.png)
-![Menu mobile](docs/wireframes/menu-mob.png)
+![Checkout desktop](docs/wireframes)
+![Checkout  ipad](docs/wireframes)
+![Checkout  mobile](docs/wireframe)
 
 #### Checkout Success
 ---
-![Menu desktop](docs/wireframes/menu-desk.png)
-![Menu ipad](docs/wireframes/menu-ipad.png)
-![Menu mobile](docs/wireframes/menu-mob.png)
+![Checkout Success desktop](docs/wireframes)
+![Checkout Success ipad](docs/wireframes)
+![Checkout Success mobile](docs/wireframe)
 
 
 ### Database schema
@@ -413,7 +413,7 @@ I used two different fonts across the page:
 
 The fonts were sourced from Google Fonts.
 
-## Business Model
+## Business-to-Consumer (B2C) Business Model
 
 * **Value Proposition:**
 
@@ -443,7 +443,7 @@ Product Sales: Revenue generated from the sale of jewelry items, including earri
 
 * **Key Activities:**
 
-Inventory Management: Monitor and manage inventory levels to ensure adequate stock availability and minimize overstock or stockouts.
+Inventory Management: Monitor and manage inventory levels to ensure stock availability and minimize overstock or stockouts.
 Digital Marketing: Develop and execute digital marketing campaigns to drive website traffic, increase brand visibility, and acquire new customers.
 
 * **Cost Structure:**
@@ -471,7 +471,7 @@ I utilized [Moz](https://moz.com/explorer) and Google to research valuable keywo
 
 Even though keywords relating to physical locations such as 'store', 'near me', and so on, are highly searched, Lohana does not have a physical store so I opted not to use those to make sure the site is not misleading.
 
-I added extra titles on every page, as well as a sitemap file and a robots.txt file to improve the SEO.
+I added extra titles on every page, as well as a [sitemap file](sitemap.xml) and a [robots.txt](robots.txt) file to improve the SEO.
 
 ## Marketing Strategy
 ### Brand Identity
