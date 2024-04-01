@@ -348,23 +348,11 @@ User-Friendly Experience: We aim to create a user-friendly website that is easy 
 ![Wishlist ipad](docs/wireframes/prof-wish-ipad.png)
 ![Wishlist mobile](docs/wireframes/prof-wish-mob.png)
 
-#### Admin - Add Product
+#### Admin - Add Product/Edit Product
 ---
-![Add desktop](docs/wireframes)
-![Add ipad](do)
-![Add mobile](docs/wireframe)
-
-#### Admin - Edit Product
----
-![Edit desktop](docs/wireframes)
-![Edit ipad](docs/wireframes)
-![Edit mobile](docs/wireframe)
-
-#### Admin - Delete Product
----
-![Delete desktop](docs/wireframes)
-![Delete ipad](docs/wireframes)
-![Delete  mobile](docs/wireframe)
+![Add desktop](docs/wireframes/add-edit.png)
+![Add ipad](docs/wireframes/add-edit-ipad.png)
+![Add mobile](docs/wireframes/add-edit-mob.png)
 
 #### Contact Form
 ---
@@ -372,25 +360,28 @@ User-Friendly Experience: We aim to create a user-friendly website that is easy 
 ![Contact ipad](docs/wireframes/cont-ipad.png)
 ![Contact mobile](docs/wireframes/cont-mob.png)
 
-#### Contact Form Success
----
-![Contact Success desktop](docs/wireframes)
-![Contact Success ipad](docs/wireframes)
-![Contact Success mobile](docs/wireframe)
-
 #### Shopping Bag
+
+I did not manage to have time to do this one!
+
 ---
 ![Bag desktop](docs/wireframes)
 ![Bag ipad](docs/wireframes)
 ![Bag mobile](docs/wireframe)
 
 #### Checkout
+
+I did not manage to have time to do this one!
+
 ---
 ![Checkout desktop](docs/wireframes)
 ![Checkout  ipad](docs/wireframes)
 ![Checkout  mobile](docs/wireframe)
 
 #### Checkout Success
+
+I did not manage to have time to do this one!
+
 ---
 ![Checkout Success desktop](docs/wireframes)
 ![Checkout Success ipad](docs/wireframes)
@@ -525,31 +516,46 @@ Even though I worked on this project alone, using Agile principles helped me tra
 ## Features 
 ### Navigation
 
-- 
+- Free delivery banner in the same color as logo text
+- Lohana Jewelry logo (designed for this project) matching with the color scheme
+- Functioning Search dropdown
+- Products dropdown with categories and all products links
+- My account dropdown with register, sign in and contact us pages
+- Shopping bag icon and price. Amount updates as you add products to shopping bag
 
 ![Navigation bar](docs/features/nav.png)
+![Navigation bar](docs/features/search.png)
+![Navigation bar](docs/features/products-nav.png)
+![Navigation bar](docs/features/account.png)
 
 #### Navigation - User
 
-- 
+- My account dropdown only accessible to the logged in user
+- My profile access with personalized profile
 
 ![Navigation bar](docs/features/user-nav.png)
 
 #### Navigation - Admin
 
-- 
+- My account dropdown only accessible to the admin
+- Link to Add product page
 
 ![Navigation bar](docs/features/admin-nav.png)
 
 ### Landing page
 
--
+- Simple landing page with a hero image and text to reflect the identity of the brand
+- Button that links to the products page
 
 ![Landing page](docs/features/home.png)
 
 ### Footer
 
-- 
+- Footer with a mailchimp email signup form for newsletter marketing
+- Success message after subscribing
+- Contact us section with a button to the contact form
+- Link to Lohana's facebook page
+- Privacy policy document link
 
 ![Footer](docs/features/footer.png)
 
@@ -566,7 +572,11 @@ Even though I worked on this project alone, using Agile principles helped me tra
 
 ### Products
 
-- 
+- Products page displaying all products or customizable by category by clicking category buttons under title 
+- Also able to sort products with sort box based on name, price and category
+- All products text link with product count on each page (this also displays the search term if coming from search dropdown)
+- Each product containing an image, name, introduction, price and category tag (clickable tag to get to all products in that category)
+- Back to top button displays after scrolling down
 
 ![Products top](docs/features/products-top.png)
 ![Products](docs/features/products.png)
@@ -574,29 +584,35 @@ Even though I worked on this project alone, using Agile principles helped me tra
 
 ### Product Details
 
-- 
+- Details page consisting of product name, image, price, category tag (clickable tag to get to all products in that category), introduction, quantity input, add to bag/continue shopping buttons, detailed description and reviews section
+- Quantity input buttons disables at 1 and 99 due to min/max quantity able to be added
+- Error form message if user tries to add more than 1-99 quantity
+- Reviews display with name, review and time of entry
+- Review container is scrollable to not take up to much space on the page
+- Reviews can be edited/deleted in the admin panel
 
 ![Product details](docs/features/product-det.png)
 ![Reviews](docs/features/reviews.png)
 
 ### Contact Form
 
-- 'POST' contact form for all shoppers to contact the store.
-- All messages displayed in the admin panel.
+- 'POST' contact form for all shoppers to contact the store
+- All messages displayed in the admin panel and can be edited/deleted
 
 ![Contact form](docs/features/contact.png)
 
 ### Contact Form Success
 
-- 
+- Simple success template with a button to all products
 
 ![Contact form success](docs/features/contact-success.png)
 
 ### User Profile - Delivery Details
 
-- User profile only accessible by the logged in user.
-- Three tabs for each section of the page.
-- Delivery details tab with the user's saved delivery details and a form to update the details.
+- User profile only accessible by the logged in user
+- Three tabs for each section of the page
+- Displaying user's delivery details from either checkout (save info button) or if they've added them themselves in the form
+- Pre-populated form to update the details
 
 ![Profile delivery](docs/features/prof-delivery.png)
 
@@ -604,8 +620,8 @@ Even though I worked on this project alone, using Agile principles helped me tra
 
 - User profile only accessible by the logged in user.
 - Three tabs for each section of the page.
-- Order history tab displaying all previous orders and ability to click on the order number to go back to the checkout success page.
-
+- Order history displaying all previous user's orders with date of order, order number, items (with quantity) and grand total
+- Ability to click on the order number to go back to the checkout success page with an updated info message (see [messages](#messages))
 
 ![Profile orders](docs/features/prof-orders.png)
 
@@ -613,22 +629,31 @@ Even though I worked on this project alone, using Agile principles helped me tra
 
 - User profile only accessible by the logged in user.
 - Three tabs for each section of the page.
-- Wishlist tab displaying all the user's saved products (with a link back to 'All products', a product count of all wishlist items and the sort box) and ability to remove them. 
-(I purposely didn't add the wishlist to the admin panel since it's not meant to be accessed/customized by the admin)
+- Wishlist displaying all the user's saved products like they are displayed on the products page
+- Text link back to 'All products' and a product count of all wishlist items (that updates as you add/remove products)
+- Sort box to sort by name, price and category
+- Remove from wishlist button that removes the product immediately and displays the JSON message
+- Add to wishlist button displayed on all products on the product page
 
+(I purposely didn't add the wishlist to the admin panel since it's not meant to be accessed/customized by the admin)
 
 ![Product wishlist button](docs/features/user-prod.png)
 ![Profile wishlist](docs/features/prof-wish.png)
 
 ### Admin - Add Products
 
-- 
+- Admin profile page only accessible by the logged in admin
+- Form to add a product on the page with all details (summernote editor to improve description)
+- Product is added to page immediately
 
 ![](docs/features/add-produ.png)
 
 ### Admin - Edit Products
 
-- 
+- Edit product buttons visible only to the logged in admin
+- Highlighted on the products page and on product details page under category tag
+- Links to the edit product form which is pre-populated with product details
+- Updated details take effect immediately on the page
 
 ![Edit button](docs/features/admin-prod-btns.png)
 ![Edit button](docs/features/admin-det-btns.png)
@@ -636,8 +661,11 @@ Even though I worked on this project alone, using Agile principles helped me tra
 
 ### Admin - Delete Products
 
-- 
-
+- Delete product buttons visible only to the logged in admin
+- Highlighted on the products page and on product details page under category tag
+- Links to delete product page
+- Simple delete confirmation page with the product name and image
+- Product is immediately deleted upon confirmation
 
 ![Delete button](docs/features/admin-prod-btns.png)
 ![Delete button](docs/features/admin-det-btns.png)
@@ -645,19 +673,31 @@ Even though I worked on this project alone, using Agile principles helped me tra
 
 ### Shopping Bag
 
-- 
+- Shopping bag page displaying product name, image, SKU, quantity, quantity input, totals (grand, sub etc)
+- Able to update the quantity of the product within 1-99 range with the update button and quantity buttons
+- Error message displays if user tries to add below or over the range
+- Delete button to delete the product from the bag
+- Free delivery is included or a message is displayed saying how much is left until free delivery is reached
+- Continue shopping button links to products page
+- Secure checkout button to checkout
 
 ![Shopping bag](docs/features/bag.png)
 
 ### Checkout
 
-- 
+- Checkout page with order summary of all order details
+- User fills in personal details and delivery details (able to save delivery details to profile if logged in)
+- Functioning stripe card payments
+- Adjust bag button to go back to shopping bag
+- Complete order button to make the purchase
 
 ![Checkout](docs/features/check.png)
 
 ### Checkout Success
 
-- 
+- Checkout page with success message displaying order number and directing user to their email for the email confirmation
+- Displays the order summary as well with all order details 
+- Contact us button to direct user to contact form page if they need
 
 ![Checkout message](docs/features/checkout-message.png)
 ![Checkout success](docs/features/check-succ.png)
@@ -670,9 +710,8 @@ I created toasts (as taught from the Boutique Ado walkthrough project) to displa
 I've added comprehensive messages to all app views to make sure the user is kept informed of all actions.
 
 [Messages success](docs/features/success-bag.png)
-[Messages error]()
-[Messages warning]()
-[Messages info]()
+[Messages error](docs/features/error.png)
+[Messages info](docs/features/info.png)
 [Messages JSON wihslist](docs/features/json-mess.png)
 
 ### Future features

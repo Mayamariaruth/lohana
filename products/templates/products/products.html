@@ -111,7 +111,7 @@
 {% block postloadjs %}
 {{ block.super }}
 <!-- Scroll to top button -->
-<script type="text/javascript">
+<script>
     $(window).scroll(function () {
         if ($(this).scrollTop() > 20) {
             $('.top-btn').css('display', 'block');
@@ -124,7 +124,7 @@
     })
 </script>
 <!-- Sorting products -->
-<script type="text/javascript">
+<script>
     $('#sort-selector').change(function () {
         const selector = $(this);
         var currentUrl = new URL(window.location);
@@ -145,7 +145,7 @@
     })
 </script>
 <!-- Wishlist button -->
-<script type="text/javascript">
+<script>
     $('.wishlist-button').click(function() {
         var productId = $(this).data('product-id');
         $.post('add_to_wishlist/', {'product_id': productId, 'csrfmiddlewaretoken': '{{ csrf_token }}'})
