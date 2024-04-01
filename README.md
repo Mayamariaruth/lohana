@@ -1,4 +1,4 @@
-![Lohana Logo](static/images/header.png)
+![Lohana Logo](docs/header.png)
 
 ## Introduction
 
@@ -524,115 +524,144 @@ Even though I worked on this project alone, using Agile principles helped me tra
 
 ## Features 
 ### Navigation
+
 - 
 
-![Navigation bar]()
+![Navigation bar](docs/features/nav.png)
 
 #### Navigation - User
+
 - 
 
-![Navigation bar]()
+![Navigation bar](docs/features/user-nav.png)
 
 #### Navigation - Admin
+
 - 
 
-![Navigation bar]()
+![Navigation bar](docs/features/admin-nav.png)
 
 ### Landing page
+
 -
 
-![Landing page]()
+![Landing page](docs/features/home.png)
 
 ### Footer
+
 - 
 
-![Footer]()
+![Footer](docs/features/footer.png)
 
 ### AllAuth
 
 #### Register
-![Register]()
+![Register](docs/features/register.png)
 
-#### Login
-![Login]()
+#### Sign In
+![Sign In](docs/features/signin.png)
 
-#### Logout
-![Logout]()
+#### Sign Out
+![Sign Out](docs/features/signout.png)
 
 ### Products
+
 - 
 
-![]()
+![Products top](docs/features/products-top.png)
+![Products](docs/features/products.png)
+![Back to top button](docs/features/top-btn.png)
 
 ### Product Details
+
 - 
 
-![]()
+![Product details](docs/features/product-det.png)
+![Reviews](docs/features/reviews.png)
 
 ### Contact Form
 
 - 'POST' contact form for all shoppers to contact the store.
 - All messages displayed in the admin panel.
 
-![Contact form]()
+![Contact form](docs/features/contact.png)
 
 ### Contact Form Success
 
 - 
-![Contact form success]()
+
+![Contact form success](docs/features/contact-success.png)
 
 ### User Profile - Delivery Details
 
 - User profile only accessible by the logged in user.
 - Three tabs for each section of the page.
 - Delivery details tab with the user's saved delivery details and a form to update the details.
-- Order history tab displaying all previous orders and ability to click on the order number to go back to the checkout success page.
-- Wishlist tab displaying all the user's saved products (with a link back to 'All products', a product count of all wishlist items and the sort box) and ability to remove them. 
-(I purposely didn't add the wishlist to the admin panel since it's not meant to be accessed/customized by the admin)
 
-![Profile delivery]()
+![Profile delivery](docs/features/prof-delivery.png)
 
 ### User Profile - Order History
 
+- User profile only accessible by the logged in user.
+- Three tabs for each section of the page.
+- Order history tab displaying all previous orders and ability to click on the order number to go back to the checkout success page.
 
 
-![Profile orders]()
+![Profile orders](docs/features/prof-orders.png)
 
 ### User Profile - Wishlist
 
+- User profile only accessible by the logged in user.
+- Three tabs for each section of the page.
+- Wishlist tab displaying all the user's saved products (with a link back to 'All products', a product count of all wishlist items and the sort box) and ability to remove them. 
+(I purposely didn't add the wishlist to the admin panel since it's not meant to be accessed/customized by the admin)
 
 
-![Profile wishlist]()
+![Product wishlist button](docs/features/user-prod.png)
+![Profile wishlist](docs/features/prof-wish.png)
 
 ### Admin - Add Products
+
 - 
 
-![]()
+![](docs/features/add-produ.png)
 
 ### Admin - Edit Products
+
 - 
 
-![]()
+![Edit button](docs/features/admin-prod-btns.png)
+![Edit button](docs/features/admin-det-btns.png)
+![Edit product](docs/features/edit.png)
 
 ### Admin - Delete Products
+
 - 
 
-![]()
+
+![Delete button](docs/features/admin-prod-btns.png)
+![Delete button](docs/features/admin-det-btns.png)
+![Delete product](docs/features/admin-del.png)
 
 ### Shopping Bag
+
 - 
 
-![]()
+![Shopping bag](docs/features/bag.png)
 
 ### Checkout
+
 - 
 
-![]()
+![Checkout](docs/features/check.png)
 
 ### Checkout Success
+
 - 
 
-![]()
+![Checkout message](docs/features/checkout-message.png)
+![Checkout success](docs/features/check-succ.png)
+![Checkout summary](docs/features/check-summary.png)
 
 ### Messages 
 
@@ -640,10 +669,11 @@ I created toasts (as taught from the Boutique Ado walkthrough project) to displa
 
 I've added comprehensive messages to all app views to make sure the user is kept informed of all actions.
 
-[Messages success]()
+[Messages success](docs/features/success-bag.png)
 [Messages error]()
 [Messages warning]()
 [Messages info]()
+[Messages JSON wihslist](docs/features/json-mess.png)
 
 ### Future features
 

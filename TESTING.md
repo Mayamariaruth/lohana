@@ -19,19 +19,15 @@
     * [***Sign Out***](#sign-out)
     * [***Products***](#products)
     * [***Product Details***](#product-details)
-    * [***User profile - Delivery Details***](#landing-page)
-
-    * [***Landing page***](#landing-page)
-    * [***Landing page***](#landing-page)
-
-    * [***Admin - Add Product***](#landing-page)
-    * [***Admin - Edit Product***](#landing-page)
-    * [***Admin - Delete Product***](#landing-page)
-    * [***Contact Form***](#landing-page)
-    * [***Contact Form Success***](#landing-page)
-    * [***Shopping Bag***](#landing-page)
-    * [***Checkout***](#landing-page)
-    * [***Checkout Success***](#landing-page)
+    * [***User Profile***](#user-profile)
+    * [***Admin - Add Product***](#admin---add-product)
+    * [***Admin - Edit Product***](#admin---edit-product)
+    * [***Admin - Delete Product***](#admin---delete-product)
+    * [***Contact Form***](#contact-form)
+    * [***Contact Form Success***](#contact-success)
+    * [***Shopping Bag***](#shopping-bag)
+    * [***Checkout***](#checkout)
+    * [***Checkout Success***](#checkout-success)
 1. [**Bugs**](#bugs)
     * [***Unfixed Bugs***](#unfixed-bugs)
 
@@ -257,58 +253,58 @@ This testing was done in an incognito window in Chrome to make sure the results 
 
 The lower scores were for two main reasons:
 - The cdn imports from bootstrap, Google fonts, Mailchimp, Stripe, JQuery and Font Awesome.
-- Hero image on landing page, which was compressed and resized multiple times without a change in score. It was not possible to edit them further without a bigger change in quality.
+- Images as usual. The hero image and logo was compressed and resized multiple times without a change in score. It was not possible to edit them further without a bigger change in quality.
 
 ### **Landing page**
 - Desktop version:
 
-![Desktop landing page](docs/images/lighthouse/land-desk.png)
+![Desktop landing page](docs/validation/lighthouse/home-desk.png)
 
 - Mobile version:
 
-![Mobile landing page](docs/images/lighthouse/land-mob.png)
+![Mobile landing page](docs/validation/lighthouse/home-mob.png)
 
 ### **Register**
 
 - Desktop version:
 
-![Desktop delete booking](docs/images/lighthouse/del-book-desk.png)
+![Desktop delete booking](docs/validation/lighthouse/reg-desk.png)
 
 - Mobile version:
 
-![Mobile delete booking](docs/images/lighthouse/del-book-mob.png)
+![Mobile delete booking](docs/validation/lighthouse/reg-mob.png)
 
 ### **Sign in**
 
 - Desktop version:
 
-![Desktop delete booking](docs/images/lighthouse/del-book-desk.png)
+![Desktop delete booking](docs/validation/lighthouse/signin-desk.png)
 
 - Mobile version:
 
-![Mobile delete booking](docs/images/lighthouse/del-book-mob.png)
+![Mobile delete booking](docs/validation/lighthouse/signin-mob.png)
 
 ### **Sign Out**
 
 - Desktop version:
 
-![Desktop delete booking](docs/images/lighthouse/del-book-desk.png)
+![Desktop delete booking](docs/validation/lighthouse/signout-desk.png)
 
 - Mobile version:
 
-![Mobile delete booking](docs/images/lighthouse/del-book-mob.png)
+![Mobile delete booking](docs/validation/lighthouse/signout-mob.png)
 
 ### **Products**
 
-The performance of the category selected pages were the same scores as below.
+Lower score due to images but did not have time to compress them all and that would surely affect quality.
 
 - Desktop version:
 
-![Desktop menu](docs/images/lighthouse/menu-desk.png)
+![Desktop menu](docs/validation/lighthouse/product-desk.png)
 
 - Mobile version:
 
-![Mobile menu](docs/images/lighthouse/menu-mob.png)
+![Mobile menu](docs/validation/lighthouse/product-mob.png)
 
 ### **Product Details**
 
@@ -316,11 +312,11 @@ The performance of the category selected pages were the same scores as below.
 
 - Desktop version:
 
-![Desktop menu](docs/images/lighthouse/menu-desk.png)
+![Desktop menu](docs/validation/lighthouse/det-desk.png)
 
 - Mobile version:
 
-![Mobile menu](docs/images/lighthouse/menu-mob.png)
+![Mobile menu](docs/validation/lighthouse/det-mob.png)
 
 ### **User Profile**
 
@@ -328,94 +324,98 @@ This page is sectioned with tabs so below is the total score for all tab content
 
 - Desktop version:
 
-![Desktop profile](docs/images/lighthouse/prof-desk.png)
+![Desktop profile](docs/validation/lighthouse/prof-desk.png)
 
 - Mobile version:
 
-![Mobile profile](docs/images/lighthouse/prof-mob.png)
+![Mobile profile](docs/validation/lighthouse/prof-mob.png)
 
 
 ### **Admin - Add product**
 
+85 accessibility score due to Summernote editor not having a title attribute.
+
 - Desktop version:
 
-![Desktop edit booking](docs/images/lighthouse/edit-book-desk.png)
+![Desktop edit booking](docs/validation/lighthouse/add-desk.png)
 
 - Mobile version:
 
-![Mobile edit booking](docs/images/lighthouse/edit-book-mob.png)
+![Mobile edit booking](docs/validation/lighthouse/add-mob.png)
 
 ### **Admin - Edit Product**
 
+83 accessibility score due to Summernote editor not having a title attribute and updated image field does not have an [alt] attribute or label.
+
 - Desktop version:
 
-![Desktop delete booking](docs/images/lighthouse/del-book-desk.png)
+![Desktop delete booking](docs/validation/lighthouse/edit-desk.png)
 
 - Mobile version:
 
-![Mobile delete booking](docs/images/lighthouse/del-book-mob.png)
+![Mobile delete booking](docs/validation/lighthouse/edit-mob.png)
 
 ### **Admin - Delete Product**
 
 - Desktop version:
 
-![Desktop delete booking](docs/images/lighthouse/del-book-desk.png)
+![Desktop delete booking](docs/validation/lighthouse/del-desk.png)
 
 - Mobile version:
 
-![Mobile delete booking](docs/images/lighthouse/del-book-mob.png)
+![Mobile delete booking](docs/validation/lighthouse/del-mob.png)
 
 ### **Contact form**
 
 - Desktop version:
 
-![Desktop booking form](docs/images/lighthouse/form-desk.png)
+![Desktop booking form](docs/validation/lighthouse/cont-desk.png)
 
 - Mobile version:
 
-![Mobile booking form](docs/images/lighthouse/form-mob.png)
+![Mobile booking form](docs/validation/lighthouse/cont-mob.png)
 
 ### **Contact Success**
 
 - Desktop version:
 
-![Desktop booking success](docs/images/lighthouse/success-desk.png)
+![Desktop booking success](docs/validation/lighthouse/cont-succ-desk.png)
 
 - Mobile version:
 
-![Mobile booking success](docs/images/lighthouse/success-mob.png)
+![Mobile booking success](docs/validation/lighthouse/cont-succ-mob.png)
 
 ### **Shopping Bag**
 
 - Desktop version:
 
-![Desktop delete booking](docs/images/lighthouse/del-book-desk.png)
+![Desktop delete booking](docs/validation/lighthouse/bag-desk.png)
 
 - Mobile version:
 
-![Mobile delete booking](docs/images/lighthouse/del-book-mob.png)
+![Mobile delete booking](docs/validation/lighthouse/bag-mob.png)
 
 ### **Checkout**
 
-85 in accessability score due to the Stripe element that I cannot change, (**"[aria-hidden="true"] elements contain focusable descendents"**).
+85 accessability score due to the Stripe element, (**"[aria-hidden="true"] elements contain focusable descendents"**).
 
 - Desktop version:
 
-![Desktop delete booking](docs/images/lighthouse/del-book-desk.png)
+![Desktop delete booking](docs/validation/lighthouse/checkout-desk.png)
 
 - Mobile version:
 
-![Mobile delete booking](docs/images/lighthouse/del-book-mob.png)
+![Mobile delete booking](docs/validation/lighthouse/checkout-mob.png)
 
 ### **Checkout Success**
 
 - Desktop version:
 
-![Desktop delete booking](docs/images/lighthouse/del-book-desk.png)
+![Desktop delete booking](docs/validation/lighthouse/check-succ-desk.png)
 
 - Mobile version:
 
-![Mobile delete booking](docs/images/lighthouse/del-book-mob.png)
+![Mobile delete booking](docs/validation/lighthouse/check-succ-mob.png)
 
 
 ## Bugs
