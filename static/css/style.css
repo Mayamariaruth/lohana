@@ -90,6 +90,7 @@ ul {
     position: relative;
     background-size: cover;
     background-position: 50% 50%;
+    max-width: 1200px;
 }
 
 .hero-content {

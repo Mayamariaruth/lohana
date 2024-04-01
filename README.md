@@ -2,7 +2,11 @@
 
 ## Introduction
 
+Lohana Jewelry is your premier destination for exquisite gold-plated jewelry online.
 
+Jewelry is more than just an accessory; it's an expression of love, style, and personality. Whether you're celebrating a special someone, expressing your individuality, or simply treating yourself to something beautiful, we're here to help you find the perfect piece that resonates with you.
+
+Our primary aim is to provide customers with a seamless and enjoyable shopping experience while offering a diverse selection of high-quality gold-plated jewelry pieces. 
 
 Link to the live site here - [Lohana](https://lohana-df1411a79e72.herokuapp.com/)
 
@@ -12,20 +16,28 @@ Link to the live site here - [Lohana](https://lohana-df1411a79e72.herokuapp.com/
 1. [**Introduction**](#introduction)
 1. [**Planning**](#planning)
     * [***User Stories***](#user-stories)
-        * [***Dropped***](#dropped)
+        * [***EPIC - View Products***](#epic---view-products)
+        * [***EPIC - Register and User Profile***](#epic---register-and-user-profile)
+        * [***EPIC - Search and Sort***](#epic---search-and-sort)
+        * [***EPIC - Shopping bag and Checkout***](#epic---shopping-bag-and-checkout)
+        * [***EPIC - Admin Management***](#epic---admin-management)
+        * [***EPIC - Contact***](#epic---contact)
     * [***Site aims***](#site-aims)
     * [***Scope***](#scope)
-        * [***Book table form***](#1-book-table-form)
-        * [***User profile***](#2-user-profile)
-        * [***Admin panel***](#3-admin-panel)
-        * [***Navigation bar***](#4-navigation-bar)
-        * [***Footer***](#5-footer)
-        * [***Landing page***](#6-landing-page)
-        * [***Menu***](#7-menu)
+        * [***Objectives***](#objectives)
+        * [***Deliverables***](#deliverables)
     * [***Wireframes***](#wireframes)
     * [***Database schema***](#database-schema)
     * [***Color scheme***](#color-scheme)
     * [***Typography***](#typography)
+1. [**Business Model**](#business-model)
+1. [**SEO**](#seo)
+1. [**Marketing Strategy**](#marketing-strategy)
+    * [***Brand Identity***](#brand-identity)
+    * [***Demographic***](#demographic)
+    * [***Competitors***](#competitors)
+    * [***Marketing Goals***](#marketing-goals)
+    * [***Marketing***](#marketing)
 1. [**Agile**](#agile)
 1. [**Features**](#Features)
     * [***Navigation***](#navigation)
@@ -37,11 +49,20 @@ Link to the live site here - [Lohana](https://lohana-df1411a79e72.herokuapp.com/
         * [***Register***](#register)
         * [***Login***](#login)
         * [***Logout***](#logout)
-    * [***Contact form***](#booking-form)
-    * [***User***](#user)
-        * [***Profile***](#profile)
-    * [***Admin***](#admin)
-        * [***Add products***](#add-products-pagel)
+    * [***Products***](#products)
+    * [***Product Details***](#product-details)
+    * [***Contact Form***](#contact-form)
+    * [***Contact Form Success***](#contact-form-success)
+    * [***User - Profile Delivery Details***](#user---profile-delivery-detailsr)
+    * [***User - Profile Delivery Details***](#user---profile-order-history)
+    * [***User - Profile Wishlist***](#user---profile-wishlist)
+    * [***Admin - Add Product***](#admin---add-products)
+    * [***Admin - Edit Product***](#admin---edit-products)
+    * [***Admin - Delete Product***](#admin---delete-products)
+    * [***Shopping bag***](#shopping-bag)
+    * [***Checkout***](#checkout)
+    * [***Checkout Success***](#checkout-success)
+    * [***Messages***](#messages)
     * [***Future features***](#future-features)
 1. [**Deployment**](#deployment)
     * [***Cloning***](#cloning)
@@ -245,52 +266,35 @@ As a shopper I can contact the store so that I can communicate with the store ab
     * Form submission to admin panel
 
 
-#### Dropped
-As an admin user, I can access the menu page so that I can edit/delete menu items
-
-- Acceptance Criteria
-    * Admin access to the menu page
-
-    * Edit menu items
-
-    * Delete menu items
-
-
 ### Site aims 
 
+Highlight Collections: Highlight the thoughtfully selected collection of gold-plated jewelry, ranging from timeless classics to trendy designs, catering to various tastes and preferences.
+
+Marketing aims:
+- Expand brand awareness.
+- Increase website traffic.
+- Improve conversion rates.
+- Grow sales revenue.
+
+Customer Satisfaction: We strive to exceed our customers' expectations by providing exceptional service, prompt assistance, and hassle-free shopping from browsing to checkout.
+
+User-Friendly Experience: We aim to create a user-friendly website that is easy to navigate, visually appealing, and optimized for both desktop and mobile devices. 
 
 ### Scope
 
-The following is a prioritized list outlining the scope of the project. These priorities were determined considering the project's limited time frame and the key features essential for its aim (MVP).
+#### Objectives:
 
-#### 1. 
+- Establish online presence through a user-friendly e-commerce website to showcasing Lohana's collection of gold-plated jewelry.
+- Enhance customer experience by creating a seamless shopping experience for customers from start to finish.
+- Increase online sales and revenue by attracting new customers and retaining existing ones.
 
-* 
+#### Deliverables:
 
-#### 2. 
-
-* 
-
-#### 3. 
-
-* 
-
-
-#### 4. 
-
-* 
-
-#### 5. 
-
-* 
-
-#### 6. 
-
-* 
-
-#### 7. 
-
-* 
+- Develop a visually appealing e-commerce website for Lohana, featuring easy navigation, product displays, and seamless checkout.
+- Showcase Lohana's collection of jewelry, including detailed product descriptions, high-quality images, and pricing details
+- Implement user account functionality, allowing customers to register, log in, and manage their profiles, addresses, and order history.
+- Integrate a shopping bag system that enables customers to add products, review their selections, and complete purchases securely through a streamlined checkout process.
+- Implement admin management functionality, allowing staff to edit/delete and, add products to the website. 
 
 ### Wireframes
 
@@ -368,92 +372,126 @@ The following is a prioritized list outlining the scope of the project. These pr
 
 
 ### Database schema
- I used Django's built-in User Model for the user accounts and I created three custom models for reviews, wishlist and a contact form (the rest were based off the walkthrough project Boutique Ado). 
+I used Django's built-in User Model for the user accounts and created three custom models for reviews, a wishlist and a contact form (the rest were based off the walkthrough project Boutique Ado). 
 
 ![ERD](docs/erd.png)
 
 ### Color scheme
-I wanted a simple and elegant color scheme to match the feel of a jewelry e-commerce website. I started by creating a unique logo and I then generated the colors from the logo on [Coolors](https://coolors.co/).
+I wanted a simple and elegant color scheme to match the identity of Lohana and their products.
+I started by creating a unique logo and then generating the website colors from the logo on [Coolors](https://coolors.co/).
 
 ### Typography
 I used two different fonts across the page:
- * Noto Serif, for most texts on the site.
+ * Noto Serif, used site-wide.
  * Montserrat, for the reviews to separate them from the rest of the text on the site.
 
 The fonts were sourced from Google Fonts.
 
-
-
-
 ## Business Model
 
+* **Value Proposition:**
 
+High-quality, thoughtfully designed jewelry pieces.
+14k-18k gold plated unique designs.
+Secure and convenient online shopping experience.
 
+* **Customer Segments:**
+
+Fashion-conscious individuals seeking elegant accessories.
+Gift shoppers looking for special occasions like birthdays, anniversaries, and holidays.
+
+* **Channels:**
+
+E-commerce Website: A user-friendly website with easy navigation and secure payment options.
+Social Media Platforms: Utilize platforms like Instagram, Facebook, and Tik Tok for showcasing products, engaging with customers, and running targeted ads.
+Influencer Collaborations: Partner with fashion influencers and bloggers for product endorsements and promotions.
+
+* **Customer Relationships:**
+
+Personalized Customer Support: Provide responsive customer service through a contact form on the website and, email.
+Engaging Content: Regularly update the website and social media platforms with engaging content such as style tips, behind-the-scenes stories, product content and, customer testimonials.
+
+* **Revenue Streams:**
+
+Product Sales: Revenue generated from the sale of jewelry items, including earrings, necklaces, and bracelets, with future aims to release further collections such as Silver Jewelry and rings to increase revenue.
+
+* **Key Activities:**
+
+Inventory Management: Monitor and manage inventory levels to ensure adequate stock availability and minimize overstock or stockouts.
+Digital Marketing: Develop and execute digital marketing campaigns to drive website traffic, increase brand visibility, and acquire new customers.
+
+* **Cost Structure:**
+
+Product Costs: Expenses associated with sourcing raw materials, production, and labor for manufacturing jewelry items.
+Marketing and Advertising: Costs related to digital marketing campaigns, social media advertising, and influencer collaborations.
+Website Maintenance: Expenses for website hosting, domain registration, and ongoing maintenance and updates.
+Operational Costs: Overhead expenses including salaries, and administrative costs.
+
+* **Metrics:**
+
+Sales Revenue: Track total sales revenue and average order value.
+Website Traffic: Monitor website traffic metrics such as unique visitors, page views, and bounce rates.
+Conversion Rate: Measure the percentage of website visitors who make a purchase or complete a desired action.
+Customer Satisfaction: Gather feedback from customers through surveys, and reviews to assess overall satisfaction and identify areas for improvement.
 
 ## SEO
-I utilized [Moz](https://moz.com/explorer) and Google to research valuable keywords for Lohana and below is the list of long-tail and short-tail keywords that I included in the meta tags.
+I utilized [Moz](https://moz.com/explorer) and Google to research valuable keywords for Lohana and below is the list of long-tail and short-tail keywords that was included in the meta tags.
 
-[Keywords]()
+- jewelry, accessories, necklaces, earrings, bracelets
 
-Even though keywords relating to physical locations such as 'store', 'near me', and so on are highly searched, Lohana does not have a physical store so I opted not to use those so as to not be misleading.
+- gold jewelry, women's jewelry, fine jewelry, jewelry brand, hoop earrings, jewelry set
 
-I added extra titles on every page, as well as added a sitemap file and a robots.txt file to improve the SEO.
+- online jewelry store, jewelry for women, gift ideas for jewelry, christmas gift ideas, gifts for mom, 18k gold-plated jewelry, 14k gold-plated jewelry, gold-plated jewelry for women
 
+Even though keywords relating to physical locations such as 'store', 'near me', and so on, are highly searched, Lohana does not have a physical store so I opted not to use those to make sure the site is not misleading.
 
-
+I added extra titles on every page, as well as a sitemap file and a robots.txt file to improve the SEO.
 
 ## Marketing Strategy
 ### Brand Identity
 
-Identify what sets Lohana apart from other gold jewelry stores. Is it the quality of craftsmanship, unique designs, ethical sourcing, or exceptional customer service?
-Craft a compelling brand story and messaging that resonates with your target audience's values and aspirations.
+Lohana's brand identity lies in the commitment to creating high quality elegant jewelry that complements every aspect of an individual's life. From dainty layering pieces to statement-making designs, Lohana offers a variety of accessories that empower individuals to express their uniqueness and style with confidence.
 
 ### Demographic
 
-Conduct market research to understand the demographics, preferences, and purchasing behavior of your target customers. Are they primarily young professionals, fashion enthusiasts, or gift buyers?
-Create detailed buyer personas to represent different segments of your audience, including their needs, motivations, and pain points.
+Age: Primarily millennials and Gen Z individuals, ranging from 25-40.
+
+Gender: Designed to appeal to all genders, but marketing efforts are predominantly towards women, given the focus on elegant and feminine designs.
+
+Income Level: Middle to upper-middle-class individuals with an income for luxury accessories. Lohana's price points are more accessible to consumers within this income bracket.
+
+Lifestyle: Urban professionals, creative professionals, fashion-forward students, and individuals who appreciate elegant style in their accessories.
 
 ### Competitors
-Analyze your competitors' marketing strategies to identify their strengths, weaknesses, opportunities, and threats. This competitive analysis can provide valuable insights into market trends, customer preferences, and potential gaps in the market that your business can exploit.
+I utilized [Moz](https://moz.com/explorer) to compile a list of Lohana's top competitors in the US.
 
+[Competitors](docs/competitors.png)
 
-Some of these brands were also in the top of my keyword search lists when digging into which keywords would work best for SEO.
+During my research into effective SEO keywords, I found that several of these competitor brands appeared at the top of my search lists.
 
-### Unique Selling Proposition (USP)
+### Marketing Goals
 
-Determine what sets your products or services apart from the competition. Your USP should clearly communicate the unique value and benefits that you offer to customers. This can help differentiate your brand and attract customers in a crowded marketplace.
-
-### Goals
-
-Determine specific, measurable goals for your marketing efforts. These could include increasing website traffic, improving conversion rates, growing sales revenue, or expanding brand awareness within your target market.
-Your goals should be specific, measurable, achievable, relevant, and time-bound (SMART). For example, your goals might include increasing brand awareness, driving website traffic, generating leads, or boosting sales.
+- Expand brand awareness.
+- Increase website traffic.
+- Improve conversion rates.
+- Grow sales revenue.
 
 ### Marketing 
 
-Select the most effective marketing channels to reach and engage your target audience. This might include:
-Social Media Marketing: Utilize platforms like Instagram, Facebook, and Pinterest to showcase your jewelry, share user-generated content, run targeted ads, and engage with followers.
-Content Marketing: Create engaging content such as blog posts, tutorials, style guides, and videos that educate and inspire your audience while subtly promoting your products.
-Email Marketing: Build and segment your email list to send personalized promotions, product recommendations, exclusive offers, and updates about new arrivals or sales.
-Influencer Partnerships: Collaborate with fashion influencers, bloggers, or celebrities to showcase your jewelry to their followers and leverage their influence to increase brand visibility.
-Search Engine Optimization (SEO): Optimize your website content and product listings to rank higher in search engine results pages (SERPs) and attract organic traffic from people searching for gold jewelry online.
-Paid Advertising: Invest in pay-per-click (PPC) advertising on platforms like Google Ads or social media channels to target specific keywords, demographics, or interests and drive relevant traffic to your website.
-Execute your marketing tactics effectively across chosen channels. This may involve creating and scheduling social media posts, launching email campaigns, optimizing your website for search engines, running online ads, attending industry events, and other activities.
+- Social Media Marketing: Use Instagram, Facebook and, TikTok to showcase jewelry, share user-generated content (reviews/testimonials), run targeted ads, and engage with followers.
+- Content Marketing: Create visually appealing content such as style guides, behind-the-scenes stories and, videos that highlight Lohana's products. 
+- Email Marketing: Build email newsletter list to launche email campaigns and send personalized product recommendations, exclusive offers, and updates about new arrivals and bestsellers.
+- Influencer Partnerships: Collaborate with fashion influencers and bloggers to showcase Lohana's jewelry to increase brand visibility.
+- SEO: Optimize website content to rank higher in SERPs and attract organic traffic from people searching for gold-plated jewelry online and gift ideas.
+- Paid Advertising: Invest in Facebook ads (and Google ads where cost-efficient) to target specific keywords, demographics, and interests to drive relevant traffic to the website.
 
 [Facebook profile](docs/fb-profile.png)
 [Facebook profile](docs/fb-profile1.png)
 
-### Content 
-
-Develop visually appealing and high-quality content that showcases your gold jewelry in the best light. Use professional product photography, lifestyle images, and videos to highlight the craftsmanship, details, and versatility of your pieces.
-Tell stories behind your jewelry designs, share customer testimonials and reviews, and provide styling tips or care instructions to enhance the value proposition and build trust with your audience.
-
-
-
-
 ## Agile
 
 Throughout the project, I followed the Agile methodology by using GitHub projects and issues. This allowed me to organize the project's tasks into epics and user stories, making it easy to manage them on the Kanban board. This helped break down the work into smaller parts, making development smoother and more efficient.
-By utilizing issues in GitHub and MSCW (MoSCoW Prioritization), I was also able to label and categorize the tasks to stay focused on the MVP. The "Won't Have's" of this project are still present on the Kanban board for future development.
+By utilizing issues in GitHub and MSCW (MoSCoW Prioritization), I was able to label and categorize the tasks to stay focused on the MVP.
 
 I decided not to use sprints in this project due to it being more of a team logic and it made more sense for me to work in a task-based manner.
 Even though I worked on this project alone, using Agile principles helped me track progress effectively and ensure future maintenance.
@@ -477,7 +515,7 @@ Even though I worked on this project alone, using Agile principles helped me tra
 ### Landing page
 -
 
-![Hero image]()
+![Landing page]()
 
 ### Footer
 - 

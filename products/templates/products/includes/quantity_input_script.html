@@ -8,6 +8,7 @@
             let quantity = parseInt(quantityInput.val());
             quantity = Math.max(1, quantity - 1); // Ensure quantity is never less than 1
             quantityInput.val(quantity);
+            toggleButtonsState(productId, quantity);
         });
 
         // Event handler for increment button
@@ -18,6 +19,23 @@
             let quantity = parseInt(quantityInput.val());
             quantity = Math.min(99, quantity + 1); // Ensure quantity is never more than 99
             quantityInput.val(quantity);
+            toggleButtonsState(productId, quantity);
         });
+
+        // Function to toggle buttons state based on quantity
+        function toggleButtonsState(productId, quantity) {
+            const decrementButton = $('.decrement-qty[data-item_id="' + productId + '"]');
+            const incrementButton = $('.increment-qty[data-item_id="' + productId + '"]');
+            if (quantity <= 1) {
+                decrementButton.prop('disabled', true);
+            } else {
+                decrementButton.prop('disabled', false);
+            }
+            if (quantity >= 99) {
+                incrementButton.prop('disabled', true);
+            } else {
+                incrementButton.prop('disabled', false);
+            }
+        }
     });
 </script>

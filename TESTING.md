@@ -5,10 +5,10 @@
 1. [**Manual testing**](#manual-testing)
     * [***User stories***](#user-stories)
         * [***EPIC - View Products***](#epic---view-products)
-        * [***EPIC - View Products***](#epic---register-and-user-profile)
-        * [***EPIC - View Products***](#epic---search-and-sort)
-        * [***EPIC - View Products***](#epic---shopping-bag-and-checkout)
-        * [***EPIC - View Products***](#epic---admin-management)
+        * [***EPIC - Register and User profile***](#epic---register-and-user-profile)
+        * [***EPIC - Search and Sort***](#epic---search-and-sort)
+        * [***EPIC - Shopping bag and Checkout***](#epic---shopping-bag-and-checkout)
+        * [***EPIC - Admin Management***](#epic---admin-management)
         * [***EPIC - Contact***](#epic---contact)
         * [***Footer***](#footer)
 1. [**Validator testing**](#validator-testing)
@@ -56,8 +56,9 @@ I manually tested this site in multiple ways highlighted below:
 |:---:|:---|
 |&check;| Click on a product from Products page to get to Product Details page
 |&check;| The page contains all details, price, image, name, introduction, category tag and description
-|&check;| Can select quantity between 1-99 of product to add to shopping bag
+|&check;| Can only select quantity between 1-99 of product to add to shopping bag
 |&check;| Error displays if value is incorrect
+|&check;| Quantity buttons disable at min/max value
 |&check;| Add to bag button adds product to the shopping bag
 |&check;| Success message displays shopping bag summary with added products and details
 |&check;| Continue Shopping button directs back to Products page
@@ -154,12 +155,14 @@ I manually tested this site in multiple ways highlighted below:
 |passed | **Edit/delete my order in the shopping bag so that I can purchase what I want**
 |:---:|:---|
 |&check;| View all items in my shopping bag with name, image, SKU, quantity and subtotal
-|&check;| Quantity buttons disabled at number 1 and 99
+|&check;| Can only select quantity between 1-99 of product
+|&check;| Error message display of incorrect value
+|&check;| Quantity buttons disable at min/max value
 |&check;| Remove button removes the product from the shopping bag
 |&check;| Update button updates the quantity when changed
 |&check;| Bag total, delivery total and grand total displays correctly
 |&check;| Continue shopping button directs to all products
-|&check;| Secure checkout button directs to checkout page 
+|&check;| Secure checkout button directs to checkout page
 
 
 |passed | **Make an order purchase so that I can buy the items I want safely**
@@ -250,7 +253,39 @@ The lower scores were for two main reasons:
 
 ![Mobile landing page](docs/images/lighthouse/land-mob.png)
 
-### **Menu**
+### **Register**
+
+- Desktop version:
+
+![Desktop delete booking](docs/images/lighthouse/del-book-desk.png)
+
+- Mobile version:
+
+![Mobile delete booking](docs/images/lighthouse/del-book-mob.png)
+
+### **Sign in**
+
+- Desktop version:
+
+![Desktop delete booking](docs/images/lighthouse/del-book-desk.png)
+
+- Mobile version:
+
+![Mobile delete booking](docs/images/lighthouse/del-book-mob.png)
+
+### **Sign Out**
+
+- Desktop version:
+
+![Desktop delete booking](docs/images/lighthouse/del-book-desk.png)
+
+- Mobile version:
+
+![Mobile delete booking](docs/images/lighthouse/del-book-mob.png)
+
+### **Products**
+
+The performance of the category selected pages were the same scores as below.
 
 - Desktop version:
 
@@ -260,27 +295,7 @@ The lower scores were for two main reasons:
 
 ![Mobile menu](docs/images/lighthouse/menu-mob.png)
 
-### **Booking form**
-
-- Desktop version:
-
-![Desktop booking form](docs/images/lighthouse/form-desk.png)
-
-- Mobile version:
-
-![Mobile booking form](docs/images/lighthouse/form-mob.png)
-
-### **Booking success**
-
-- Desktop version:
-
-![Desktop booking success](docs/images/lighthouse/success-desk.png)
-
-- Mobile version:
-
-![Mobile booking success](docs/images/lighthouse/success-mob.png)
-
-### **Profile**
+### **User Profile - Delivery Details**
 
 - Desktop version:
 
@@ -290,7 +305,7 @@ The lower scores were for two main reasons:
 
 ![Mobile profile](docs/images/lighthouse/prof-mob.png)
 
-### **Edit account details**
+### **User Profile - Order History**
 
 - Desktop version:
 
@@ -300,7 +315,7 @@ The lower scores were for two main reasons:
 
 ![Mobile edit account details](docs/images/lighthouse/edit-acc-mob.png)
 
-### **Delete account**
+### **User Profile - Wishlist**
 
 - Desktop version:
 
@@ -310,7 +325,7 @@ The lower scores were for two main reasons:
 
 ![Mobile delete account](docs/images/lighthouse/del-acc-mob.png)
 
-### **Edit booking**
+### **Admin - Add product**
 
 - Desktop version:
 
@@ -320,7 +335,67 @@ The lower scores were for two main reasons:
 
 ![Mobile edit booking](docs/images/lighthouse/edit-book-mob.png)
 
-### **Delete booking**
+### **Admin - Edit Product**
+
+- Desktop version:
+
+![Desktop delete booking](docs/images/lighthouse/del-book-desk.png)
+
+- Mobile version:
+
+![Mobile delete booking](docs/images/lighthouse/del-book-mob.png)
+
+### **Admin - Delete Product**
+
+- Desktop version:
+
+![Desktop delete booking](docs/images/lighthouse/del-book-desk.png)
+
+- Mobile version:
+
+![Mobile delete booking](docs/images/lighthouse/del-book-mob.png)
+
+### **Contact form**
+
+- Desktop version:
+
+![Desktop booking form](docs/images/lighthouse/form-desk.png)
+
+- Mobile version:
+
+![Mobile booking form](docs/images/lighthouse/form-mob.png)
+
+### **Contact Success**
+
+- Desktop version:
+
+![Desktop booking success](docs/images/lighthouse/success-desk.png)
+
+- Mobile version:
+
+![Mobile booking success](docs/images/lighthouse/success-mob.png)
+
+### **Shopping Bag**
+
+- Desktop version:
+
+![Desktop delete booking](docs/images/lighthouse/del-book-desk.png)
+
+- Mobile version:
+
+![Mobile delete booking](docs/images/lighthouse/del-book-mob.png)
+
+### **Checkout**
+
+- Desktop version:
+
+![Desktop delete booking](docs/images/lighthouse/del-book-desk.png)
+
+- Mobile version:
+
+![Mobile delete booking](docs/images/lighthouse/del-book-mob.png)
+
+### **Checkout Success**
 
 - Desktop version:
 
